@@ -134,6 +134,7 @@ model += (
 
 # Constraints: We need to ensure flow conservation at each node, capacity constraints for arcs, and that the binary variables y[m, 'l1'] are set correctly based on the flow.
 print("\nDefining constraints...")
+# Flow conservation constraints
 constraint_names = set()
 constraint_counter = 0
 for n, t, c in nodes:
@@ -169,6 +170,7 @@ for n, t, c in nodes:
         )
     model += constraint, constraint_name
 
+# Capacity constraints for q-to-r arcs
 for m in M:
     for t in T:
         for c in C:
@@ -178,7 +180,7 @@ for m in M:
             constraint_names.add(constraint_name)
             constraint_counter += 1
             if c[0] == 'l1':
-                model += x_regular[(f'{m}_q', f'{m}_r', t, c)] <= U_l1, constraint_name
+                model += x_regular[(f'{m}_q', f'{m}_r', t, c)] <= U_l1 * y[(m, 'l1')], constraint_name #This ensures flow on CSAM repair arcs is bounded by U_l1 only when y[(m, 'l1')] = 1; otherwise, it is forced to 0.
             else:
                 model += x_regular[(f'{m}_q', f'{m}_r', t, c)] <= U_l2, constraint_name
 
@@ -209,8 +211,22 @@ for a in x_qq:
     flow = x_qq[a].varValue if x_qq[a].varValue is not None else 0
     print(f"Arc ({i} -> {j}), t={t} to t={t2}, commodity={c}, type=Queue-to-queue: flow={flow:.1f}")
 
+print("\nFacility openings:")
+for m in M:
+    print(f"y[{m}, 'l1'] = {value(y[(m, 'l1')])}")
+
+print("\nPositive q-to-r flows for l1 commodities:")
+for m in M:
+    for t in T:
+        for c in C:
+            if c[0] == 'l1':
+                a = (f'{m}_q', f'{m}_r', t, c)
+                flow = value(x_regular[a])
+                if flow > 1e-6:
+                    print(f"Arc ({m}_q -> {m}_r), t={t}, commodity={c}: flow={flow:.1f}")
+                    
 """ # Save flows to CSV (if you want a separate file to examine the output)
-output_dir = r'C:\Users\david\OneDrive\Documents\Academics'
+output_dir = r'C:/Users/david/OneDrive/Documents/Academics'
 with open(os.path.join(output_dir, 'arc_flows.csv'), 'w', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(['Source', 'Destination', 'Time', 'Commodity', 'Type', 'Flow'])
