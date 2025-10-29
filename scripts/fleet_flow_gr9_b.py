@@ -1,5 +1,7 @@
-# Upping the amount of commodities and nodes: 5 commodities and 10 nodes. I'm also adding print statements that are collected in an output file so that I can track larger runs without scrolling endlessly through the console.
+# Model: 5 commodities and 10 nodes. Adding print statements that are collected in an output file so that I can track larger runs without scrolling endlessly through the console.
 
+import os
+import sys
 import csv
 from pulp import *
 import numpy as np
@@ -16,8 +18,14 @@ class Tee(object):
         for f in self.files:
             f.flush()
 
-# Open log file
-log_file = open('output_gr9_b.txt', 'w')
+# Create output directory at repo root if it doesn't exist
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))  # Go up one level from 'scripts' to root
+output_dir = os.path.join(repo_root, 'output')
+
+
+# Open log file in the output directory
+log_file_path = os.path.join(output_dir, 'output_gr9_b.txt')
+log_file = open(log_file_path, 'w')
 original_stdout = sys.stdout
 sys.stdout = Tee(sys.stdout, log_file)
 
