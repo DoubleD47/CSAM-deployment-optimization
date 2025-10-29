@@ -1,13 +1,17 @@
 # This script will parse the output from the optimization model and create visualizations
 
+import os
 import re
 import networkx as nx
 import matplotlib.pyplot as plt
 
+# Create viz_output subfolder path to store visualizations
+output_dir = os.path.join(os.path.dirname(__file__), 'viz_output')
+
 # The output text
 # Read output from file 
 try:
-    output_text = open(r'C:\Git\CSAM-deployment-optimization\visualizations\output_gr9_b.txt', 'r').read()
+    output_text = open(r'C:\Git\CSAM-deployment-optimization\output\output_gr9_b.txt', 'r').read()
 except FileNotFoundError:
     print("Error: File not found at C:\\Git\\CSAM-deployment-optimization\\visualizations\output_gr9_b.txt")
     raise
@@ -119,5 +123,6 @@ for t in [1, 2]:
 
     plt.title(f'CSAM Deployment Network Flow for t={t}\n(Blue: Travel for l2, Green: CSAM l1 repair sum, Red: Traditional l2 repair)')
     plt.axis('off')
-    plt.savefig(f'csam_network_t{t}.png')
+    # plt.savefig(f'csam_network_t{t}.png')
+    plt.savefig(os.path.join(output_dir, f'csam_network_t{t}.png')) # Save in viz_output folder
     plt.show()

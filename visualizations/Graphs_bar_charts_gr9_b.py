@@ -1,14 +1,18 @@
 # This script will parse the output from the optimization model and create bar charts
-
+import os
 import re
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Create viz_output subfolder path to store visualizations
+output_dir = os.path.join(os.path.dirname(__file__), 'viz_output')
+
+
 # The output text
 # Read output from file 
 try:
-    output_text = open(r'C:\Git\output_gr9_b.txt', 'r').read()
+    output_text = open(r'C:\Git\CSAM-deployment-optimization\output\output_gr9_b.txt', 'r').read()
 except FileNotFoundError:
     print("Error: File not found at C:\\Git\\output_gr9_b.txt")
     raise
@@ -71,7 +75,8 @@ plt.ylabel('Flow Volume')
 plt.xticks(rotation=90)
 plt.legend(title='Flow Type')
 plt.tight_layout()
-plt.savefig('csam_flow_stacked_bars.png')
+# plt.savefig('csam_flow_stacked_bars.png')
+plt.savefig(os.path.join(output_dir, 'csam_flow_stacked_bars.png'))  # Save in viz_output folder
 plt.show()
 
 # Separate bar for deployments
@@ -80,7 +85,8 @@ plt.figure(figsize=(10, 6))
 sns.barplot(x='Facility', y='Opened', data=deploy_df, palette='viridis')
 plt.title('CSAM Facility Deployments (1=Opened)')
 plt.ylabel('Opened (Binary)')
-plt.savefig('csam_deployments_bar.png')
+# plt.savefig('csam_deployments_bar.png')
+plt.savefig(os.path.join(output_dir, 'csam_deployments_bar.png'))  # Save in viz_output folder
 plt.show()
 
 # Optional: Demands vs Total Fulfilled (CSAM + Trad)
@@ -96,7 +102,8 @@ plt.ylabel('Volume')
 plt.xticks(rotation=90)
 plt.legend(title='Type')
 plt.tight_layout()
-plt.savefig('demands_vs_fulfilled_bars.png')
+# plt.savefig('demands_vs_fulfilled_bars.png')
+plt.savefig(os.path.join(output_dir, 'demands_vs_fulfilled_bars.png'))  # Save in viz_output folder
 plt.show()
 
 # Travel flows outgoing per facility per t
@@ -115,5 +122,6 @@ plt.xlabel('Facility_Time')
 plt.ylabel('Travel Flow Volume')
 plt.xticks(rotation=90)
 plt.tight_layout()
-plt.savefig('outgoing_travel_bars.png')
+# plt.savefig('outgoing_travel_bars.png')
+plt.savefig(os.path.join(output_dir, 'outgoing_travel_bars.png'))  # Save in viz_output folder
 plt.show()

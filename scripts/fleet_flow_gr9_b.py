@@ -1,4 +1,6 @@
 # Model: 5 commodities and 10 nodes. Adding print statements that are collected in an output file so that I can track larger runs without scrolling endlessly through the console.
+# Making adjustments so that this places the output in the output folder at the repo root.
+# 
 
 import os
 import sys
@@ -30,7 +32,7 @@ original_stdout = sys.stdout
 sys.stdout = Tee(sys.stdout, log_file)
 
 # Set random seed
-SEED = 456
+SEED = 789
 np.random.seed(SEED)
 print(f"Random seed set to: {SEED}")
 
@@ -130,23 +132,23 @@ for t in T:
             regular_arcs.append(('dummy', 'ss', t, c))
 
 # Parameters
-D = {(m, t, c): np.random.uniform(1, 10) for m in M for t in T for c in C}
+D = {(m, t, c): np.random.uniform(5, 10) for m in M for t in T for c in C}
 print("\nDemands:")
 for (m, t, c), d in D.items():
     print(f"D({m}, t={t}, {c}) = {d:.1f}")
-F = {m: np.random.uniform(50, 150) for m in M}  # CS deployment costs 
+F = {m: np.random.uniform(150, 250) for m in M}  # CS deployment costs 
 C_in_in = np.random.uniform(10, 80)  # Travel cost
-C_in_q = np.random.uniform(1, 5) # queueing cost
-C_q_r_l1 = np.random.uniform(10, 20)  # Higher costs for CSAM
-C_q_r_l2 = np.random.uniform(0.5, 2)  #  Cheaper costs for traditional
-C_q_q = np.random.uniform(8, 12) # Carryover cost to remain in queue
-C_r_out = np.random.uniform(0.5, 2) # Outbound cost
-C_out_sink = 0.1 # Negligible
+C_in_q = np.random.uniform(0.1, 0.2) # queueing cost: Run another set of experiments to make sure that lower queueing costs reduce the amount AM used…it's weird that AM is being used before TM is exhausted
+C_q_r_l1 = np.random.uniform(10, 20)  # Higher costs for CSAM repair
+C_q_r_l2 = np.random.uniform(0.5, 2)  #  Cheaper costs for traditional repair
+C_q_q = np.random.uniform(1, 2) # Carryover cost to remain in queue from one time index to the next (i.e. stays in queue, not repaired)
+C_r_out = 0.1 # Negligible Outbound cost
+C_out_sink = 0.1 # Negligible 
 C_sink_ss = 0.1 # Negligible
-C_q_dummy = np.random.uniform(50, 150) # High penalty for unmet demand
+C_q_dummy = 1000 # High penalty for unmet demand
 C_dummy_ss = 0.1 # Negligible
 U_l1 = 50  # Adjusted type-specific upper bound for l1 (assumed same for all m)
-U_l2 = {k: 150 for k in K}  # Type-specific for l2 (assumed same for all traditional_m of type k)
+U_l2 = {k: 100 for k in K}  # Type-specific for l2 (assumed same for all traditional_m of type k)
 
 # PuLP Model
 model = LpProblem("Facility_Location_MultiCommodity", LpMinimize)

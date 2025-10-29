@@ -1,14 +1,18 @@
-# This script will parse the output from the optimization model and create heatmaps
+# This script will parse the output from the optimization model and create heatmaps and store them in the viz_output folder
+import os
 import re
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Create viz_output subfolder path to store visualizations
+output_dir = os.path.join(os.path.dirname(__file__), 'viz_output')
+
 # The output text
 # Read output from file 
 try:
-    output_text = open(r'C:\Git\output_gr9_b.txt', 'r').read()
+    output_text = open(r'C:\Git\CSAM-deployment-optimization\output\output_gr9_b.txt', 'r').read()
 except FileNotFoundError:
     print("Error: File not found at C:\\Git\\output_gr9_b.txt")
     raise
@@ -36,7 +40,8 @@ sns.heatmap(l1_pivot, annot=True, fmt='.1f', cmap='YlGnBu', cbar_kws={'label': '
 plt.title('CSAM l1 Capacity Utilization (%) by Facility and Time')
 plt.xlabel('Time Period')
 plt.ylabel('Facility')
-plt.savefig('csam_l1_util_heatmap.png')
+# plt.savefig('csam_l1_util_heatmap.png')
+plt.savefig(os.path.join(output_dir, 'csam_l1_util_heatmap.png'))  # Save in viz_output folder
 plt.show()
 
 # Parse traditional l2 flows (per traditional m, t)
@@ -57,7 +62,8 @@ sns.heatmap(l2_pivot, annot=True, fmt='.1f', cmap='YlOrRd', cbar_kws={'label': '
 plt.title('Traditional l2 Capacity Utilization (%) by Facility and Time')
 plt.xlabel('Time Period')
 plt.ylabel('Traditional Facility')
-plt.savefig('trad_l2_util_heatmap.png')
+# plt.savefig('trad_l2_util_heatmap.png')
+plt.savefig(os.path.join(output_dir, 'trad_l2_util_heatmap.png'))  # Save in viz_output folder
 plt.show()
 
 # Parse inter-facility travels for flow matrix (sum over t, c)
@@ -77,5 +83,6 @@ sns.heatmap(travel_matrix, annot=True, fmt='.1f', cmap='Blues', cbar_kws={'label
 plt.title('Inter-Facility Travel Flow Matrix (Sum over Time and Commodities)')
 plt.xlabel('To Facility')
 plt.ylabel('From Facility')
-plt.savefig('travel_flow_matrix_heatmap.png')
+# plt.savefig('travel_flow_matrix_heatmap.png')
+plt.savefig(os.path.join(output_dir, 'travel_flow_matrix_heatmap.png'))  # Save in viz_output folder
 plt.show()
