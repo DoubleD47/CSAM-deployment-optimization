@@ -1,209 +1,209 @@
 Random seed set to: 789
 
 Demands:
-D(m1, t=1, ('l1', 'k1')) = 6.6
-D(m1, t=1, ('l1', 'k2')) = 6.2
-D(m1, t=1, ('l1', 'k3')) = 9.0
-D(m1, t=1, ('l1', 'k4')) = 8.1
-D(m1, t=1, ('l1', 'k5')) = 9.9
-D(m1, t=1, ('l2', 'k1')) = 8.8
-D(m1, t=1, ('l2', 'k2')) = 5.1
-D(m1, t=1, ('l2', 'k3')) = 5.1
-D(m1, t=1, ('l2', 'k4')) = 5.6
-D(m1, t=1, ('l2', 'k5')) = 7.7
-D(m1, t=2, ('l1', 'k1')) = 5.2
-D(m1, t=2, ('l1', 'k2')) = 7.8
-D(m1, t=2, ('l1', 'k3')) = 8.6
-D(m1, t=2, ('l1', 'k4')) = 6.5
-D(m1, t=2, ('l1', 'k5')) = 8.7
-D(m1, t=2, ('l2', 'k1')) = 8.2
-D(m1, t=2, ('l2', 'k2')) = 6.1
-D(m1, t=2, ('l2', 'k3')) = 5.6
-D(m1, t=2, ('l2', 'k4')) = 6.6
-D(m1, t=2, ('l2', 'k5')) = 7.1
-D(m2, t=1, ('l1', 'k1')) = 5.7
-D(m2, t=1, ('l1', 'k2')) = 8.0
-D(m2, t=1, ('l1', 'k3')) = 6.9
-D(m2, t=1, ('l1', 'k4')) = 8.0
-D(m2, t=1, ('l1', 'k5')) = 8.9
-D(m2, t=1, ('l2', 'k1')) = 9.2
-D(m2, t=1, ('l2', 'k2')) = 7.5
-D(m2, t=1, ('l2', 'k3')) = 9.6
-D(m2, t=1, ('l2', 'k4')) = 7.5
-D(m2, t=1, ('l2', 'k5')) = 9.3
-D(m2, t=2, ('l1', 'k1')) = 9.1
-D(m2, t=2, ('l1', 'k2')) = 6.1
-D(m2, t=2, ('l1', 'k3')) = 6.0
-D(m2, t=2, ('l1', 'k4')) = 5.7
-D(m2, t=2, ('l1', 'k5')) = 9.0
-D(m2, t=2, ('l2', 'k1')) = 8.8
-D(m2, t=2, ('l2', 'k2')) = 6.1
-D(m2, t=2, ('l2', 'k3')) = 8.8
-D(m2, t=2, ('l2', 'k4')) = 8.7
-D(m2, t=2, ('l2', 'k5')) = 9.3
-D(m3, t=1, ('l1', 'k1')) = 7.3
-D(m3, t=1, ('l1', 'k2')) = 8.2
-D(m3, t=1, ('l1', 'k3')) = 6.6
-D(m3, t=1, ('l1', 'k4')) = 8.0
-D(m3, t=1, ('l1', 'k5')) = 6.5
-D(m3, t=1, ('l2', 'k1')) = 7.9
-D(m3, t=1, ('l2', 'k2')) = 6.2
-D(m3, t=1, ('l2', 'k3')) = 9.0
-D(m3, t=1, ('l2', 'k4')) = 7.8
-D(m3, t=1, ('l2', 'k5')) = 7.0
-D(m3, t=2, ('l1', 'k1')) = 5.6
-D(m3, t=2, ('l1', 'k2')) = 9.4
-D(m3, t=2, ('l1', 'k3')) = 8.6
-D(m3, t=2, ('l1', 'k4')) = 7.5
-D(m3, t=2, ('l1', 'k5')) = 5.1
-D(m3, t=2, ('l2', 'k1')) = 8.8
-D(m3, t=2, ('l2', 'k2')) = 7.8
-D(m3, t=2, ('l2', 'k3')) = 8.9
-D(m3, t=2, ('l2', 'k4')) = 6.0
-D(m3, t=2, ('l2', 'k5')) = 9.6
-D(m4, t=1, ('l1', 'k1')) = 8.9
-D(m4, t=1, ('l1', 'k2')) = 7.6
-D(m4, t=1, ('l1', 'k3')) = 6.0
-D(m4, t=1, ('l1', 'k4')) = 8.4
-D(m4, t=1, ('l1', 'k5')) = 9.5
-D(m4, t=1, ('l2', 'k1')) = 8.0
-D(m4, t=1, ('l2', 'k2')) = 5.1
-D(m4, t=1, ('l2', 'k3')) = 6.9
-D(m4, t=1, ('l2', 'k4')) = 7.6
-D(m4, t=1, ('l2', 'k5')) = 9.4
-D(m4, t=2, ('l1', 'k1')) = 5.9
-D(m4, t=2, ('l1', 'k2')) = 7.5
-D(m4, t=2, ('l1', 'k3')) = 9.9
-D(m4, t=2, ('l1', 'k4')) = 7.7
-D(m4, t=2, ('l1', 'k5')) = 6.4
-D(m4, t=2, ('l2', 'k1')) = 9.1
-D(m4, t=2, ('l2', 'k2')) = 5.5
-D(m4, t=2, ('l2', 'k3')) = 7.1
-D(m4, t=2, ('l2', 'k4')) = 8.0
-D(m4, t=2, ('l2', 'k5')) = 6.8
-D(m5, t=1, ('l1', 'k1')) = 9.2
-D(m5, t=1, ('l1', 'k2')) = 9.3
-D(m5, t=1, ('l1', 'k3')) = 9.6
-D(m5, t=1, ('l1', 'k4')) = 8.1
-D(m5, t=1, ('l1', 'k5')) = 7.6
-D(m5, t=1, ('l2', 'k1')) = 7.2
-D(m5, t=1, ('l2', 'k2')) = 8.3
-D(m5, t=1, ('l2', 'k3')) = 6.0
-D(m5, t=1, ('l2', 'k4')) = 9.6
-D(m5, t=1, ('l2', 'k5')) = 6.2
-D(m5, t=2, ('l1', 'k1')) = 8.9
-D(m5, t=2, ('l1', 'k2')) = 7.5
-D(m5, t=2, ('l1', 'k3')) = 8.2
-D(m5, t=2, ('l1', 'k4')) = 6.6
-D(m5, t=2, ('l1', 'k5')) = 8.4
-D(m5, t=2, ('l2', 'k1')) = 6.6
-D(m5, t=2, ('l2', 'k2')) = 8.3
-D(m5, t=2, ('l2', 'k3')) = 5.3
-D(m5, t=2, ('l2', 'k4')) = 6.6
-D(m5, t=2, ('l2', 'k5')) = 6.5
-D(m6, t=1, ('l1', 'k1')) = 8.7
-D(m6, t=1, ('l1', 'k2')) = 9.8
-D(m6, t=1, ('l1', 'k3')) = 8.8
-D(m6, t=1, ('l1', 'k4')) = 7.8
-D(m6, t=1, ('l1', 'k5')) = 7.1
-D(m6, t=1, ('l2', 'k1')) = 9.7
-D(m6, t=1, ('l2', 'k2')) = 8.6
-D(m6, t=1, ('l2', 'k3')) = 5.3
-D(m6, t=1, ('l2', 'k4')) = 9.4
-D(m6, t=1, ('l2', 'k5')) = 6.1
-D(m6, t=2, ('l1', 'k1')) = 6.5
-D(m6, t=2, ('l1', 'k2')) = 7.7
-D(m6, t=2, ('l1', 'k3')) = 9.7
-D(m6, t=2, ('l1', 'k4')) = 6.9
-D(m6, t=2, ('l1', 'k5')) = 8.3
-D(m6, t=2, ('l2', 'k1')) = 7.8
-D(m6, t=2, ('l2', 'k2')) = 9.4
-D(m6, t=2, ('l2', 'k3')) = 5.5
-D(m6, t=2, ('l2', 'k4')) = 9.1
-D(m6, t=2, ('l2', 'k5')) = 7.7
-D(m7, t=1, ('l1', 'k1')) = 8.5
-D(m7, t=1, ('l1', 'k2')) = 5.4
-D(m7, t=1, ('l1', 'k3')) = 6.8
-D(m7, t=1, ('l1', 'k4')) = 6.0
-D(m7, t=1, ('l1', 'k5')) = 7.6
-D(m7, t=1, ('l2', 'k1')) = 6.4
-D(m7, t=1, ('l2', 'k2')) = 9.2
-D(m7, t=1, ('l2', 'k3')) = 6.8
-D(m7, t=1, ('l2', 'k4')) = 9.3
-D(m7, t=1, ('l2', 'k5')) = 5.6
-D(m7, t=2, ('l1', 'k1')) = 8.1
-D(m7, t=2, ('l1', 'k2')) = 5.7
-D(m7, t=2, ('l1', 'k3')) = 8.2
-D(m7, t=2, ('l1', 'k4')) = 9.6
-D(m7, t=2, ('l1', 'k5')) = 5.3
-D(m7, t=2, ('l2', 'k1')) = 6.6
-D(m7, t=2, ('l2', 'k2')) = 7.2
-D(m7, t=2, ('l2', 'k3')) = 7.3
-D(m7, t=2, ('l2', 'k4')) = 5.2
-D(m7, t=2, ('l2', 'k5')) = 7.5
-D(m8, t=1, ('l1', 'k1')) = 7.4
-D(m8, t=1, ('l1', 'k2')) = 6.5
-D(m8, t=1, ('l1', 'k3')) = 6.0
-D(m8, t=1, ('l1', 'k4')) = 8.7
-D(m8, t=1, ('l1', 'k5')) = 8.5
-D(m8, t=1, ('l2', 'k1')) = 8.4
-D(m8, t=1, ('l2', 'k2')) = 6.6
-D(m8, t=1, ('l2', 'k3')) = 8.5
-D(m8, t=1, ('l2', 'k4')) = 6.3
-D(m8, t=1, ('l2', 'k5')) = 8.9
-D(m8, t=2, ('l1', 'k1')) = 9.7
-D(m8, t=2, ('l1', 'k2')) = 7.0
-D(m8, t=2, ('l1', 'k3')) = 5.2
-D(m8, t=2, ('l1', 'k4')) = 5.4
-D(m8, t=2, ('l1', 'k5')) = 7.5
-D(m8, t=2, ('l2', 'k1')) = 5.3
-D(m8, t=2, ('l2', 'k2')) = 6.2
-D(m8, t=2, ('l2', 'k3')) = 9.4
-D(m8, t=2, ('l2', 'k4')) = 5.3
-D(m8, t=2, ('l2', 'k5')) = 5.0
-D(m9, t=1, ('l1', 'k1')) = 8.8
-D(m9, t=1, ('l1', 'k2')) = 8.2
-D(m9, t=1, ('l1', 'k3')) = 5.0
-D(m9, t=1, ('l1', 'k4')) = 9.0
-D(m9, t=1, ('l1', 'k5')) = 6.5
-D(m9, t=1, ('l2', 'k1')) = 7.3
-D(m9, t=1, ('l2', 'k2')) = 8.1
-D(m9, t=1, ('l2', 'k3')) = 8.7
-D(m9, t=1, ('l2', 'k4')) = 8.7
-D(m9, t=1, ('l2', 'k5')) = 5.3
-D(m9, t=2, ('l1', 'k1')) = 7.0
-D(m9, t=2, ('l1', 'k2')) = 7.8
-D(m9, t=2, ('l1', 'k3')) = 8.4
-D(m9, t=2, ('l1', 'k4')) = 5.9
-D(m9, t=2, ('l1', 'k5')) = 5.2
-D(m9, t=2, ('l2', 'k1')) = 5.1
-D(m9, t=2, ('l2', 'k2')) = 7.1
-D(m9, t=2, ('l2', 'k3')) = 8.6
-D(m9, t=2, ('l2', 'k4')) = 6.8
-D(m9, t=2, ('l2', 'k5')) = 6.1
-D(m10, t=1, ('l1', 'k1')) = 9.1
-D(m10, t=1, ('l1', 'k2')) = 5.1
-D(m10, t=1, ('l1', 'k3')) = 8.5
-D(m10, t=1, ('l1', 'k4')) = 5.6
-D(m10, t=1, ('l1', 'k5')) = 9.2
-D(m10, t=1, ('l2', 'k1')) = 7.0
-D(m10, t=1, ('l2', 'k2')) = 10.0
-D(m10, t=1, ('l2', 'k3')) = 7.8
-D(m10, t=1, ('l2', 'k4')) = 7.7
-D(m10, t=1, ('l2', 'k5')) = 8.0
-D(m10, t=2, ('l1', 'k1')) = 6.2
-D(m10, t=2, ('l1', 'k2')) = 7.7
-D(m10, t=2, ('l1', 'k3')) = 9.7
-D(m10, t=2, ('l1', 'k4')) = 8.3
-D(m10, t=2, ('l1', 'k5')) = 5.4
-D(m10, t=2, ('l2', 'k1')) = 7.2
-D(m10, t=2, ('l2', 'k2')) = 8.2
-D(m10, t=2, ('l2', 'k3')) = 5.3
-D(m10, t=2, ('l2', 'k4')) = 7.5
-D(m10, t=2, ('l2', 'k5')) = 7.9
+D(m1, t=1, ('l1', 'k1')) = 66.2
+D(m1, t=1, ('l1', 'k2')) = 61.5
+D(m1, t=1, ('l1', 'k3')) = 89.7
+D(m1, t=1, ('l1', 'k4')) = 81.2
+D(m1, t=1, ('l1', 'k5')) = 98.8
+D(m1, t=1, ('l2', 'k1')) = 87.9
+D(m1, t=1, ('l2', 'k2')) = 50.5
+D(m1, t=1, ('l2', 'k3')) = 51.2
+D(m1, t=1, ('l2', 'k4')) = 55.6
+D(m1, t=1, ('l2', 'k5')) = 76.9
+D(m1, t=2, ('l1', 'k1')) = 52.3
+D(m1, t=2, ('l1', 'k2')) = 77.6
+D(m1, t=2, ('l1', 'k3')) = 86.4
+D(m1, t=2, ('l1', 'k4')) = 64.9
+D(m1, t=2, ('l1', 'k5')) = 86.7
+D(m1, t=2, ('l2', 'k1')) = 82.0
+D(m1, t=2, ('l2', 'k2')) = 61.0
+D(m1, t=2, ('l2', 'k3')) = 56.4
+D(m1, t=2, ('l2', 'k4')) = 66.4
+D(m1, t=2, ('l2', 'k5')) = 70.7
+D(m2, t=1, ('l1', 'k1')) = 56.9
+D(m2, t=1, ('l1', 'k2')) = 79.6
+D(m2, t=1, ('l1', 'k3')) = 68.5
+D(m2, t=1, ('l1', 'k4')) = 79.8
+D(m2, t=1, ('l1', 'k5')) = 89.3
+D(m2, t=1, ('l2', 'k1')) = 92.3
+D(m2, t=1, ('l2', 'k2')) = 75.0
+D(m2, t=1, ('l2', 'k3')) = 95.5
+D(m2, t=1, ('l2', 'k4')) = 74.7
+D(m2, t=1, ('l2', 'k5')) = 92.6
+D(m2, t=2, ('l1', 'k1')) = 91.1
+D(m2, t=2, ('l1', 'k2')) = 60.7
+D(m2, t=2, ('l1', 'k3')) = 59.7
+D(m2, t=2, ('l1', 'k4')) = 56.7
+D(m2, t=2, ('l1', 'k5')) = 90.0
+D(m2, t=2, ('l2', 'k1')) = 88.5
+D(m2, t=2, ('l2', 'k2')) = 60.6
+D(m2, t=2, ('l2', 'k3')) = 88.0
+D(m2, t=2, ('l2', 'k4')) = 87.0
+D(m2, t=2, ('l2', 'k5')) = 93.1
+D(m3, t=1, ('l1', 'k1')) = 72.7
+D(m3, t=1, ('l1', 'k2')) = 82.4
+D(m3, t=1, ('l1', 'k3')) = 66.4
+D(m3, t=1, ('l1', 'k4')) = 79.6
+D(m3, t=1, ('l1', 'k5')) = 65.0
+D(m3, t=1, ('l2', 'k1')) = 78.6
+D(m3, t=1, ('l2', 'k2')) = 61.6
+D(m3, t=1, ('l2', 'k3')) = 89.5
+D(m3, t=1, ('l2', 'k4')) = 77.8
+D(m3, t=1, ('l2', 'k5')) = 69.8
+D(m3, t=2, ('l1', 'k1')) = 56.4
+D(m3, t=2, ('l1', 'k2')) = 94.4
+D(m3, t=2, ('l1', 'k3')) = 86.0
+D(m3, t=2, ('l1', 'k4')) = 74.5
+D(m3, t=2, ('l1', 'k5')) = 51.3
+D(m3, t=2, ('l2', 'k1')) = 88.2
+D(m3, t=2, ('l2', 'k2')) = 78.0
+D(m3, t=2, ('l2', 'k3')) = 88.6
+D(m3, t=2, ('l2', 'k4')) = 59.9
+D(m3, t=2, ('l2', 'k5')) = 96.5
+D(m4, t=1, ('l1', 'k1')) = 89.2
+D(m4, t=1, ('l1', 'k2')) = 76.4
+D(m4, t=1, ('l1', 'k3')) = 60.5
+D(m4, t=1, ('l1', 'k4')) = 84.2
+D(m4, t=1, ('l1', 'k5')) = 95.1
+D(m4, t=1, ('l2', 'k1')) = 79.9
+D(m4, t=1, ('l2', 'k2')) = 51.2
+D(m4, t=1, ('l2', 'k3')) = 69.4
+D(m4, t=1, ('l2', 'k4')) = 76.0
+D(m4, t=1, ('l2', 'k5')) = 94.2
+D(m4, t=2, ('l1', 'k1')) = 59.1
+D(m4, t=2, ('l1', 'k2')) = 74.5
+D(m4, t=2, ('l1', 'k3')) = 98.5
+D(m4, t=2, ('l1', 'k4')) = 76.7
+D(m4, t=2, ('l1', 'k5')) = 63.7
+D(m4, t=2, ('l2', 'k1')) = 91.3
+D(m4, t=2, ('l2', 'k2')) = 55.3
+D(m4, t=2, ('l2', 'k3')) = 70.9
+D(m4, t=2, ('l2', 'k4')) = 79.7
+D(m4, t=2, ('l2', 'k5')) = 67.9
+D(m5, t=1, ('l1', 'k1')) = 92.0
+D(m5, t=1, ('l1', 'k2')) = 93.2
+D(m5, t=1, ('l1', 'k3')) = 96.4
+D(m5, t=1, ('l1', 'k4')) = 80.8
+D(m5, t=1, ('l1', 'k5')) = 75.6
+D(m5, t=1, ('l2', 'k1')) = 72.4
+D(m5, t=1, ('l2', 'k2')) = 83.0
+D(m5, t=1, ('l2', 'k3')) = 59.6
+D(m5, t=1, ('l2', 'k4')) = 95.9
+D(m5, t=1, ('l2', 'k5')) = 61.8
+D(m5, t=2, ('l1', 'k1')) = 88.6
+D(m5, t=2, ('l1', 'k2')) = 75.1
+D(m5, t=2, ('l1', 'k3')) = 81.9
+D(m5, t=2, ('l1', 'k4')) = 65.8
+D(m5, t=2, ('l1', 'k5')) = 84.0
+D(m5, t=2, ('l2', 'k1')) = 66.0
+D(m5, t=2, ('l2', 'k2')) = 82.9
+D(m5, t=2, ('l2', 'k3')) = 53.1
+D(m5, t=2, ('l2', 'k4')) = 65.9
+D(m5, t=2, ('l2', 'k5')) = 65.0
+D(m6, t=1, ('l1', 'k1')) = 87.3
+D(m6, t=1, ('l1', 'k2')) = 97.7
+D(m6, t=1, ('l1', 'k3')) = 88.2
+D(m6, t=1, ('l1', 'k4')) = 78.5
+D(m6, t=1, ('l1', 'k5')) = 71.3
+D(m6, t=1, ('l2', 'k1')) = 97.3
+D(m6, t=1, ('l2', 'k2')) = 85.6
+D(m6, t=1, ('l2', 'k3')) = 53.5
+D(m6, t=1, ('l2', 'k4')) = 93.6
+D(m6, t=1, ('l2', 'k5')) = 60.9
+D(m6, t=2, ('l1', 'k1')) = 64.9
+D(m6, t=2, ('l1', 'k2')) = 77.2
+D(m6, t=2, ('l1', 'k3')) = 97.2
+D(m6, t=2, ('l1', 'k4')) = 68.5
+D(m6, t=2, ('l1', 'k5')) = 83.3
+D(m6, t=2, ('l2', 'k1')) = 78.4
+D(m6, t=2, ('l2', 'k2')) = 94.5
+D(m6, t=2, ('l2', 'k3')) = 55.4
+D(m6, t=2, ('l2', 'k4')) = 91.0
+D(m6, t=2, ('l2', 'k5')) = 77.1
+D(m7, t=1, ('l1', 'k1')) = 85.5
+D(m7, t=1, ('l1', 'k2')) = 53.7
+D(m7, t=1, ('l1', 'k3')) = 67.9
+D(m7, t=1, ('l1', 'k4')) = 59.6
+D(m7, t=1, ('l1', 'k5')) = 76.2
+D(m7, t=1, ('l2', 'k1')) = 64.2
+D(m7, t=1, ('l2', 'k2')) = 92.0
+D(m7, t=1, ('l2', 'k3')) = 68.3
+D(m7, t=1, ('l2', 'k4')) = 93.4
+D(m7, t=1, ('l2', 'k5')) = 56.4
+D(m7, t=2, ('l1', 'k1')) = 80.6
+D(m7, t=2, ('l1', 'k2')) = 56.5
+D(m7, t=2, ('l1', 'k3')) = 82.2
+D(m7, t=2, ('l1', 'k4')) = 95.9
+D(m7, t=2, ('l1', 'k5')) = 53.0
+D(m7, t=2, ('l2', 'k1')) = 65.9
+D(m7, t=2, ('l2', 'k2')) = 71.6
+D(m7, t=2, ('l2', 'k3')) = 72.9
+D(m7, t=2, ('l2', 'k4')) = 52.2
+D(m7, t=2, ('l2', 'k5')) = 75.2
+D(m8, t=1, ('l1', 'k1')) = 74.2
+D(m8, t=1, ('l1', 'k2')) = 64.7
+D(m8, t=1, ('l1', 'k3')) = 59.7
+D(m8, t=1, ('l1', 'k4')) = 87.1
+D(m8, t=1, ('l1', 'k5')) = 85.0
+D(m8, t=1, ('l2', 'k1')) = 83.7
+D(m8, t=1, ('l2', 'k2')) = 66.1
+D(m8, t=1, ('l2', 'k3')) = 84.7
+D(m8, t=1, ('l2', 'k4')) = 63.2
+D(m8, t=1, ('l2', 'k5')) = 88.9
+D(m8, t=2, ('l1', 'k1')) = 97.1
+D(m8, t=2, ('l1', 'k2')) = 69.6
+D(m8, t=2, ('l1', 'k3')) = 52.3
+D(m8, t=2, ('l1', 'k4')) = 54.2
+D(m8, t=2, ('l1', 'k5')) = 74.6
+D(m8, t=2, ('l2', 'k1')) = 52.6
+D(m8, t=2, ('l2', 'k2')) = 61.6
+D(m8, t=2, ('l2', 'k3')) = 94.1
+D(m8, t=2, ('l2', 'k4')) = 52.8
+D(m8, t=2, ('l2', 'k5')) = 50.1
+D(m9, t=1, ('l1', 'k1')) = 88.3
+D(m9, t=1, ('l1', 'k2')) = 81.5
+D(m9, t=1, ('l1', 'k3')) = 50.3
+D(m9, t=1, ('l1', 'k4')) = 89.8
+D(m9, t=1, ('l1', 'k5')) = 64.6
+D(m9, t=1, ('l2', 'k1')) = 73.1
+D(m9, t=1, ('l2', 'k2')) = 81.2
+D(m9, t=1, ('l2', 'k3')) = 87.4
+D(m9, t=1, ('l2', 'k4')) = 86.6
+D(m9, t=1, ('l2', 'k5')) = 52.8
+D(m9, t=2, ('l1', 'k1')) = 69.7
+D(m9, t=2, ('l1', 'k2')) = 78.4
+D(m9, t=2, ('l1', 'k3')) = 84.3
+D(m9, t=2, ('l1', 'k4')) = 59.1
+D(m9, t=2, ('l1', 'k5')) = 52.2
+D(m9, t=2, ('l2', 'k1')) = 51.4
+D(m9, t=2, ('l2', 'k2')) = 70.6
+D(m9, t=2, ('l2', 'k3')) = 86.2
+D(m9, t=2, ('l2', 'k4')) = 67.9
+D(m9, t=2, ('l2', 'k5')) = 61.4
+D(m10, t=1, ('l1', 'k1')) = 91.3
+D(m10, t=1, ('l1', 'k2')) = 50.8
+D(m10, t=1, ('l1', 'k3')) = 85.1
+D(m10, t=1, ('l1', 'k4')) = 56.2
+D(m10, t=1, ('l1', 'k5')) = 91.8
+D(m10, t=1, ('l2', 'k1')) = 70.0
+D(m10, t=1, ('l2', 'k2')) = 99.9
+D(m10, t=1, ('l2', 'k3')) = 78.4
+D(m10, t=1, ('l2', 'k4')) = 77.4
+D(m10, t=1, ('l2', 'k5')) = 79.7
+D(m10, t=2, ('l1', 'k1')) = 61.7
+D(m10, t=2, ('l1', 'k2')) = 76.5
+D(m10, t=2, ('l1', 'k3')) = 96.6
+D(m10, t=2, ('l1', 'k4')) = 83.3
+D(m10, t=2, ('l1', 'k5')) = 53.8
+D(m10, t=2, ('l2', 'k1')) = 72.0
+D(m10, t=2, ('l2', 'k2')) = 81.8
+D(m10, t=2, ('l2', 'k3')) = 53.5
+D(m10, t=2, ('l2', 'k4')) = 74.6
+D(m10, t=2, ('l2', 'k5')) = 79.0
 Solving model...
 Status: Optimal
-Objective: 39197.93344815368
+Objective: 13229554.355285915
 
 Facility openings (CSAM l1):
 y[m1, 'l1'] = 1.0
@@ -218,222 +218,199 @@ y[m9, 'l1'] = 1.0
 y[m10, 'l1'] = 1.0
 
 Positive flows on CSAM (l1) repair paths (only flexible l1 commodities):
-Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k2'): flow=6.2
-Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k3'): flow=9.0
-Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k4'): flow=8.1
-Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k5'): flow=9.9
-Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k2'): flow=7.8
-Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k3'): flow=8.6
-Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k4'): flow=6.5
-Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k5'): flow=8.7
-Arc (m2_q_l1 -> m2_r_l1), t=1, commodity=('l1', 'k1'): flow=5.7
-Arc (m2_q_l1 -> m2_r_l1), t=1, commodity=('l1', 'k3'): flow=6.9
-Arc (m2_q_l1 -> m2_r_l1), t=1, commodity=('l1', 'k4'): flow=8.0
-Arc (m2_q_l1 -> m2_r_l1), t=1, commodity=('l1', 'k5'): flow=8.9
-Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k1'): flow=9.1
-Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k3'): flow=6.0
-Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k4'): flow=5.7
-Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k5'): flow=9.0
-Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k1'): flow=7.3
-Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k2'): flow=8.2
-Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k4'): flow=8.0
-Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k5'): flow=6.5
-Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k1'): flow=5.6
-Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k2'): flow=9.4
-Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k4'): flow=7.5
-Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k5'): flow=5.1
-Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k1'): flow=8.9
-Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k2'): flow=7.6
-Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k3'): flow=6.0
-Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k5'): flow=9.5
-Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k1'): flow=5.9
-Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k2'): flow=7.5
-Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k3'): flow=9.9
-Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k5'): flow=6.4
-Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k1'): flow=9.2
-Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k2'): flow=9.3
-Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k3'): flow=9.6
-Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k4'): flow=8.1
-Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k1'): flow=8.9
-Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k2'): flow=7.5
-Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k3'): flow=8.2
-Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k4'): flow=6.6
-Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k1'): flow=8.7
-Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k2'): flow=9.8
-Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k3'): flow=8.8
-Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k4'): flow=7.8
-Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k5'): flow=7.1
-Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k1'): flow=6.5
-Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k2'): flow=7.7
-Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k3'): flow=9.7
-Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k4'): flow=6.9
-Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k5'): flow=8.3
-Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k1'): flow=8.5
-Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k2'): flow=5.4
-Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k3'): flow=6.8
-Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k4'): flow=6.0
-Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k5'): flow=7.6
-Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k1'): flow=8.1
-Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k2'): flow=5.7
-Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k3'): flow=8.2
-Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k4'): flow=9.6
-Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k5'): flow=5.3
-Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k1'): flow=7.4
-Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k2'): flow=6.5
-Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k3'): flow=6.0
-Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k4'): flow=8.7
-Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k5'): flow=8.5
-Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k1'): flow=9.7
-Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k2'): flow=7.0
-Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k3'): flow=5.2
-Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k4'): flow=5.4
-Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k5'): flow=7.5
-Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k1'): flow=8.8
-Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k2'): flow=8.2
-Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k3'): flow=5.0
-Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k4'): flow=9.0
-Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k5'): flow=6.5
-Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k1'): flow=7.0
-Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k2'): flow=7.8
-Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k3'): flow=8.4
-Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k4'): flow=5.9
-Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k5'): flow=5.2
-Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k1'): flow=9.1
-Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k2'): flow=5.1
-Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k3'): flow=8.5
-Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k4'): flow=5.6
-Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k5'): flow=9.2
-Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k1'): flow=6.2
-Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k2'): flow=7.7
-Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k3'): flow=9.7
-Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k4'): flow=8.3
-Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k5'): flow=5.4
+Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k3'): flow=50.0
+Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k4'): flow=50.0
+Arc (m2_q_l1 -> m2_r_l1), t=1, commodity=('l1', 'k3'): flow=50.0
+Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k1'): flow=50.0
+Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k1'): flow=50.0
+Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k3'): flow=50.0
+Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k3'): flow=50.0
+Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k4'): flow=50.0
+Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k1'): flow=50.0
+Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k1'): flow=50.0
+Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k2'): flow=50.0
+Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k4'): flow=50.0
+Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k5'): flow=50.0
+Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k4'): flow=50.0
+Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k3'): flow=50.0
+Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k3'): flow=50.0
+Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k4'): flow=50.0
+Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k1'): flow=50.0
+Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k5'): flow=50.0
+Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k3'): flow=50.0
 
 Positive flows on traditional (l2) repair paths:
 
 For k=k1 at m1:
-Arc (m1_q_l2 -> m1_r_l2), t=1, commodity=('l1', 'k1'): flow=6.6 (jumping if 'l1')
-Arc (m1_q_l2 -> m1_r_l2), t=1, commodity=('l2', 'k1'): flow=79.9 (jumping if 'l1')
-Arc (m1_q_l2 -> m1_r_l2), t=2, commodity=('l1', 'k1'): flow=5.2 (jumping if 'l1')
-Arc (m1_q_l2 -> m1_r_l2), t=2, commodity=('l2', 'k1'): flow=73.6 (jumping if 'l1')
+Arc (m1_q_l2 -> m1_r_l2), t=1, commodity=('l1', 'k1'): flow=66.2 (jumping if 'l1')
+Arc (m1_q_l2 -> m1_r_l2), t=1, commodity=('l2', 'k1'): flow=33.8 (jumping if 'l1')
+Arc (m1_q_l2 -> m1_r_l2), t=2, commodity=('l1', 'k1'): flow=52.3 (jumping if 'l1')
+Arc (m1_q_l2 -> m1_r_l2), t=2, commodity=('l2', 'k1'): flow=47.7 (jumping if 'l1')
 
 For k=k2 at m2:
-Arc (m2_q_l2 -> m2_r_l2), t=1, commodity=('l1', 'k2'): flow=8.0 (jumping if 'l1')
-Arc (m2_q_l2 -> m2_r_l2), t=1, commodity=('l2', 'k2'): flow=74.6 (jumping if 'l1')
-Arc (m2_q_l2 -> m2_r_l2), t=2, commodity=('l1', 'k2'): flow=6.1 (jumping if 'l1')
-Arc (m2_q_l2 -> m2_r_l2), t=2, commodity=('l2', 'k2'): flow=71.8 (jumping if 'l1')
+Arc (m2_q_l2 -> m2_r_l2), t=1, commodity=('l2', 'k2'): flow=100.0 (jumping if 'l1')
+Arc (m2_q_l2 -> m2_r_l2), t=2, commodity=('l2', 'k2'): flow=100.0 (jumping if 'l1')
 
 For k=k3 at m3:
-Arc (m3_q_l2 -> m3_r_l2), t=1, commodity=('l1', 'k3'): flow=6.6 (jumping if 'l1')
-Arc (m3_q_l2 -> m3_r_l2), t=1, commodity=('l2', 'k3'): flow=73.8 (jumping if 'l1')
-Arc (m3_q_l2 -> m3_r_l2), t=2, commodity=('l1', 'k3'): flow=8.6 (jumping if 'l1')
-Arc (m3_q_l2 -> m3_r_l2), t=2, commodity=('l2', 'k3'): flow=71.9 (jumping if 'l1')
+Arc (m3_q_l2 -> m3_r_l2), t=1, commodity=('l2', 'k3'): flow=100.0 (jumping if 'l1')
+Arc (m3_q_l2 -> m3_r_l2), t=2, commodity=('l1', 'k3'): flow=86.0 (jumping if 'l1')
+Arc (m3_q_l2 -> m3_r_l2), t=2, commodity=('l2', 'k3'): flow=14.0 (jumping if 'l1')
 
 For k=k4 at m4:
-Arc (m4_q_l2 -> m4_r_l2), t=1, commodity=('l1', 'k4'): flow=8.4 (jumping if 'l1')
-Arc (m4_q_l2 -> m4_r_l2), t=1, commodity=('l2', 'k4'): flow=79.4 (jumping if 'l1')
-Arc (m4_q_l2 -> m4_r_l2), t=2, commodity=('l1', 'k4'): flow=7.7 (jumping if 'l1')
-Arc (m4_q_l2 -> m4_r_l2), t=2, commodity=('l2', 'k4'): flow=69.8 (jumping if 'l1')
+Arc (m4_q_l2 -> m4_r_l2), t=1, commodity=('l2', 'k4'): flow=100.0 (jumping if 'l1')
+Arc (m4_q_l2 -> m4_r_l2), t=2, commodity=('l2', 'k4'): flow=100.0 (jumping if 'l1')
 
 For k=k5 at m5:
-Arc (m5_q_l2 -> m5_r_l2), t=1, commodity=('l1', 'k5'): flow=7.6 (jumping if 'l1')
-Arc (m5_q_l2 -> m5_r_l2), t=1, commodity=('l2', 'k5'): flow=73.4 (jumping if 'l1')
-Arc (m5_q_l2 -> m5_r_l2), t=2, commodity=('l1', 'k5'): flow=8.4 (jumping if 'l1')
-Arc (m5_q_l2 -> m5_r_l2), t=2, commodity=('l2', 'k5'): flow=73.6 (jumping if 'l1')
+Arc (m5_q_l2 -> m5_r_l2), t=1, commodity=('l2', 'k5'): flow=100.0 (jumping if 'l1')
+Arc (m5_q_l2 -> m5_r_l2), t=2, commodity=('l2', 'k5'): flow=100.0 (jumping if 'l1')
 
 Positive inter-facility travel flows (in-to-in):
-Arc (m1_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=5.1
-Arc (m1_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=6.1
-Arc (m1_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=5.1
-Arc (m1_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=5.6
-Arc (m1_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=5.6
-Arc (m1_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=6.6
-Arc (m1_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=7.7
-Arc (m1_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=7.1
-Arc (m2_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=9.2
-Arc (m2_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=8.8
-Arc (m2_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=9.6
-Arc (m2_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=8.8
-Arc (m2_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=7.5
-Arc (m2_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=8.7
-Arc (m2_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=9.3
-Arc (m2_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=9.3
-Arc (m3_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=7.9
-Arc (m3_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=8.8
-Arc (m3_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=6.2
-Arc (m3_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=7.8
-Arc (m3_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=7.8
-Arc (m3_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=6.0
-Arc (m3_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=7.0
-Arc (m3_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=9.6
-Arc (m4_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=8.0
-Arc (m4_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=9.1
-Arc (m4_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=5.1
-Arc (m4_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=5.5
-Arc (m4_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=6.9
-Arc (m4_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=7.1
-Arc (m4_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=9.4
-Arc (m4_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=6.8
-Arc (m5_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=7.2
-Arc (m5_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=6.6
-Arc (m5_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=8.3
-Arc (m5_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=8.3
-Arc (m5_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=6.0
-Arc (m5_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=5.3
-Arc (m5_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=9.6
-Arc (m5_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=6.6
-Arc (m6_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=9.7
-Arc (m6_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=7.8
-Arc (m6_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=8.6
-Arc (m6_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=9.4
-Arc (m6_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=5.3
-Arc (m6_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=5.5
-Arc (m6_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=9.4
-Arc (m6_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=9.1
-Arc (m6_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=6.1
-Arc (m6_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=7.7
-Arc (m7_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=6.4
-Arc (m7_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=6.6
-Arc (m7_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=9.2
-Arc (m7_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=7.2
-Arc (m7_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=6.8
-Arc (m7_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=7.3
-Arc (m7_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=9.3
-Arc (m7_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=5.2
-Arc (m7_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=5.6
-Arc (m7_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=7.5
-Arc (m8_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=8.4
-Arc (m8_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=5.3
-Arc (m8_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=6.6
-Arc (m8_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=6.2
-Arc (m8_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=8.5
-Arc (m8_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=9.4
-Arc (m8_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=6.3
-Arc (m8_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=5.3
-Arc (m8_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=8.9
-Arc (m8_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=5.0
-Arc (m9_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=7.3
-Arc (m9_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=5.1
-Arc (m9_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=8.1
-Arc (m9_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=7.1
-Arc (m9_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=8.7
-Arc (m9_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=8.6
-Arc (m9_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=8.7
-Arc (m9_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=6.8
-Arc (m9_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=5.3
-Arc (m9_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=6.1
-Arc (m10_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=7.0
-Arc (m10_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=7.2
-Arc (m10_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=10.0
-Arc (m10_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=8.2
-Arc (m10_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=7.8
-Arc (m10_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=5.3
-Arc (m10_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=7.7
-Arc (m10_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=7.5
-Arc (m10_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=8.0
-Arc (m10_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=7.9
+Arc (m1_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=50.5
+Arc (m1_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=61.0
+Arc (m1_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=51.2
+Arc (m1_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=56.4
+Arc (m1_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=55.6
+Arc (m1_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=66.4
+Arc (m1_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=76.9
+Arc (m1_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=70.7
+Arc (m2_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=92.3
+Arc (m2_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=88.5
+Arc (m2_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=95.5
+Arc (m2_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=88.0
+Arc (m2_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=74.7
+Arc (m2_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=87.0
+Arc (m2_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=92.6
+Arc (m2_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=93.1
+Arc (m3_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=78.6
+Arc (m3_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=88.2
+Arc (m3_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=61.6
+Arc (m3_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=78.0
+Arc (m3_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=77.8
+Arc (m3_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=59.9
+Arc (m3_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=69.8
+Arc (m3_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=96.5
+Arc (m4_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=79.9
+Arc (m4_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=91.3
+Arc (m4_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=51.2
+Arc (m4_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=55.3
+Arc (m4_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=69.4
+Arc (m4_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=70.9
+Arc (m4_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=94.2
+Arc (m4_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=67.9
+Arc (m5_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=72.4
+Arc (m5_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=66.0
+Arc (m5_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=83.0
+Arc (m5_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=82.9
+Arc (m5_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=59.6
+Arc (m5_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=53.1
+Arc (m5_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=95.9
+Arc (m5_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=65.9
+Arc (m6_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=97.3
+Arc (m6_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=78.4
+Arc (m6_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=85.6
+Arc (m6_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=94.5
+Arc (m6_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=53.5
+Arc (m6_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=55.4
+Arc (m6_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=93.6
+Arc (m6_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=91.0
+Arc (m6_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=60.9
+Arc (m6_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=77.1
+Arc (m7_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=64.2
+Arc (m7_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=65.9
+Arc (m7_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=92.0
+Arc (m7_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=71.6
+Arc (m7_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=68.3
+Arc (m7_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=72.9
+Arc (m7_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=93.4
+Arc (m7_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=52.2
+Arc (m7_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=56.4
+Arc (m7_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=75.2
+Arc (m8_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=83.7
+Arc (m8_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=52.6
+Arc (m8_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=66.1
+Arc (m8_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=61.6
+Arc (m8_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=84.7
+Arc (m8_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=94.1
+Arc (m8_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=63.2
+Arc (m8_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=52.8
+Arc (m8_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=88.9
+Arc (m8_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=50.1
+Arc (m9_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=73.1
+Arc (m9_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=51.4
+Arc (m9_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=81.2
+Arc (m9_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=70.6
+Arc (m9_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=87.4
+Arc (m9_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=86.2
+Arc (m9_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=86.6
+Arc (m9_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=67.9
+Arc (m9_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=52.8
+Arc (m9_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=61.4
+Arc (m10_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=70.0
+Arc (m10_in -> m1_in), t=2, commodity=('l2', 'k1'): flow=72.0
+Arc (m10_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=99.9
+Arc (m10_in -> m2_in), t=2, commodity=('l2', 'k2'): flow=81.8
+Arc (m10_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=78.4
+Arc (m10_in -> m3_in), t=2, commodity=('l2', 'k3'): flow=53.5
+Arc (m10_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=77.4
+Arc (m10_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=74.6
+Arc (m10_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=79.7
+Arc (m10_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=79.0
 
 Positive flows on dummy arcs (unmet demand in t=2):
+Arc (m1_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=139.1
+Arc (m1_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=126.1
+Arc (m1_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=96.1
+Arc (m1_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=185.4
+Arc (m1_q_l2 -> dummy), t=2, commodity=('l2', 'k1'): flow=1454.2
+Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=98.0
+Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=140.3
+Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=78.2
+Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=136.5
+Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=179.4
+Arc (m2_q_l2 -> dummy), t=2, commodity=('l2', 'k2'): flow=1264.1
+Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=79.2
+Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=176.8
+Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=16.4
+Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=154.1
+Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=116.4
+Arc (m3_q_l2 -> dummy), t=2, commodity=('l2', 'k3'): flow=1342.7
+Arc (m4_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=148.3
+Arc (m4_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=150.9
+Arc (m4_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=109.0
+Arc (m4_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=110.8
+Arc (m4_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=158.8
+Arc (m4_q_l2 -> dummy), t=2, commodity=('l2', 'k4'): flow=1291.8
+Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=80.6
+Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=168.2
+Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=178.2
+Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=146.6
+Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=159.6
+Arc (m5_q_l2 -> dummy), t=2, commodity=('l2', 'k5'): flow=1270.0
+Arc (m6_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=152.2
+Arc (m6_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=124.9
+Arc (m6_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=185.4
+Arc (m6_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=97.0
+Arc (m6_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=154.6
+Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=166.1
+Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=110.3
+Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=150.1
+Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=105.5
+Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=79.3
+Arc (m8_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=171.3
+Arc (m8_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=134.2
+Arc (m8_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=12.0
+Arc (m8_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=141.3
+Arc (m8_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=159.6
+Arc (m9_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=108.0
+Arc (m9_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=160.0
+Arc (m9_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=134.6
+Arc (m9_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=98.9
+Arc (m9_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=116.8
+Arc (m10_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=153.0
+Arc (m10_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=127.3
+Arc (m10_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=131.7
+Arc (m10_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=139.5
+Arc (m10_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=95.7
 
-Total demand: 1496.5
-Total inflow to ss: 1496.5
+Total demand: 14965.2
+Total inflow to ss: 14965.2

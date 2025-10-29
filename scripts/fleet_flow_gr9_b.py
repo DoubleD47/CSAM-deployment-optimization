@@ -132,7 +132,7 @@ for t in T:
             regular_arcs.append(('dummy', 'ss', t, c))
 
 # Parameters
-D = {(m, t, c): np.random.uniform(5, 10) for m in M for t in T for c in C}
+D = {(m, t, c): np.random.uniform(50, 100) for m in M for t in T for c in C}
 print("\nDemands:")
 for (m, t, c), d in D.items():
     print(f"D({m}, t={t}, {c}) = {d:.1f}")
