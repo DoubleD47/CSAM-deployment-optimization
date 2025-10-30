@@ -203,7 +203,7 @@ D(m10, t=2, ('l2', 'k4')) = 26.0
 D(m10, t=2, ('l2', 'k5')) = 40.0
 Solving model...
 Status: Optimal
-Objective: 5367736.00750125
+Objective: 5425843.67498055
 
 Facility openings (CSAM l1):
 y[m1, 'l1'] = 0.0
@@ -218,34 +218,33 @@ y[m9, 'l1'] = 0.0
 y[m10, 'l1'] = 0.0
 
 Positive flows on CSAM (l1) repair paths (only flexible l1 commodities):
-Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k1'): flow=10.3
-Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k3'): flow=39.7
+Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k1'): flow=35.8
+Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k2'): flow=14.2
 Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k2'): flow=50.0
-Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k1'): flow=4.6
-Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k3'): flow=19.9
+Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k1'): flow=24.5
 Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k4'): flow=25.5
-Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k3'): flow=50.0
-Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k2'): flow=5.6
+Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k4'): flow=32.6
+Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k5'): flow=17.4
 Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k3'): flow=29.3
-Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k5'): flow=15.1
-Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k5'): flow=50.0
+Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k5'): flow=20.7
+Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k2'): flow=5.6
+Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k5'): flow=44.4
 
 Positive flows on traditional (l2) repair paths:
 
 For k=k1 at m1:
 Arc (m1_q_l2 -> m1_r_l2), t=1, commodity=('l1', 'k1'): flow=28.7 (jumping if 'l1')
 Arc (m1_q_l2 -> m1_r_l2), t=1, commodity=('l2', 'k1'): flow=71.3 (jumping if 'l1')
-Arc (m1_q_l2 -> m1_r_l2), t=2, commodity=('l1', 'k1'): flow=31.5 (jumping if 'l1')
-Arc (m1_q_l2 -> m1_r_l2), t=2, commodity=('l2', 'k1'): flow=68.5 (jumping if 'l1')
+Arc (m1_q_l2 -> m1_r_l2), t=2, commodity=('l2', 'k1'): flow=100.0 (jumping if 'l1')
 
 For k=k2 at m2:
-Arc (m2_q_l2 -> m2_r_l2), t=1, commodity=('l2', 'k2'): flow=100.0 (jumping if 'l1')
+Arc (m2_q_l2 -> m2_r_l2), t=1, commodity=('l1', 'k2'): flow=26.8 (jumping if 'l1')
+Arc (m2_q_l2 -> m2_r_l2), t=1, commodity=('l2', 'k2'): flow=73.2 (jumping if 'l1')
 Arc (m2_q_l2 -> m2_r_l2), t=2, commodity=('l2', 'k2'): flow=100.0 (jumping if 'l1')
 
 For k=k3 at m3:
 Arc (m3_q_l2 -> m3_r_l2), t=1, commodity=('l2', 'k3'): flow=100.0 (jumping if 'l1')
-Arc (m3_q_l2 -> m3_r_l2), t=2, commodity=('l1', 'k3'): flow=26.5 (jumping if 'l1')
-Arc (m3_q_l2 -> m3_r_l2), t=2, commodity=('l2', 'k3'): flow=73.5 (jumping if 'l1')
+Arc (m3_q_l2 -> m3_r_l2), t=2, commodity=('l2', 'k3'): flow=100.0 (jumping if 'l1')
 
 For k=k4 at m4:
 Arc (m4_q_l2 -> m4_r_l2), t=1, commodity=('l2', 'k4'): flow=100.0 (jumping if 'l1')
@@ -348,32 +347,33 @@ Arc (m10_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=36.0
 Arc (m10_in -> m5_in), t=2, commodity=('l2', 'k5'): flow=40.0
 
 Positive flows on dummy arcs (unmet demand in t=2):
+Arc (m1_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=31.5
 Arc (m1_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=58.2
 Arc (m1_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=70.4
 Arc (m1_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=64.3
 Arc (m1_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=69.7
-Arc (m1_q_l2 -> dummy), t=2, commodity=('l2', 'k1'): flow=487.7
+Arc (m1_q_l2 -> dummy), t=2, commodity=('l2', 'k1'): flow=456.2
 Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=55.9
-Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=66.4
+Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=39.6
 Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=66.5
 Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=58.1
 Arc (m2_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=61.9
-Arc (m2_q_l2 -> dummy), t=2, commodity=('l2', 'k2'): flow=477.5
+Arc (m2_q_l2 -> dummy), t=2, commodity=('l2', 'k2'): flow=504.3
 Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=58.5
 Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=71.3
-Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=27.3
+Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=53.8
 Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=65.4
 Arc (m3_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=65.0
-Arc (m3_q_l2 -> dummy), t=2, commodity=('l2', 'k3'): flow=492.2
+Arc (m3_q_l2 -> dummy), t=2, commodity=('l2', 'k3'): flow=465.7
 Arc (m4_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=67.1
 Arc (m4_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=57.9
 Arc (m4_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=65.7
 Arc (m4_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=55.4
 Arc (m4_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=68.8
 Arc (m4_q_l2 -> dummy), t=2, commodity=('l2', 'k4'): flow=440.5
-Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=62.5
-Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=15.6
-Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=38.1
+Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=37.0
+Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=1.3
+Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=77.8
 Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=67.6
 Arc (m5_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=52.4
 Arc (m5_q_l2 -> dummy), t=2, commodity=('l2', 'k5'): flow=469.6
@@ -382,10 +382,10 @@ Arc (m6_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=72.7
 Arc (m6_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=63.7
 Arc (m6_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=54.2
 Arc (m6_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=57.9
-Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=53.7
+Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=33.8
 Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=59.8
-Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k4'): flow=32.6
-Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=58.0
+Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=69.9
+Arc (m7_q_l1 -> dummy), t=2, commodity=('l1', 'k5'): flow=40.5
 Arc (m8_q_l1 -> dummy), t=2, commodity=('l1', 'k1'): flow=66.2
 Arc (m8_q_l1 -> dummy), t=2, commodity=('l1', 'k2'): flow=62.4
 Arc (m8_q_l1 -> dummy), t=2, commodity=('l1', 'k3'): flow=29.2
@@ -406,16 +406,15 @@ Arc (m1_in -> m1_q_l1), t=1, commodity=('l1', 'k2'): flow=27.4
 Arc (m1_in -> m1_q_l1), t=1, commodity=('l1', 'k3'): flow=36.8
 Arc (m1_in -> m1_q_l1), t=1, commodity=('l1', 'k4'): flow=37.1
 Arc (m1_in -> m1_q_l1), t=1, commodity=('l1', 'k5'): flow=34.4
+Arc (m1_in -> m1_q_l1), t=2, commodity=('l1', 'k1'): flow=31.5
 Arc (m1_in -> m1_q_l1), t=2, commodity=('l1', 'k2'): flow=30.8
 Arc (m1_in -> m1_q_l1), t=2, commodity=('l1', 'k3'): flow=33.6
 Arc (m1_in -> m1_q_l1), t=2, commodity=('l1', 'k4'): flow=27.2
 Arc (m1_in -> m1_q_l1), t=2, commodity=('l1', 'k5'): flow=35.3
 Arc (m1_in -> m1_q_l2), t=1, commodity=('l1', 'k1'): flow=28.7
 Arc (m1_in -> m1_q_l2), t=1, commodity=('l2', 'k1'): flow=311.2
-Arc (m1_in -> m1_q_l2), t=2, commodity=('l1', 'k1'): flow=31.5
 Arc (m1_in -> m1_q_l2), t=2, commodity=('l2', 'k1'): flow=316.3
 Arc (m2_in -> m2_q_l1), t=1, commodity=('l1', 'k1'): flow=27.7
-Arc (m2_in -> m2_q_l1), t=1, commodity=('l1', 'k2'): flow=26.8
 Arc (m2_in -> m2_q_l1), t=1, commodity=('l1', 'k3'): flow=28.6
 Arc (m2_in -> m2_q_l1), t=1, commodity=('l1', 'k4'): flow=25.1
 Arc (m2_in -> m2_q_l1), t=1, commodity=('l1', 'k5'): flow=30.4
@@ -424,6 +423,7 @@ Arc (m2_in -> m2_q_l1), t=2, commodity=('l1', 'k2'): flow=39.6
 Arc (m2_in -> m2_q_l1), t=2, commodity=('l1', 'k3'): flow=37.9
 Arc (m2_in -> m2_q_l1), t=2, commodity=('l1', 'k4'): flow=33.0
 Arc (m2_in -> m2_q_l1), t=2, commodity=('l1', 'k5'): flow=31.5
+Arc (m2_in -> m2_q_l2), t=1, commodity=('l1', 'k2'): flow=26.8
 Arc (m2_in -> m2_q_l2), t=1, commodity=('l2', 'k2'): flow=337.3
 Arc (m2_in -> m2_q_l2), t=2, commodity=('l2', 'k2'): flow=340.2
 Arc (m3_in -> m3_q_l1), t=1, commodity=('l1', 'k1'): flow=33.4
@@ -433,10 +433,10 @@ Arc (m3_in -> m3_q_l1), t=1, commodity=('l1', 'k4'): flow=38.4
 Arc (m3_in -> m3_q_l1), t=1, commodity=('l1', 'k5'): flow=27.7
 Arc (m3_in -> m3_q_l1), t=2, commodity=('l1', 'k1'): flow=25.2
 Arc (m3_in -> m3_q_l1), t=2, commodity=('l1', 'k2'): flow=32.2
+Arc (m3_in -> m3_q_l1), t=2, commodity=('l1', 'k3'): flow=26.5
 Arc (m3_in -> m3_q_l1), t=2, commodity=('l1', 'k4'): flow=26.9
 Arc (m3_in -> m3_q_l1), t=2, commodity=('l1', 'k5'): flow=37.3
 Arc (m3_in -> m3_q_l2), t=1, commodity=('l2', 'k3'): flow=344.6
-Arc (m3_in -> m3_q_l2), t=2, commodity=('l1', 'k3'): flow=26.5
 Arc (m3_in -> m3_q_l2), t=2, commodity=('l2', 'k3'): flow=321.1
 Arc (m4_in -> m4_q_l1), t=1, commodity=('l1', 'k1'): flow=32.9
 Arc (m4_in -> m4_q_l1), t=1, commodity=('l1', 'k2'): flow=26.8
@@ -517,154 +517,154 @@ Objective Component Sums:
 Deployment (CSAM): 503.04599558096305
 Travel (in-in): 221763.7788164378
 Queue Entry (in-q): 992.72309999104
-Repair l1 (CSAM): 4362.380794525734
+Repair l1 (CSAM): 4362.380797433988
 Repair l2 (TM): 1270.9041859495192
-Carryover (q-q): 4938.7915009333565
-R to Out: 129.99999997
-Out to Sink: 129.99999997
-Sink to SS: 129.99999989
-Dummy (q-dummy): 5133001.083
-Dummy to SS: 513.300108
+Carryover (q-q): 63046.452276175056
+R to Out: 129.99999999
+Out to Sink: 129.99999999
+Sink to SS: 130.0
+Dummy (q-dummy): 5133001.0897
+Dummy to SS: 513.300109
 
 Total Cost by Node (excluding dummy penalties):
-m1: 21396.50
-m10: 25658.07
-m2: 19870.18
-m3: 21767.99
-m4: 19360.02
-m5: 23241.56
-m6: 25170.15
-m7: 27017.06
-m8: 26091.15
-m9: 24518.96
+m1: 29932.57
+m10: 29220.88
+m2: 28414.87
+m3: 31098.30
+m4: 27810.99
+m5: 31244.05
+m6: 28672.72
+m7: 29309.52
+m8: 28653.41
+m9: 27841.98
 
 Total Cost by Node and Commodity Tuple (excluding dummy penalties):
 m1:
-  ('l1', 'k1'): 97.95
-  ('l1', 'k2'): 62.00
-  ('l1', 'k3'): 81.86
-  ('l1', 'k4'): 81.64
-  ('l1', 'k5'): 77.17
-  ('l2', 'k1'): 765.73
+  ('l1', 'k1'): 51.56
+  ('l1', 'k2'): 685.75
+  ('l1', 'k3'): 917.16
+  ('l1', 'k4'): 925.43
+  ('l1', 'k5'): 858.61
+  ('l2', 'k1'): 6263.91
   ('l2', 'k2'): 5403.66
   ('l2', 'k3'): 5346.24
   ('l2', 'k4'): 4781.65
   ('l2', 'k5'): 4698.60
 m10:
-  ('l1', 'k1'): 62.25
-  ('l1', 'k2'): 72.69
-  ('l1', 'k3'): 78.53
-  ('l1', 'k4'): 73.23
-  ('l1', 'k5'): 63.16
+  ('l1', 'k1'): 688.67
+  ('l1', 'k2'): 809.21
+  ('l1', 'k3'): 889.20
+  ('l1', 'k4'): 817.57
+  ('l1', 'k5'): 708.00
   ('l2', 'k1'): 4470.69
   ('l2', 'k2'): 5867.59
   ('l2', 'k3'): 4649.10
   ('l2', 'k4'): 4603.98
   ('l2', 'k5'): 5716.86
 m2:
-  ('l1', 'k1'): 62.16
-  ('l1', 'k2'): 61.96
-  ('l1', 'k3'): 65.59
-  ('l1', 'k4'): 57.50
-  ('l1', 'k5'): 68.28
+  ('l1', 'k1'): 692.00
+  ('l1', 'k2'): 49.62
+  ('l1', 'k3'): 716.50
+  ('l1', 'k4'): 628.45
+  ('l1', 'k5'): 759.18
   ('l2', 'k1'): 4137.13
-  ('l2', 'k2'): 857.16
+  ('l2', 'k2'): 6871.58
   ('l2', 'k3'): 5435.89
   ('l2', 'k4'): 4388.40
   ('l2', 'k5'): 4736.12
 m3:
-  ('l1', 'k1'): 73.46
-  ('l1', 'k2'): 86.60
-  ('l1', 'k3'): 99.94
-  ('l1', 'k4'): 84.34
-  ('l1', 'k5'): 63.47
+  ('l1', 'k1'): 831.49
+  ('l1', 'k2'): 976.02
+  ('l1', 'k3'): 681.54
+  ('l1', 'k4'): 958.02
+  ('l1', 'k5'): 692.32
   ('l2', 'k1'): 5112.49
   ('l2', 'k2'): 4899.07
-  ('l2', 'k3'): 830.55
+  ('l2', 'k3'): 6429.29
   ('l2', 'k4'): 5275.56
   ('l2', 'k5'): 5242.49
 m4:
-  ('l1', 'k1'): 73.85
-  ('l1', 'k2'): 60.64
-  ('l1', 'k3'): 68.04
-  ('l1', 'k4'): 64.73
-  ('l1', 'k5'): 84.11
+  ('l1', 'k1'): 820.94
+  ('l1', 'k2'): 669.01
+  ('l1', 'k3'): 749.31
+  ('l1', 'k4'): 725.76
+  ('l1', 'k5'): 948.80
   ('l2', 'k1'): 3886.14
   ('l2', 'k2'): 4735.82
   ('l2', 'k3'): 4866.79
-  ('l2', 'k4'): 808.52
+  ('l2', 'k4'): 5697.04
   ('l2', 'k5'): 4711.37
 m5:
-  ('l1', 'k1'): 212.22
-  ('l1', 'k2'): 809.49
-  ('l1', 'k3'): 597.28
-  ('l1', 'k4'): 80.77
-  ('l1', 'k5'): 59.00
+  ('l1', 'k1'): 538.54
+  ('l1', 'k2'): 1401.44
+  ('l1', 'k3'): 991.01
+  ('l1', 'k4'): 908.46
+  ('l1', 'k5'): 658.12
   ('l2', 'k1'): 4526.65
   ('l2', 'k2'): 5651.58
   ('l2', 'k3'): 4818.47
   ('l2', 'k4'): 5471.06
-  ('l2', 'k5'): 1015.03
+  ('l2', 'k5'): 6278.71
 m6:
-  ('l1', 'k1'): 57.22
-  ('l1', 'k2'): 77.97
-  ('l1', 'k3'): 83.53
-  ('l1', 'k4'): 61.45
-  ('l1', 'k5'): 64.00
+  ('l1', 'k1'): 634.82
+  ('l1', 'k2'): 863.33
+  ('l1', 'k3'): 950.63
+  ('l1', 'k4'): 686.08
+  ('l1', 'k5'): 711.88
   ('l2', 'k1'): 5074.65
   ('l2', 'k2'): 5163.67
   ('l2', 'k3'): 4635.34
   ('l2', 'k4'): 4716.24
   ('l2', 'k5'): 5236.08
 m7:
-  ('l1', 'k1'): 128.45
-  ('l1', 'k2'): 73.98
-  ('l1', 'k3'): 1071.58
-  ('l1', 'k4'): 384.43
-  ('l1', 'k5'): 57.46
+  ('l1', 'k1'): 537.25
+  ('l1', 'k2'): 835.70
+  ('l1', 'k3'): 885.64
+  ('l1', 'k4'): 864.55
+  ('l1', 'k5'): 885.21
   ('l2', 'k1'): 5313.22
   ('l2', 'k2'): 5107.57
   ('l2', 'k3'): 4383.96
   ('l2', 'k4'): 5458.84
   ('l2', 'k5'): 5037.57
 m8:
-  ('l1', 'k1'): 79.02
-  ('l1', 'k2'): 136.91
+  ('l1', 'k1'): 888.54
+  ('l1', 'k2'): 788.72
   ('l1', 'k3'): 440.67
-  ('l1', 'k4'): 84.11
-  ('l1', 'k5'): 1002.22
+  ('l1', 'k4'): 941.24
+  ('l1', 'k5'): 1246.03
   ('l2', 'k1'): 4439.84
   ('l2', 'k2'): 4740.24
   ('l2', 'k3'): 5090.16
   ('l2', 'k4'): 4580.91
   ('l2', 'k5'): 5497.07
 m9:
-  ('l1', 'k1'): 61.03
-  ('l1', 'k2'): 70.33
-  ('l1', 'k3'): 66.87
-  ('l1', 'k4'): 64.10
-  ('l1', 'k5'): 68.73
+  ('l1', 'k1'): 668.31
+  ('l1', 'k2'): 790.47
+  ('l1', 'k3'): 729.95
+  ('l1', 'k4'): 703.99
+  ('l1', 'k5'): 761.36
   ('l2', 'k1'): 5264.02
   ('l2', 'k2'): 4696.27
   ('l2', 'k3'): 5570.17
   ('l2', 'k4'): 4316.89
   ('l2', 'k5'): 4340.55
 
-Total CSAM (AM) Cost (excluding dummy penalties): 5361.788340102217
+Total CSAM (AM) Cost (excluding dummy penalties): 5361.788343010471
 Total TM Cost (excluding dummy penalties): 1767.265735945039
-Total Queue Cost (Flow Time Proxy): 5931.514600924396
+Total Queue Cost (Flow Time Proxy): 64039.175376166095
 
 Queue Costs by Tuple:
-('l1', 'k1'): 599.26
-('l1', 'k2'): 692.70
-('l1', 'k3'): 567.31
-('l1', 'k4'): 660.83
-('l1', 'k5'): 647.92
-('l2', 'k1'): 560.19
-('l2', 'k2'): 562.98
-('l2', 'k3'): 575.28
-('l2', 'k4'): 514.34
-('l2', 'k5'): 550.72
+('l1', 'k1'): 5420.97
+('l1', 'k2'): 6800.28
+('l1', 'k3'): 7519.95
+('l1', 'k4'): 7303.95
+('l1', 'k5'): 7012.88
+('l2', 'k1'): 6011.99
+('l2', 'k2'): 6616.78
+('l2', 'k3'): 6135.10
+('l2', 'k4'): 5402.86
+('l2', 'k5'): 5814.40
 
 Transportation Costs by Tuple:
 ('l1', 'k1'): 0.00
@@ -678,10 +678,10 @@ Transportation Costs by Tuple:
 ('l2', 'k4'): 43593.55
 ('l2', 'k5'): 44883.80
 
-Total CSAM (AM) Cost (excluding dummy penalties): 8020.05219370693
-Total TM Cost (excluding dummy penalties): 4047.793383273682
+Total CSAM (AM) Cost (excluding dummy penalties): 38914.89378019033
+Total TM Cost (excluding dummy penalties): 31260.61257494023
 
 Total demand: 6433.0
 Total inflow to ss: 6433.0
 
-Total Model Cost (Objective Value): 5367736.01
+Total Model Cost (Objective Value): 5425843.67
