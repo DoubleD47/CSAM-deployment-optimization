@@ -17,9 +17,9 @@ os.makedirs(output_dir, exist_ok=True)
 # The output text
 # Read output from file 
 try:
-    output_text = open(r'C:\Git\CSAM-deployment-optimization\output\output_gr9_b.txt', 'r').read()
+    output_text = open(r'C:\Git\CSAM-deployment-optimization\output\output_gr9_c.txt', 'r').read()
 except FileNotFoundError:
-    print("Error: File not found at C:\\Git\\output_gr9_b.txt")
+    print("Error: File not found at C:\\Git\\output_gr9_c.txt")
     raise
 
 # Capacities from model code

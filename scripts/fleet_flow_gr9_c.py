@@ -1,26 +1,54 @@
-# The model has 15 commodities and 50 nodes.
+# Model: 5 commodities and 10 nodes. Adding print statements that are collected in an output file so that I can track larger runs without scrolling endlessly through the console.
+# Adding CSAM deployment limits. 
 
+import os
+import sys
+import csv
 from pulp import *
 import numpy as np
+from collections import defaultdict
+
+# Capture all prints to file while printing to console
+class Tee(object):
+    def __init__(self, *files):
+        self.files = files
+    def write(self, obj):
+        for f in self.files:
+            f.write(obj)
+            f.flush()  # Ensure real-time output
+    def flush(self):
+        for f in self.files:
+            f.flush()
+
+# Create output directory at repo root if it doesn't exist
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))  # Go up one level from 'scripts' to root
+output_dir = os.path.join(repo_root, 'output')
+
+
+# Open log file in the output directory
+log_file_path = os.path.join(output_dir, 'output_gr9_c.txt')
+log_file = open(log_file_path, 'w')
+original_stdout = sys.stdout
+sys.stdout = Tee(sys.stdout, log_file)
 
 # Set random seed
-SEED = 123
+SEED = 456
 np.random.seed(SEED)
 print(f"Random seed set to: {SEED}")
 
 # Define sets
-M = [f'm{i}' for i in range(1, 51)]  # 50 nodes: m1 to m50
-traditional_m_dict = {f'k{i}': f'm{i}' for i in range(1, 16)}  # Type-specific traditional facilities for k1-m1 to k15-m15
+M = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9', 'm10']
+traditional_m_dict = {'k1': 'm1', 'k2': 'm2', 'k3': 'm3', 'k4': 'm4', 'k5': 'm5'}  # Type-specific traditional facilities at these nodes
 L = ['l1', 'l2']
-K = [f'k{i}' for i in range(1, 16)]  # 15 commodity types: k1 to k15
-C = [(l, k) for l in L for k in K]  # 30 commodities
+K = ['k1', 'k2', 'k3', 'k4', 'k5']
+C = [(l, k) for l in L for k in K]
 T = [1, 2]
 
 ##### Nodes #####
 nodes = []
 for t in T:
     for c in C:
-        # Source and sink per t, c
+        # Source and sink per t, crumble
         nodes.append(('source', t, c))
         nodes.append(('sink', t, c))
         # Dummy and ss per c
@@ -104,23 +132,26 @@ for t in T:
             regular_arcs.append(('dummy', 'ss', t, c))
 
 # Parameters
-D = {(m, t, c): np.random.uniform(1, 10) for m in M for t in T for c in C}
+D = {(m, t, c): np.random.uniform(25, 40) for m in M for t in T for c in C}
 print("\nDemands:")
 for (m, t, c), d in D.items():
     print(f"D({m}, t={t}, {c}) = {d:.1f}")
-F = {m: np.random.uniform(100, 300) for m in M}  # Lower to encourage deployment
-C_in_in = np.random.uniform(2, 8)  # Travel cost
-C_in_q = np.random.uniform(1, 5)
-C_q_r_l1 = np.random.uniform(0.5, 2)  # Cheaper for CSAM
-C_q_r_l2 = np.random.uniform(2, 5)  # Higher for traditional
-C_q_q = np.random.uniform(8, 12)
-C_r_out = np.random.uniform(0.5, 2)
-C_out_sink = 0.1
-C_sink_ss = 0.1
-C_q_dummy = np.random.uniform(50, 150)
-C_dummy_ss = 0.1
-U_l1 = 50  # Adjusted
-U_l2 = {k: 150 for k in K}  # Type-specific for l2
+F = {m: np.random.uniform(150, 250) for m in M}  # CS deployment costs 
+C_in_in = np.random.uniform(10, 80)  # Travel cost
+C_in_q = np.random.uniform(0.1, 0.2) # queueing cost: Run another set of experiments to make sure that lower queueing costs reduce the amount AM used…it's weird that AM is being used before TM is exhausted
+C_q_r_l1 = np.random.uniform(10, 20)  # Higher costs for CSAM repair
+C_q_r_l2 = np.random.uniform(0.5, 2)  #  Cheaper costs for traditional repair
+C_q_q = np.random.uniform(1, 2) # Carryover cost to remain in queue from one time index to the next (i.e. stays in queue, not repaired)
+C_r_out = 0.1 # Negligible Outbound cost
+C_out_sink = 0.1 # Negligible 
+C_sink_ss = 0.1 # Negligible
+C_q_dummy = 1000 # High penalty for unmet demand
+C_dummy_ss = 0.1 # Negligible
+U_l1 = 50  # Adjusted type-specific upper bound for l1 (assumed same for all m)
+U_l2 = {k: 100 for k in K}  # Type-specific for l2 (assumed same for all traditional_m of type k)
+# New parameters for constraints in CSAM supplementation
+# overall_budget = 10000.00 # Overall budget for all costs in the CSAM supplementation model (adjust as needed; includes penalties)
+max_csam_facilities = 3  # Maximum integer number of CSAM facilities allowed to deploy overall (adjust as needed)
 
 # PuLP Model
 model = LpProblem("Facility_Location_MultiCommodity", LpMinimize)
@@ -199,6 +230,21 @@ for t in T:
         # l2 capacity per k, t at k's traditional_m (sum over l in c[0])
         model += lpSum(x_regular[(f'{traditional_m}_q_l2', f'{traditional_m}_r_l2', t, c)] for c in C if c[1] == k and (f'{traditional_m}_q_l2', f'{traditional_m}_r_l2', t, c) in x_regular) <= U_l2[k], f"capacity_l2_{k}_{t}"
 
+""" # Overall budget constraint: Total model cost (operational/deployment only) <= overall_budget
+total_model_cost = (
+    lpSum(F[m] * y[(m, 'l1')] for m in M) +
+    lpSum(C_in_in * x_regular[a] for a in regular_arcs if '_in' in a[0] and '_in' in a[1]) +
+    lpSum(C_in_q * x_regular[a] for a in regular_arcs if '_in' in a[0] and '_q_' in a[1]) +
+    lpSum(C_q_r_l1 * x_regular[a] for a in regular_arcs if '_q_l1' in a[0] and '_r_l1' in a[1]) +
+    lpSum(C_q_r_l2 * x_regular[a] for a in regular_arcs if '_q_l2' in a[0] and '_r_l2' in a[1]) +
+    lpSum(C_q_q * x_qq[a] for a in qq_arcs)
+    # Removed negligible and dummy-related terms
+)
+model += total_model_cost <= overall_budget, "Overall_Model_Budget_Constraint" """
+
+# Integer limit on total number of CSAM facilities deployed
+model += lpSum(y[(m, 'l1')] for m in M) <= max_csam_facilities, "Max_CSAM_Facilities_Constraint"
+
 # Solve
 print("Solving model...")
 model.solve()
@@ -212,60 +258,243 @@ else:
     print("\nFacility openings (CSAM l1):")
     for m in M:
         print(f"y[{m}, 'l1'] = {value(y[(m, 'l1')])}")
+        
+    # Log deployments to CSV
+    with open('deployments.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Node', 'Deployment'])
+        for m in M:
+            writer.writerow([m, value(y[(m, 'l1')])])
 
     # Print positive repair flows
     print("\nPositive flows on CSAM (l1) repair paths (only flexible l1 commodities):")
-    for m in M:
-        for t in T:
-            for c in C:
-                if c[0] == 'l2': continue  # No l2 on l1
-                a = (f'{m}_q_l1', f'{m}_r_l1', t, c)
-                if a in x_regular:
-                    flow = value(x_regular[a])
-                    if flow > 1e-6:
-                        print(f"Arc ({m}_q_l1 -> {m}_r_l1), t={t}, commodity={c}: flow={flow:.1f}")
-
-    print("\nPositive flows on traditional (l2) repair paths:")
-    for k in K:
-        traditional_m = traditional_m_dict[k]
-        print(f"\nFor k={k} at {traditional_m}:")
-        for t in T:
-            for c in C:
-                if c[1] != k: continue  # Only matching k
-                a = (f'{traditional_m}_q_l2', f'{traditional_m}_r_l2', t, c)
-                if a in x_regular:
-                    flow = value(x_regular[a])
-                    if flow > 1e-6:
-                        print(f"Arc ({traditional_m}_q_l2 -> {traditional_m}_r_l2), t={t}, commodity={c}: flow={flow:.1f} (jumping if 'l1')")
-
-    # Print travel flows
-    print("\nPositive inter-facility travel flows (in-to-in):")
-    for m1 in M:
-        for m2 in M:
-            if m1 == m2: continue
+    with open('csam_flows.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Node', 'Time', 'Commodity', 'Flow'])
+        for m in M:
             for t in T:
                 for c in C:
-                    a = (f'{m1}_in', f'{m2}_in', t, c)
+                    if c[0] == 'l2': continue  # No l2 on l1
+                    a = (f'{m}_q_l1', f'{m}_r_l1', t, c)
                     if a in x_regular:
                         flow = value(x_regular[a])
                         if flow > 1e-6:
-                            print(f"Arc ({m1}_in -> {m2}_in), t={t}, commodity={c}: flow={flow:.1f}")
+                            print(f"Arc ({m}_q_l1 -> {m}_r_l1), t={t}, commodity={c}: flow={flow:.1f}")
+                            writer.writerow([m, t, str(c), flow])
 
+    print("\nPositive flows on traditional (l2) repair paths:")
+    with open('traditional_flows.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Commodity Type', 'Traditional Node', 'Time', 'Commodity', 'Flow'])
+        for k in K:
+            traditional_m = traditional_m_dict[k]
+            print(f"\nFor k={k} at {traditional_m}:")
+            for t in T:
+                for c in C:
+                    if c[1] != k: continue  # Only matching k
+                    a = (f'{traditional_m}_q_l2', f'{traditional_m}_r_l2', t, c)
+                    if a in x_regular:
+                        flow = value(x_regular[a])
+                        if flow > 1e-6:
+                            print(f"Arc ({traditional_m}_q_l2 -> {traditional_m}_r_l2), t={t}, commodity={c}: flow={flow:.1f} (jumping if 'l1')")
+                            writer.writerow([k, traditional_m, t, str(c), flow])
+    # Print travel flows
+    print("\nPositive inter-facility travel flows (in-to-in):")
+    with open('travel_flows.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['From Node', 'To Node', 'Time', 'Commodity', 'Flow'])
+        for m1 in M:
+            for m2 in M:
+                if m1 == m2: continue
+                for t in T:
+                    for c in C:
+                        a = (f'{m1}_in', f'{m2}_in', t, c)
+                        if a in x_regular:
+                            flow = value(x_regular[a])
+                            if flow > 1e-6:
+                                print(f"Arc ({m1}_in -> {m2}_in), t={t}, commodity={c}: flow={flow:.1f}")
+                                writer.writerow([m1, m2, t, str(c), flow])
     # Print dummy flows
     print("\nPositive flows on dummy arcs (unmet demand in t=2):")
+    with open('dummy_flows.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Node', 'Path', 'Commodity', 'Flow'])
+        for m in M:
+            for lp in L:
+                for c in C:
+                    a = (f'{m}_q_{lp}', 'dummy', 2, c)
+                    if a in x_regular:
+                        flow = value(x_regular[a])
+                        if flow > 1e-6:
+                            print(f"Arc ({m}_q_{lp} -> dummy), t=2, commodity={c}: flow={flow:.1f}")
+                            writer.writerow([m, lp, str(c), flow])
+                            
+    # Print positive in-to-q flows (queue entries)
+print("\nPositive in-to-q flows (queue entries):")
+with open('inq_flows.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['Facility', 'Level', 'Time', 'Commodity', 'Flow'])
     for m in M:
         for lp in L:
-            for c in C:
-                a = (f'{m}_q_{lp}', 'dummy', 2, c)
-                if a in x_regular:
-                    flow = value(x_regular[a])
-                    if flow > 1e-6:
-                        print(f"Arc ({m}_q_{lp} -> dummy), t=2, commodity={c}: flow={flow:.1f}")
+            for t in T:
+                for c in C:
+                    # Validate for l1 path: only if commodity not l2
+                    if lp == 'l1' and c[0] != 'l2':
+                        valid = True
+                    # Validate for l2 path: only at traditional m for the k
+                    elif lp == 'l2' and m == traditional_m_dict.get(c[1]):
+                        valid = True
+                    else:
+                        valid = False
+                    if valid:
+                        a = (f'{m}_in', f'{m}_q_{lp}', t, c)
+                        if a in x_regular:
+                            flow = value(x_regular[a])
+                            if flow > 1e-6:
+                                print(f"Arc ({m}_in -> {m}_q_{lp}), t={t}, commodity={c}: flow={flow:.1f}")
+                                writer.writerow([m, lp, t, str(c), flow])
+                                
+    # Objective component sums (after solve)
+    print("\nObjective Component Sums:")
+    deployment_cost = sum(value(F[m] * y[(m, 'l1')]) for m in M)
+    travel_cost = sum(value(C_in_in * x_regular[a]) for a in regular_arcs if '_in' in a[0] and '_in' in a[1])
+    queue_entry_cost = sum(value(C_in_q * x_regular[a]) for a in regular_arcs if '_in' in a[0] and '_q_' in a[1])
+    repair_l1_cost = sum(value(C_q_r_l1 * x_regular[a]) for a in regular_arcs if '_q_l1' in a[0] and '_r_l1' in a[1])
+    repair_l2_cost = sum(value(C_q_r_l2 * x_regular[a]) for a in regular_arcs if '_q_l2' in a[0] and '_r_l2' in a[1])
+    carryover_cost = sum(value(C_q_q * x_qq[a]) for a in qq_arcs)
+    r_out_cost = sum(value(C_r_out * x_regular[a]) for a in regular_arcs if '_r_' in a[0] and '_out_' in a[1])
+    out_sink_cost = sum(value(C_out_sink * x_regular[a]) for a in regular_arcs if '_out_' in a[0] and 'sink' in a[1])
+    sink_ss_cost = sum(value(C_sink_ss * x_regular[a]) for a in regular_arcs if 'sink' in a[0] and 'ss' in a[1])
+    dummy_cost = sum(value(C_q_dummy * x_regular[a]) for a in regular_arcs if '_q_' in a[0] and 'dummy' in a[1])
+    dummy_ss_cost = sum(value(C_dummy_ss * x_regular[a]) for a in regular_arcs if 'dummy' in a[0] and 'ss' in a[1])
+
+    print("Deployment (CSAM):", deployment_cost)
+    print("Travel (in-in):", travel_cost)
+    print("Queue Entry (in-q):", queue_entry_cost)
+    print("Repair l1 (CSAM):", repair_l1_cost)
+    print("Repair l2 (TM):", repair_l2_cost)
+    print("Carryover (q-q):", carryover_cost)
+    print("R to Out:", r_out_cost)
+    print("Out to Sink:", out_sink_cost)
+    print("Sink to SS:", sink_ss_cost)
+    print("Dummy (q-dummy):", dummy_cost)
+    print("Dummy to SS:", dummy_ss_cost)
+
+    # Total cost by node and by commodity/tuple (excluding dummy penalties)
+    cost_by_node = defaultdict(float)
+    cost_by_node_commodity = defaultdict(lambda: defaultdict(float))
+
+    for a in regular_arcs:
+        flow = value(x_regular[a])
+        if flow > 1e-6:
+            src, dst, t, c = a
+            m = src.split('_')[0] if '_' in src else src
+            if m in M:
+                if '_in' in src and '_in' in dst:
+                    cost = C_in_in * flow
+                elif '_in' in src and '_q_' in dst:
+                    cost = C_in_q * flow
+                elif '_q_l1' in src and '_r_l1' in dst:
+                    cost = C_q_r_l1 * flow
+                elif '_q_l2' in src and '_r_l2' in dst:
+                    cost = C_q_r_l2 * flow
+                elif '_r_' in src and '_out_' in dst:
+                    cost = C_r_out * flow
+                elif '_out_' in src and 'sink' in dst:
+                    cost = C_out_sink * flow
+                else:
+                    cost = 0  # Skip dummies and others
+                cost_by_node[m] += cost
+                cost_by_node_commodity[m][c] += cost
+
+    for a in qq_arcs:
+        flow = value(x_qq[a])
+        if flow > 1e-6:
+            src, dst, t1, c, t2 = a
+            m = src.split('_')[0] if '_' in src else src
+            if m in M:
+                cost = C_q_q * flow
+                cost_by_node[m] += cost
+                cost_by_node_commodity[m][c] += cost
+
+    # Add deployment to CSAM nodes
+    for m in M:
+        dep = value(y[(m, 'l1')])
+        if dep > 0:
+            cost = F[m] * dep
+            cost_by_node[m] += cost
+            # Distribute deployment cost across l1 commodities at m (or leave aggregated; adjust if per-tuple needed)
+            l1_comms_at_m = {c for a in regular_arcs if a[0].startswith(m) and '_q_l1' in a[0] and c == a[3]}
+            if l1_comms_at_m:
+                cost_per = cost / len(l1_comms_at_m)
+                for c in l1_comms_at_m:
+                    cost_by_node_commodity[m][c] += cost_per
+
+    print("\nTotal Cost by Node (excluding dummy penalties):")
+    for m in sorted(M):
+        print(f"{m}: {cost_by_node[m]:.2f}")
+
+    print("\nTotal Cost by Node and Commodity Tuple (excluding dummy penalties):")
+    for m in sorted(M):
+        print(f"{m}:")
+        for c in sorted(cost_by_node_commodity[m]):
+            print(f"  {c}: {cost_by_node_commodity[m][c]:.2f}")
+
+    # CSAM (AM) vs TM costs (excluding dummy penalties)
+    csam_cost = deployment_cost + repair_l1_cost + queue_entry_cost * 0.5  # Approximate queue split; adjust based on l1/l2
+    tm_cost = repair_l2_cost + queue_entry_cost * 0.5  # Similar for TM
+
+    print("\nTotal CSAM (AM) Cost (excluding dummy penalties):", csam_cost)
+    print("Total TM Cost (excluding dummy penalties):", tm_cost)
+
+    # Queue costs (total and by tuple; no dummies here)
+    queue_cost = queue_entry_cost + carryover_cost  # Includes entry and hold
+    print("Total Queue Cost (Flow Time Proxy):", queue_cost)
+
+    queue_by_tuple = defaultdict(float)
+    for a in regular_arcs:
+        if '_in' in a[0] and '_q_' in a[1]:
+            queue_by_tuple[a[3]] += value(C_in_q * x_regular[a])
+    for a in qq_arcs:
+        queue_by_tuple[a[3]] += value(C_q_q * x_qq[a])
+
+    print("\nQueue Costs by Tuple:")
+    for c in sorted(queue_by_tuple):
+        print(f"{c}: {queue_by_tuple[c]:.2f}")
+
+    # Transportation costs by tuple (no dummies here)
+    transport_by_tuple = defaultdict(float)
+    for a in regular_arcs:
+        if '_in' in a[0] and '_in' in a[1]:
+            transport_by_tuple[a[3]] += value(C_in_in * x_regular[a])
+
+    print("\nTransportation Costs by Tuple:")
+    for c in sorted(transport_by_tuple):
+        print(f"{c}: {transport_by_tuple[c]:.2f}")
+    
+    # CSAM (AM) vs TM costs (excluding dummy penalties; precise queue allocation)
+    queue_l1_cost = sum(value(C_in_q * x_regular[a]) for a in regular_arcs if '_in' in a[0] and '_q_l1' in a[1])
+    queue_l2_cost = sum(value(C_in_q * x_regular[a]) for a in regular_arcs if '_in' in a[0] and '_q_l2' in a[1])
+    carry_l1_cost = sum(value(C_q_q * x_qq[a]) for a in qq_arcs if '_q_l1' in a[0])
+    carry_l2_cost = sum(value(C_q_q * x_qq[a]) for a in qq_arcs if '_q_l2' in a[0])
+
+    csam_cost = deployment_cost + repair_l1_cost + queue_l1_cost + carry_l1_cost
+    tm_cost = repair_l2_cost + queue_l2_cost + carry_l2_cost
+
+    print("\nTotal CSAM (AM) Cost (excluding dummy penalties):", csam_cost)
+    print("Total TM Cost (excluding dummy penalties):", tm_cost)
 
     # Verify total
     total_demand = sum(D.values())
     total_ss_inflow = sum(value(x_regular[a]) for a in regular_arcs if a[1] == 'ss')
     print(f"\nTotal demand: {total_demand:.1f}")
     print(f"Total inflow to ss: {total_ss_inflow:.1f}")
+    
+    print(f"\nTotal Model Cost (Objective Value): {value(model.objective):.2f}")
+    # print(f"Within Overall Budget? {'Yes' if value(model.objective) <= overall_budget else 'No (Infeasible or Exceeded)'}")
 
-print("Script completed")
+# Restore original stdout and close log file
+sys.stdout = original_stdout
+log_file.close()
+
+print("Script completed. All output logged to 'output_gr9_c.txt' and CSVs for graphing.")

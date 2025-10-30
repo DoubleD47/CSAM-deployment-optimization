@@ -5,9 +5,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Create viz_output subfolder path to store visualizations
-output_dir = os.path.join(os.path.dirname(__file__), 'viz_output')
+# Dynamically create subfolder based on the script file name (e.g., 'fleet_flow_gr9' from 'fleet_flow_gr9_c.py')
+script_name = os.path.splitext(os.path.basename(__file__))[0]  # e.g., 'fleet_flow_gr9_c'
+subfolder = script_name.rsplit('_', 1)[0] if '_' in script_name else script_name  # e.g., 'fleet_flow_gr9'
 
+# Create viz_output subfolder path with the dynamic subfolder
+output_dir = os.path.join(os.path.dirname(__file__), 'viz_output', subfolder)
+os.makedirs(output_dir, exist_ok=True)
 
 # The output text
 # Read output from file 

@@ -32,7 +32,7 @@ original_stdout = sys.stdout
 sys.stdout = Tee(sys.stdout, log_file)
 
 # Set random seed
-SEED = 789
+SEED = 123
 np.random.seed(SEED)
 print(f"Random seed set to: {SEED}")
 
@@ -136,12 +136,12 @@ D = {(m, t, c): np.random.uniform(50, 100) for m in M for t in T for c in C}
 print("\nDemands:")
 for (m, t, c), d in D.items():
     print(f"D({m}, t={t}, {c}) = {d:.1f}")
-F = {m: np.random.uniform(150, 250) for m in M}  # CS deployment costs 
+F = {m: np.random.uniform(150, 200) for m in M}  # CS deployment costs 
 C_in_in = np.random.uniform(10, 80)  # Travel cost
-C_in_q = np.random.uniform(0.1, 0.2) # queueing cost: Run another set of experiments to make sure that lower queueing costs reduce the amount AM used…it's weird that AM is being used before TM is exhausted
+C_in_q = 0.01 # queueing cost: Run another set of experiments to make sure that lower queueing costs reduce the amount AM used…it's weird that AM is being used before TM is exhausted
 C_q_r_l1 = np.random.uniform(10, 20)  # Higher costs for CSAM repair
-C_q_r_l2 = np.random.uniform(0.5, 2)  #  Cheaper costs for traditional repair
-C_q_q = np.random.uniform(1, 2) # Carryover cost to remain in queue from one time index to the next (i.e. stays in queue, not repaired)
+C_q_r_l2 = np.random.uniform(1, 2)  #  Cheaper costs for traditional repair
+C_q_q = np.random.uniform(2, 4) # Carryover cost to remain in queue from one time index to the next (i.e. stays in queue, not repaired)
 C_r_out = 0.1 # Negligible Outbound cost
 C_out_sink = 0.1 # Negligible 
 C_sink_ss = 0.1 # Negligible
