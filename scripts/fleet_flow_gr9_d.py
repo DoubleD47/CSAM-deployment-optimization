@@ -1,4 +1,4 @@
-# Model: 5 commodities and 10 nodes. Adding print statements that are collected in an output file so that I can track larger runs without scrolling endlessly through the console.
+# Model: 5 commodities and 25 nodes. Adding print statements that are collected in an output file so that I can track larger runs without scrolling endlessly through the console.
 # Adding CSAM deployment limits. 
 
 import os
@@ -26,7 +26,7 @@ output_dir = os.path.join(repo_root, 'output')
 
 
 # Open log file in the output directory
-log_file_path = os.path.join(output_dir, 'output_gr9_c.txt')
+log_file_path = os.path.join(output_dir, 'output_gr9_d.txt')
 log_file = open(log_file_path, 'w')
 original_stdout = sys.stdout
 sys.stdout = Tee(sys.stdout, log_file)
@@ -37,7 +37,7 @@ np.random.seed(SEED)
 print(f"Random seed set to: {SEED}")
 
 # Define sets
-M = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9', 'm10']
+M = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9', 'm10', 'm11', 'm12', 'm13', 'm14', 'm15', 'm16', 'm17', 'm18', 'm19', 'm20', 'm21', 'm22', 'm23', 'm24', 'm25']  # Facility nodes
 traditional_m_dict = {'k1': 'm1', 'k2': 'm2', 'k3': 'm3', 'k4': 'm4', 'k5': 'm5'}  # Type-specific traditional facilities at these nodes
 L = ['l1', 'l2']
 K = ['k1', 'k2', 'k3', 'k4', 'k5']
@@ -132,7 +132,7 @@ for t in T:
             regular_arcs.append(('dummy', 'ss', t, c))
 
 # Parameters
-D = {(m, t, c): np.random.uniform(8, 20) for m in M for t in T for c in C} # Reduced in order to not overwhelm graphs with unmet demand
+D = {(m, t, c): np.random.uniform(5, 25) for m in M for t in T for c in C}
 print("\nDemands:")
 for (m, t, c), d in D.items():
     print(f"D({m}, t={t}, {c}) = {d:.1f}")
@@ -497,4 +497,4 @@ with open('inq_flows.csv', 'w', newline='') as csvfile:
 sys.stdout = original_stdout
 log_file.close()
 
-print("Script completed. All output logged to 'output_gr9_c.txt' and CSVs for graphing.")
+print("Script completed. All output logged to 'output_gr9_d.txt' and CSVs for graphing.")

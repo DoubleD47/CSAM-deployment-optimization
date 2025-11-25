@@ -36,12 +36,13 @@ l1_df['Time'] = l1_df['Time'].astype(int)
 l1_df['CSAM_l1_Flow'] = l1_df['CSAM_l1_Flow'].astype(float)
 l1_agg = l1_df.groupby(['Facility', 'Time'])['CSAM_l1_Flow'].sum().reset_index()
 
-# Parse traditional l2 flows
-l2_pattern = r"Arc \((\w+)_q_l2 -> \1_r_l2\), t=([12]), commodity=\(('l2', 'k\d')\): flow=([\d.]+)"
+# Parse traditional l2 flows (with optional jumping)
+l2_pattern = r"Arc \((\w+)_q_l2 -> \1_r_l2\), t=([12]), commodity=\(('l[12]', 'k\d')\): flow=([\d.]+)( \(jumping if 'l1'\))?"
 l2_matches = re.findall(l2_pattern, output_text)
-l2_df = pd.DataFrame(l2_matches, columns=['Facility', 'Time', 'Commodity', 'Traditional_l2_Flow'])
+l2_df = pd.DataFrame(l2_matches, columns=['Facility', 'Time', 'Commodity', 'Traditional_l2_Flow', 'Jumping'])
 l2_df['Time'] = l2_df['Time'].astype(int)
 l2_df['Traditional_l2_Flow'] = l2_df['Traditional_l2_Flow'].astype(float)
+l2_agg = l2_df.groupby(['Facility', 'Time'])['Traditional_l2_Flow'].sum().reset_index()
 
 # Parse dummy flows (unmet demand in t=2)
 dummy_pattern = r"Arc \((\w+)_q_(\w+) -> dummy\), t=2, commodity=\(('l[12]', 'k\d')\): flow=([\d.]+)"
@@ -60,8 +61,8 @@ base_df = pd.DataFrame([(f, t) for f in facilities for t in times], columns=['Fa
 # Merge l1
 df = base_df.merge(l1_agg, on=['Facility', 'Time'], how='left').fillna({'CSAM_l1_Flow': 0})
 
-# Merge l2 (only for traditional m1-m5)
-df = df.merge(l2_df[['Facility', 'Time', 'Traditional_l2_Flow']], on=['Facility', 'Time'], how='left').fillna({'Traditional_l2_Flow': 0})
+# Merge l2 (summed)
+df = df.merge(l2_agg, on=['Facility', 'Time'], how='left').fillna({'Traditional_l2_Flow': 0})
 
 # Add unmet (0)
 # Remove: df['Unmet_Dummy'] = 0.0
@@ -239,13 +240,8 @@ plt.savefig(os.path.join(output_dir, 'queue_sizes_by_commodity_tuple.png'))  # S
 plt.show()
 
 # Crossover l1 flows to l2 processes (l1 commodities on traditional l2 paths)
-# Updated pattern to handle optional "(jumping if 'l1')"
-l2_pattern = r"Arc \((\w+)_q_l2 -> \1_r_l2\), t=([12]), commodity=\(('l[12]', 'k\d')\): flow=([\d.]+)( \(jumping if 'l1'\))?"
-l2_matches = re.findall(l2_pattern, output_text)
-l2_df = pd.DataFrame(l2_matches, columns=['Facility', 'Time', 'Commodity', 'Traditional_l2_Flow', 'Jumping'])
-l2_df['Time'] = l2_df['Time'].astype(int)
-l2_df['Traditional_l2_Flow'] = l2_df['Traditional_l2_Flow'].astype(float)
-crossover_df = l2_df[l2_df['Commodity'].str.startswith("'l1'")]  # Filter to l1 commodities on l2 paths (adjusted for string format)
+# Filter existing l2_df to l1 commodities
+crossover_df = l2_df[l2_df['Commodity'].str.startswith("'l1'")]
 crossover_df['Facility_Time'] = crossover_df['Facility'] + '_t' + crossover_df['Time'].astype(str)
 
 plt.figure(figsize=(14, 8))
@@ -259,7 +255,7 @@ plt.tight_layout()
 plt.savefig(os.path.join(output_dir, 'crossover_l1_to_l2_by_tuple.png'))  # Save in viz_output subfolder
 plt.show()
 
-# Total demands by commodity tuple and time (sum over facilities)
+# New: Total demands by commodity tuple and time (sum over facilities)
 total_demand_per_ct = demand_df.groupby(['Commodity', 'Time'])['Demand'].sum().reset_index()
 total_demand_per_ct = total_demand_per_ct.sort_values(['Commodity', 'Time'])
 total_demand_per_ct['Commodity_Time'] = total_demand_per_ct['Commodity'].str.replace(r"[()' ]", "", regex=True).str.replace(",", "_") + '_t' + total_demand_per_ct['Time'].astype(str)

@@ -1,4 +1,5 @@
 # This script will parse the output from the optimization model and create bar charts
+# It's updated to automatically save the graphs instead of having to 'x' through them one by one.
 import os
 import re
 import pandas as pd
@@ -36,12 +37,13 @@ l1_df['Time'] = l1_df['Time'].astype(int)
 l1_df['CSAM_l1_Flow'] = l1_df['CSAM_l1_Flow'].astype(float)
 l1_agg = l1_df.groupby(['Facility', 'Time'])['CSAM_l1_Flow'].sum().reset_index()
 
-# Parse traditional l2 flows
-l2_pattern = r"Arc \((\w+)_q_l2 -> \1_r_l2\), t=([12]), commodity=\(('l2', 'k\d')\): flow=([\d.]+)"
+# Parse traditional l2 flows (with optional jumping)
+l2_pattern = r"Arc \((\w+)_q_l2 -> \1_r_l2\), t=([12]), commodity=\(('l[12]', 'k\d')\): flow=([\d.]+)( \(jumping if 'l1'\))?"
 l2_matches = re.findall(l2_pattern, output_text)
-l2_df = pd.DataFrame(l2_matches, columns=['Facility', 'Time', 'Commodity', 'Traditional_l2_Flow'])
+l2_df = pd.DataFrame(l2_matches, columns=['Facility', 'Time', 'Commodity', 'Traditional_l2_Flow', 'Jumping'])
 l2_df['Time'] = l2_df['Time'].astype(int)
 l2_df['Traditional_l2_Flow'] = l2_df['Traditional_l2_Flow'].astype(float)
+l2_agg = l2_df.groupby(['Facility', 'Time'])['Traditional_l2_Flow'].sum().reset_index()
 
 # Parse dummy flows (unmet demand in t=2)
 dummy_pattern = r"Arc \((\w+)_q_(\w+) -> dummy\), t=2, commodity=\(('l[12]', 'k\d')\): flow=([\d.]+)"
@@ -60,8 +62,8 @@ base_df = pd.DataFrame([(f, t) for f in facilities for t in times], columns=['Fa
 # Merge l1
 df = base_df.merge(l1_agg, on=['Facility', 'Time'], how='left').fillna({'CSAM_l1_Flow': 0})
 
-# Merge l2 (only for traditional m1-m5)
-df = df.merge(l2_df[['Facility', 'Time', 'Traditional_l2_Flow']], on=['Facility', 'Time'], how='left').fillna({'Traditional_l2_Flow': 0})
+# Merge l2 (summed)
+df = df.merge(l2_agg, on=['Facility', 'Time'], how='left').fillna({'Traditional_l2_Flow': 0})
 
 # Add unmet (0)
 # Remove: df['Unmet_Dummy'] = 0.0
@@ -94,7 +96,7 @@ plt.legend(title='Flow Type')
 plt.tight_layout()
 # plt.savefig('csam_flow_stacked_bars.png')
 plt.savefig(os.path.join(output_dir, 'csam_flow_stacked_bars.png'))  # Save in viz_output folder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
 
 # Separate bar for deployments
 deploy_df = pd.DataFrame(list(deployments.items()), columns=['Facility', 'Opened'])
@@ -104,7 +106,7 @@ plt.title('CSAM Facility Deployments (1=Opened)')
 plt.ylabel('Opened (Binary)')
 # plt.savefig('csam_deployments_bar.png')
 plt.savefig(os.path.join(output_dir, 'csam_deployments_bar.png'))  # Save in viz_output folder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
 
 # Optional: Demands vs Total Fulfilled (CSAM + Trad)
 df['Total_Fulfilled'] = df['CSAM_l1_Flow'] + df['Traditional_l2_Flow']
@@ -121,7 +123,7 @@ plt.legend(title='Type')
 plt.tight_layout()
 # plt.savefig('demands_vs_fulfilled_bars.png')
 plt.savefig(os.path.join(output_dir, 'demands_vs_fulfilled_bars.png'))  # Save in viz_output folder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
 
 # Travel flows outgoing per facility per t
 travel_pattern = r"Arc \((\w+)_in -> (\w+)_in\), t=([12]), commodity=\(('l2', 'k\d')\): flow=([\d.]+)"
@@ -141,7 +143,7 @@ plt.xticks(rotation=90)
 plt.tight_layout()
 # plt.savefig('outgoing_travel_bars.png')
 plt.savefig(os.path.join(output_dir, 'outgoing_travel_bars.png'))  # Save in viz_output folder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
 
 # Fulfilled flows stacked by commodity tuple
 df_fulfilled = pd.concat([
@@ -159,7 +161,7 @@ plt.xticks(rotation=90)
 plt.legend(title='Commodity Tuple', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.savefig(os.path.join(output_dir, 'fulfilled_by_commodity_tuple.png'))  # Save in viz_output subfolder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
 
 # Demands stacked by commodity tuple (for comparison)
 demand_df['Facility_Time'] = demand_df['Facility'] + '_t' + demand_df['Time'].astype(str)  # If not already added
@@ -173,7 +175,7 @@ plt.xticks(rotation=90)
 plt.legend(title='Commodity Tuple', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.savefig(os.path.join(output_dir, 'demands_by_commodity_tuple.png'))  # Save in viz_output subfolder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
 
 # Outgoing travel flows stacked by commodity tuple
 travel_df['From_Time'] = travel_df['From'] + '_t' + travel_df['Time'].astype(str)
@@ -187,7 +189,7 @@ plt.xticks(rotation=90)
 plt.legend(title='Commodity Tuple', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.savefig(os.path.join(output_dir, 'outgoing_travel_by_commodity_tuple.png'))  # Save in viz_output subfolder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
 
 # CSAM l1 flows stacked by commodity tuple (filtered to l1 only)
 df_l1_only = l1_df.rename(columns={'CSAM_l1_Flow': 'Flow'})[['Facility', 'Time', 'Commodity', 'Flow']]
@@ -202,7 +204,7 @@ plt.xticks(rotation=90)
 plt.legend(title='Commodity Tuple', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.savefig(os.path.join(output_dir, 'csam_l1_by_commodity_tuple.png'))  # Save in viz_output subfolder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
 
 # Queue sizes (incoming to q arcs + carryover qq if applicable) stacked by commodity tuple
 # Note: Assumes model script prints positive in-to-q and qq flows; add prints if needed (e.g., similar to travel flows)
@@ -236,16 +238,11 @@ plt.xticks(rotation=90)
 plt.legend(title='Commodity Tuple', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.savefig(os.path.join(output_dir, 'queue_sizes_by_commodity_tuple.png'))  # Save in viz_output subfolder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
 
 # Crossover l1 flows to l2 processes (l1 commodities on traditional l2 paths)
-# Updated pattern to handle optional "(jumping if 'l1')"
-l2_pattern = r"Arc \((\w+)_q_l2 -> \1_r_l2\), t=([12]), commodity=\(('l[12]', 'k\d')\): flow=([\d.]+)( \(jumping if 'l1'\))?"
-l2_matches = re.findall(l2_pattern, output_text)
-l2_df = pd.DataFrame(l2_matches, columns=['Facility', 'Time', 'Commodity', 'Traditional_l2_Flow', 'Jumping'])
-l2_df['Time'] = l2_df['Time'].astype(int)
-l2_df['Traditional_l2_Flow'] = l2_df['Traditional_l2_Flow'].astype(float)
-crossover_df = l2_df[l2_df['Commodity'].str.startswith("'l1'")]  # Filter to l1 commodities on l2 paths (adjusted for string format)
+# Filter existing l2_df to l1 commodities
+crossover_df = l2_df[l2_df['Commodity'].str.startswith("'l1'")]
 crossover_df['Facility_Time'] = crossover_df['Facility'] + '_t' + crossover_df['Time'].astype(str)
 
 plt.figure(figsize=(14, 8))
@@ -257,9 +254,9 @@ plt.xticks(rotation=90)
 plt.legend(title='Commodity Tuple (l1 only)', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.savefig(os.path.join(output_dir, 'crossover_l1_to_l2_by_tuple.png'))  # Save in viz_output subfolder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
 
-# Total demands by commodity tuple and time (sum over facilities)
+# New: Total demands by commodity tuple and time (sum over facilities)
 total_demand_per_ct = demand_df.groupby(['Commodity', 'Time'])['Demand'].sum().reset_index()
 total_demand_per_ct = total_demand_per_ct.sort_values(['Commodity', 'Time'])
 total_demand_per_ct['Commodity_Time'] = total_demand_per_ct['Commodity'].str.replace(r"[()' ]", "", regex=True).str.replace(",", "_") + '_t' + total_demand_per_ct['Time'].astype(str)
@@ -272,4 +269,4 @@ plt.ylabel('Demand Volume')
 plt.xticks(rotation=90)
 plt.tight_layout()
 plt.savefig(os.path.join(output_dir, 'total_demands_by_commodity_time.png'))  # Save in viz_output subfolder
-plt.show()
+# plt.show()  # Removed to avoid displaying the plot
