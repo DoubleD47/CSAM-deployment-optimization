@@ -1,0 +1,18 @@
+{
+  "run_id": "2026-05-14_024638_maxCSAM3_single",
+  "timestamp": "2026-05-14_024638",
+  "experiment": "maxCSAM3_single",
+  "max_csam_facilities": 3,
+  "seed": 100,
+  "objective": 940646.2093914318,
+  "deployed_count": 3,
+  "deployed_facilities": [
+    "m6",
+    "m8",
+    "m10"
+  ],
+  "unmet_demand": 1383.16349606,
+  "iterations": 100,
+  "deployment_cost": 3000.0,
+  "dummy_cost": 1383163.49606
+}

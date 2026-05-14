@@ -1,0 +1,1309 @@
+Random seed set to: 456
+
+Demands:
+D(m1, t=1, ('l1', 'k1')) = 7.5
+D(m1, t=1, ('l1', 'k2')) = 6.6
+D(m1, t=1, ('l1', 'k3')) = 12.8
+D(m1, t=1, ('l1', 'k4')) = 13.1
+D(m1, t=1, ('l1', 'k5')) = 11.3
+D(m1, t=1, ('l2', 'k1')) = 11.0
+D(m1, t=1, ('l2', 'k2')) = 13.9
+D(m1, t=1, ('l2', 'k3')) = 12.6
+D(m1, t=1, ('l2', 'k4')) = 6.8
+D(m1, t=1, ('l2', 'k5')) = 6.5
+D(m1, t=2, ('l1', 'k1')) = 9.4
+D(m1, t=2, ('l1', 'k2')) = 8.9
+D(m1, t=2, ('l1', 'k3')) = 10.8
+D(m1, t=2, ('l1', 'k4')) = 6.5
+D(m1, t=2, ('l1', 'k5')) = 11.9
+D(m1, t=2, ('l2', 'k1')) = 9.7
+D(m1, t=2, ('l2', 'k2')) = 10.7
+D(m1, t=2, ('l2', 'k3')) = 11.5
+D(m1, t=2, ('l2', 'k4')) = 12.2
+D(m1, t=2, ('l2', 'k5')) = 11.8
+D(m2, t=1, ('l1', 'k1')) = 6.8
+D(m2, t=1, ('l1', 'k2')) = 6.2
+D(m2, t=1, ('l1', 'k3')) = 7.4
+D(m2, t=1, ('l1', 'k4')) = 5.1
+D(m2, t=1, ('l1', 'k5')) = 8.6
+D(m2, t=1, ('l2', 'k1')) = 6.5
+D(m2, t=1, ('l2', 'k2')) = 10.4
+D(m2, t=1, ('l2', 'k3')) = 13.6
+D(m2, t=1, ('l2', 'k4')) = 7.0
+D(m2, t=1, ('l2', 'k5')) = 6.3
+D(m2, t=2, ('l1', 'k1')) = 7.1
+D(m2, t=2, ('l1', 'k2')) = 14.7
+D(m2, t=2, ('l1', 'k3')) = 13.6
+D(m2, t=2, ('l1', 'k4')) = 10.3
+D(m2, t=2, ('l1', 'k5')) = 9.3
+D(m2, t=2, ('l2', 'k1')) = 6.9
+D(m2, t=2, ('l2', 'k2')) = 7.9
+D(m2, t=2, ('l2', 'k3')) = 11.3
+D(m2, t=2, ('l2', 'k4')) = 8.6
+D(m2, t=2, ('l2', 'k5')) = 12.3
+D(m3, t=1, ('l1', 'k1')) = 10.6
+D(m3, t=1, ('l1', 'k2')) = 14.4
+D(m3, t=1, ('l1', 'k3')) = 6.5
+D(m3, t=1, ('l1', 'k4')) = 14.0
+D(m3, t=1, ('l1', 'k5')) = 6.8
+D(m3, t=1, ('l2', 'k1')) = 10.9
+D(m3, t=1, ('l2', 'k2')) = 5.4
+D(m3, t=1, ('l2', 'k3')) = 11.5
+D(m3, t=1, ('l2', 'k4')) = 8.7
+D(m3, t=1, ('l2', 'k5')) = 13.0
+D(m3, t=2, ('l1', 'k1')) = 5.1
+D(m3, t=2, ('l1', 'k2')) = 9.8
+D(m3, t=2, ('l1', 'k3')) = 6.0
+D(m3, t=2, ('l1', 'k4')) = 6.3
+D(m3, t=2, ('l1', 'k5')) = 13.2
+D(m3, t=2, ('l2', 'k1')) = 11.0
+D(m3, t=2, ('l2', 'k2')) = 14.7
+D(m3, t=2, ('l2', 'k3')) = 11.9
+D(m3, t=2, ('l2', 'k4')) = 14.8
+D(m3, t=2, ('l2', 'k5')) = 10.2
+D(m4, t=1, ('l1', 'k1')) = 10.2
+D(m4, t=1, ('l1', 'k2')) = 6.2
+D(m4, t=1, ('l1', 'k3')) = 8.3
+D(m4, t=1, ('l1', 'k4')) = 7.7
+D(m4, t=1, ('l1', 'k5')) = 13.7
+D(m4, t=1, ('l2', 'k1')) = 5.9
+D(m4, t=1, ('l2', 'k2')) = 9.8
+D(m4, t=1, ('l2', 'k3')) = 13.4
+D(m4, t=1, ('l2', 'k4')) = 10.1
+D(m4, t=1, ('l2', 'k5')) = 5.5
+D(m4, t=2, ('l1', 'k1')) = 11.1
+D(m4, t=2, ('l1', 'k2')) = 9.1
+D(m4, t=2, ('l1', 'k3')) = 12.1
+D(m4, t=2, ('l1', 'k4')) = 5.9
+D(m4, t=2, ('l1', 'k5')) = 8.8
+D(m4, t=2, ('l2', 'k1')) = 5.2
+D(m4, t=2, ('l2', 'k2')) = 8.9
+D(m4, t=2, ('l2', 'k3')) = 6.4
+D(m4, t=2, ('l2', 'k4')) = 7.2
+D(m4, t=2, ('l2', 'k5')) = 12.9
+D(m5, t=1, ('l1', 'k1')) = 12.2
+D(m5, t=1, ('l1', 'k2')) = 9.8
+D(m5, t=1, ('l1', 'k3')) = 14.8
+D(m5, t=1, ('l1', 'k4')) = 12.6
+D(m5, t=1, ('l1', 'k5')) = 5.9
+D(m5, t=1, ('l2', 'k1')) = 10.4
+D(m5, t=1, ('l2', 'k2')) = 11.8
+D(m5, t=1, ('l2', 'k3')) = 12.4
+D(m5, t=1, ('l2', 'k4')) = 11.3
+D(m5, t=1, ('l2', 'k5')) = 13.8
+D(m5, t=2, ('l1', 'k1')) = 13.0
+D(m5, t=2, ('l1', 'k2')) = 10.5
+D(m5, t=2, ('l1', 'k3')) = 13.7
+D(m5, t=2, ('l1', 'k4')) = 9.1
+D(m5, t=2, ('l1', 'k5')) = 5.7
+D(m5, t=2, ('l2', 'k1')) = 6.4
+D(m5, t=2, ('l2', 'k2')) = 15.0
+D(m5, t=2, ('l2', 'k3')) = 7.0
+D(m5, t=2, ('l2', 'k4')) = 13.9
+D(m5, t=2, ('l2', 'k5')) = 11.5
+D(m6, t=1, ('l1', 'k1')) = 5.3
+D(m6, t=1, ('l1', 'k2')) = 11.4
+D(m6, t=1, ('l1', 'k3')) = 13.8
+D(m6, t=1, ('l1', 'k4')) = 6.7
+D(m6, t=1, ('l1', 'k5')) = 7.3
+D(m6, t=1, ('l2', 'k1')) = 7.6
+D(m6, t=1, ('l2', 'k2')) = 8.2
+D(m6, t=1, ('l2', 'k3')) = 12.5
+D(m6, t=1, ('l2', 'k4')) = 5.8
+D(m6, t=1, ('l2', 'k5')) = 14.9
+D(m6, t=2, ('l1', 'k1')) = 6.5
+D(m6, t=2, ('l1', 'k2')) = 13.8
+D(m6, t=2, ('l1', 'k3')) = 5.4
+D(m6, t=2, ('l1', 'k4')) = 6.1
+D(m6, t=2, ('l1', 'k5')) = 7.9
+D(m6, t=2, ('l2', 'k1')) = 14.0
+D(m6, t=2, ('l2', 'k2')) = 14.2
+D(m6, t=2, ('l2', 'k3')) = 5.2
+D(m6, t=2, ('l2', 'k4')) = 12.6
+D(m6, t=2, ('l2', 'k5')) = 8.2
+D(m7, t=1, ('l1', 'k1')) = 9.2
+D(m7, t=1, ('l1', 'k2')) = 10.7
+D(m7, t=1, ('l1', 'k3')) = 12.0
+D(m7, t=1, ('l1', 'k4')) = 5.3
+D(m7, t=1, ('l1', 'k5')) = 5.1
+D(m7, t=1, ('l2', 'k1')) = 12.5
+D(m7, t=1, ('l2', 'k2')) = 14.7
+D(m7, t=1, ('l2', 'k3')) = 7.9
+D(m7, t=1, ('l2', 'k4')) = 14.4
+D(m7, t=1, ('l2', 'k5')) = 10.9
+D(m7, t=2, ('l1', 'k1')) = 6.4
+D(m7, t=2, ('l1', 'k2')) = 5.9
+D(m7, t=2, ('l1', 'k3')) = 11.3
+D(m7, t=2, ('l1', 'k4')) = 10.0
+D(m7, t=2, ('l1', 'k5')) = 10.2
+D(m7, t=2, ('l2', 'k1')) = 11.3
+D(m7, t=2, ('l2', 'k2')) = 7.3
+D(m7, t=2, ('l2', 'k3')) = 7.6
+D(m7, t=2, ('l2', 'k4')) = 10.6
+D(m7, t=2, ('l2', 'k5')) = 8.9
+D(m8, t=1, ('l1', 'k1')) = 12.1
+D(m8, t=1, ('l1', 'k2')) = 7.1
+D(m8, t=1, ('l1', 'k3')) = 7.9
+D(m8, t=1, ('l1', 'k4')) = 13.5
+D(m8, t=1, ('l1', 'k5')) = 9.6
+D(m8, t=1, ('l2', 'k1')) = 5.7
+D(m8, t=1, ('l2', 'k2')) = 13.6
+D(m8, t=1, ('l2', 'k3')) = 9.2
+D(m8, t=1, ('l2', 'k4')) = 10.2
+D(m8, t=1, ('l2', 'k5')) = 11.5
+D(m8, t=2, ('l1', 'k1')) = 8.7
+D(m8, t=2, ('l1', 'k2')) = 14.9
+D(m8, t=2, ('l1', 'k3')) = 7.8
+D(m8, t=2, ('l1', 'k4')) = 11.8
+D(m8, t=2, ('l1', 'k5')) = 10.5
+D(m8, t=2, ('l2', 'k1')) = 10.3
+D(m8, t=2, ('l2', 'k2')) = 5.1
+D(m8, t=2, ('l2', 'k3')) = 12.6
+D(m8, t=2, ('l2', 'k4')) = 7.0
+D(m8, t=2, ('l2', 'k5')) = 12.4
+D(m9, t=1, ('l1', 'k1')) = 6.1
+D(m9, t=1, ('l1', 'k2')) = 9.5
+D(m9, t=1, ('l1', 'k3')) = 7.8
+D(m9, t=1, ('l1', 'k4')) = 7.1
+D(m9, t=1, ('l1', 'k5')) = 8.7
+D(m9, t=1, ('l2', 'k1')) = 13.0
+D(m9, t=1, ('l2', 'k2')) = 5.9
+D(m9, t=1, ('l2', 'k3')) = 11.6
+D(m9, t=1, ('l2', 'k4')) = 7.2
+D(m9, t=1, ('l2', 'k5')) = 9.6
+D(m9, t=2, ('l1', 'k1')) = 11.2
+D(m9, t=2, ('l1', 'k2')) = 6.6
+D(m9, t=2, ('l1', 'k3')) = 14.3
+D(m9, t=2, ('l1', 'k4')) = 11.5
+D(m9, t=2, ('l1', 'k5')) = 10.6
+D(m9, t=2, ('l2', 'k1')) = 10.4
+D(m9, t=2, ('l2', 'k2')) = 12.4
+D(m9, t=2, ('l2', 'k3')) = 14.4
+D(m9, t=2, ('l2', 'k4')) = 7.7
+D(m9, t=2, ('l2', 'k5')) = 5.5
+D(m10, t=1, ('l1', 'k1')) = 6.7
+D(m10, t=1, ('l1', 'k2')) = 9.9
+D(m10, t=1, ('l1', 'k3')) = 12.1
+D(m10, t=1, ('l1', 'k4')) = 10.2
+D(m10, t=1, ('l1', 'k5')) = 7.2
+D(m10, t=1, ('l2', 'k1')) = 7.3
+D(m10, t=1, ('l2', 'k2')) = 14.5
+D(m10, t=1, ('l2', 'k3')) = 8.4
+D(m10, t=1, ('l2', 'k4')) = 11.8
+D(m10, t=1, ('l2', 'k5')) = 12.3
+D(m10, t=2, ('l1', 'k1')) = 8.9
+D(m10, t=2, ('l1', 'k2')) = 10.3
+D(m10, t=2, ('l1', 'k3')) = 6.1
+D(m10, t=2, ('l1', 'k4')) = 9.5
+D(m10, t=2, ('l1', 'k5')) = 5.5
+D(m10, t=2, ('l2', 'k1')) = 9.0
+D(m10, t=2, ('l2', 'k2')) = 14.1
+D(m10, t=2, ('l2', 'k3')) = 9.5
+D(m10, t=2, ('l2', 'k4')) = 5.7
+D(m10, t=2, ('l2', 'k5')) = 15.0
+
+Iteration 1: Solving Master...
+Master LB: 0.00
+Fixed y: {}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 1168905.11, Total UB: 1168905.11
+Added optimality cut: opt_cut_1
+
+Iteration 2: Solving Master...
+Master LB: 902715.11
+Fixed y: {'m1': 1.0, 'm2': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901278.53, Total UB: 904278.53
+Added optimality cut: opt_cut_2
+
+Iteration 3: Solving Master...
+Master LB: 902715.11
+Fixed y: {'m3': 1.0, 'm4': 1.0, 'm5': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901259.62, Total UB: 904259.62
+Added optimality cut: opt_cut_3
+
+Iteration 4: Solving Master...
+Master LB: 902715.11
+Fixed y: {'m6': 1.0, 'm7': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901244.98, Total UB: 904244.98
+Added optimality cut: opt_cut_4
+
+Iteration 5: Solving Master...
+Master LB: 903059.62
+Fixed y: {'m5': 1.0, 'm8': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901230.20, Total UB: 904230.20
+Added optimality cut: opt_cut_5
+
+Iteration 6: Solving Master...
+Master LB: 903080.20
+Fixed y: {'m2': 1.0, 'm3': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901266.67, Total UB: 904230.20
+Added optimality cut: opt_cut_6
+
+Iteration 7: Solving Master...
+Master LB: 903080.20
+Fixed y: {'m1': 1.0, 'm4': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901253.76, Total UB: 904230.20
+Added optimality cut: opt_cut_7
+
+Iteration 8: Solving Master...
+Master LB: 903144.98
+Fixed y: {'m6': 1.0, 'm9': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901255.37, Total UB: 904230.20
+Added optimality cut: opt_cut_8
+
+Iteration 9: Solving Master...
+Master LB: 903153.76
+Fixed y: {'m1': 1.0, 'm7': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901258.17, Total UB: 904230.20
+Added optimality cut: opt_cut_9
+
+Iteration 10: Solving Master...
+Master LB: 903153.76
+Fixed y: {'m4': 1.0, 'm7': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901262.95, Total UB: 904230.20
+Added optimality cut: opt_cut_10
+
+Iteration 11: Solving Master...
+Master LB: 903166.67
+Fixed y: {'m2': 1.0, 'm4': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901278.04, Total UB: 904230.20
+Added optimality cut: opt_cut_11
+
+Iteration 12: Solving Master...
+Master LB: 903166.67
+Fixed y: {'m1': 1.0, 'm3': 1.0, 'm6': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901269.16, Total UB: 904230.20
+Added optimality cut: opt_cut_12
+
+Iteration 13: Solving Master...
+Master LB: 903180.20
+Fixed y: {'m2': 1.0, 'm5': 1.0, 'm6': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901266.94, Total UB: 904230.20
+Added optimality cut: opt_cut_13
+
+Iteration 14: Solving Master...
+Master LB: 903653.76
+Fixed y: {'m4': 1.0, 'm6': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901251.42, Total UB: 904230.20
+Added optimality cut: opt_cut_14
+
+Iteration 15: Solving Master...
+Master LB: 903655.37
+Fixed y: {'m3': 1.0, 'm9': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901259.33, Total UB: 904230.20
+Added optimality cut: opt_cut_15
+
+Iteration 16: Solving Master...
+Master LB: 903655.37
+Fixed y: {'m6': 1.0, 'm8': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901241.88, Total UB: 904230.20
+Added optimality cut: opt_cut_16
+
+Iteration 17: Solving Master...
+Master LB: 903658.17
+Fixed y: {'m7': 1.0, 'm8': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901239.92, Total UB: 904230.20
+Added optimality cut: opt_cut_17
+
+Iteration 18: Solving Master...
+Master LB: 903658.17
+Fixed y: {'m1': 1.0, 'm8': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901244.22, Total UB: 904230.20
+Added optimality cut: opt_cut_18
+
+Iteration 19: Solving Master...
+Master LB: 903659.33
+Fixed y: {'m8': 1.0, 'm9': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901239.45, Total UB: 904230.20
+Added optimality cut: opt_cut_19
+
+Iteration 20: Solving Master...
+Master LB: 903659.62
+Fixed y: {'m3': 1.0, 'm5': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901253.17, Total UB: 904230.20
+Added optimality cut: opt_cut_20
+
+Iteration 21: Solving Master...
+Master LB: 903662.95
+Fixed y: {'m5': 1.0, 'm7': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901246.78, Total UB: 904230.20
+Added optimality cut: opt_cut_21
+
+Iteration 22: Solving Master...
+Master LB: 903662.95
+Fixed y: {'m4': 1.0, 'm5': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901253.23, Total UB: 904230.20
+Added optimality cut: opt_cut_22
+
+Iteration 23: Solving Master...
+Master LB: 903662.95
+Fixed y: {'m3': 1.0, 'm4': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901269.34, Total UB: 904230.20
+Added optimality cut: opt_cut_23
+
+Iteration 24: Solving Master...
+Master LB: 903666.67
+Fixed y: {'m3': 1.0, 'm8': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901245.84, Total UB: 904230.20
+Added optimality cut: opt_cut_24
+
+Iteration 25: Solving Master...
+Master LB: 903666.94
+Fixed y: {'m2': 1.0, 'm5': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901264.97, Total UB: 904230.20
+Added optimality cut: opt_cut_25
+
+Iteration 26: Solving Master...
+Master LB: 903669.16
+Fixed y: {'m1': 1.0, 'm5': 1.0, 'm6': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901253.51, Total UB: 904230.20
+Added optimality cut: opt_cut_26
+
+Iteration 27: Solving Master...
+Master LB: 903669.16
+Fixed y: {'m3': 1.0, 'm5': 1.0, 'm6': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901255.14, Total UB: 904230.20
+Added optimality cut: opt_cut_27
+
+Iteration 28: Solving Master...
+Master LB: 903669.16
+Fixed y: {'m1': 1.0, 'm3': 1.0, 'm5': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901257.48, Total UB: 904230.20
+Added optimality cut: opt_cut_28
+
+Iteration 29: Solving Master...
+Master LB: 903669.34
+Fixed y: {'m4': 1.0, 'm5': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901253.69, Total UB: 904230.20
+Added optimality cut: opt_cut_29
+
+Iteration 30: Solving Master...
+Master LB: 903678.04
+Fixed y: {'m2': 1.0, 'm8': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901257.64, Total UB: 904230.20
+Added optimality cut: opt_cut_30
+
+Iteration 31: Solving Master...
+Master LB: 903678.04
+Fixed y: {'m4': 1.0, 'm8': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901246.36, Total UB: 904230.20
+Added optimality cut: opt_cut_31
+
+Iteration 32: Solving Master...
+Master LB: 903678.53
+Fixed y: {'m1': 1.0, 'm2': 1.0, 'm6': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901280.96, Total UB: 904230.20
+Added optimality cut: opt_cut_32
+
+Iteration 33: Solving Master...
+Master LB: 903678.53
+Fixed y: {'m2': 1.0, 'm7': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901274.23, Total UB: 904230.20
+Added optimality cut: opt_cut_33
+
+Iteration 34: Solving Master...
+Master LB: 903678.53
+Fixed y: {'m1': 1.0, 'm5': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901251.09, Total UB: 904230.20
+Added optimality cut: opt_cut_34
+
+Iteration 35: Solving Master...
+Master LB: 903678.53
+Fixed y: {'m2': 1.0, 'm5': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901264.51, Total UB: 904230.20
+Added optimality cut: opt_cut_35
+
+Iteration 36: Solving Master...
+Master LB: 903680.96
+Fixed y: {'m1': 1.0, 'm2': 1.0, 'm5': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901269.28, Total UB: 904230.20
+Added optimality cut: opt_cut_36
+
+Iteration 37: Solving Master...
+Master LB: 903689.45
+Fixed y: {'m5': 1.0, 'm8': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901232.83, Total UB: 904230.20
+Added optimality cut: opt_cut_37
+
+Iteration 38: Solving Master...
+Master LB: 903689.92
+Fixed y: {'m7': 1.0, 'm8': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901242.55, Total UB: 904230.20
+Added optimality cut: opt_cut_38
+
+Iteration 39: Solving Master...
+Master LB: 903689.92
+Fixed y: {'m5': 1.0, 'm7': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901233.29, Total UB: 904230.20
+Added optimality cut: opt_cut_39
+
+Iteration 40: Solving Master...
+Master LB: 903691.88
+Fixed y: {'m5': 1.0, 'm6': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901235.26, Total UB: 904230.20
+Added optimality cut: opt_cut_40
+
+Iteration 41: Solving Master...
+Master LB: 903694.22
+Fixed y: {'m1': 1.0, 'm5': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901237.60, Total UB: 904230.20
+Added optimality cut: opt_cut_41
+
+Iteration 42: Solving Master...
+Master LB: 903694.22
+Fixed y: {'m1': 1.0, 'm6': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901249.28, Total UB: 904230.20
+Added optimality cut: opt_cut_42
+
+Iteration 43: Solving Master...
+Master LB: 903694.22
+Fixed y: {'m1': 1.0, 'm8': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901246.85, Total UB: 904230.20
+Added optimality cut: opt_cut_43
+
+Iteration 44: Solving Master...
+Master LB: 903695.84
+Fixed y: {'m3': 1.0, 'm6': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901250.91, Total UB: 904230.20
+Added optimality cut: opt_cut_44
+
+Iteration 45: Solving Master...
+Master LB: 903695.84
+Fixed y: {'m3': 1.0, 'm5': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901239.22, Total UB: 904230.20
+Added optimality cut: opt_cut_45
+
+Iteration 46: Solving Master...
+Master LB: 903695.84
+Fixed y: {'m1': 1.0, 'm3': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901253.24, Total UB: 904230.20
+Added optimality cut: opt_cut_46
+
+Iteration 47: Solving Master...
+Master LB: 903695.84
+Fixed y: {'m3': 1.0, 'm7': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901248.94, Total UB: 904230.20
+Added optimality cut: opt_cut_47
+
+Iteration 48: Solving Master...
+Master LB: 903696.36
+Fixed y: {'m4': 1.0, 'm7': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901249.46, Total UB: 904230.20
+Added optimality cut: opt_cut_48
+
+Iteration 49: Solving Master...
+Master LB: 903696.36
+Fixed y: {'m4': 1.0, 'm8': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901249.00, Total UB: 904230.20
+Added optimality cut: opt_cut_49
+
+Iteration 50: Solving Master...
+Master LB: 903696.36
+Fixed y: {'m4': 1.0, 'm5': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901239.74, Total UB: 904230.20
+Added optimality cut: opt_cut_50
+
+Iteration 51: Solving Master...
+Master LB: 903696.36
+Fixed y: {'m3': 1.0, 'm4': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901255.38, Total UB: 904230.20
+Added optimality cut: opt_cut_51
+
+Iteration 52: Solving Master...
+Master LB: 903705.37
+Fixed y: {'m6': 1.0, 'm8': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901244.52, Total UB: 904230.20
+Added optimality cut: opt_cut_52
+
+Iteration 53: Solving Master...
+Master LB: 903707.64
+Fixed y: {'m2': 1.0, 'm5': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901251.02, Total UB: 904230.20
+Added optimality cut: opt_cut_53
+
+Iteration 54: Solving Master...
+Master LB: 903707.64
+Fixed y: {'m2': 1.0, 'm8': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901260.28, Total UB: 904230.20
+Added optimality cut: opt_cut_54
+
+Iteration 55: Solving Master...
+Master LB: 903707.64
+Fixed y: {'m2': 1.0, 'm6': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901262.71, Total UB: 904230.20
+Added optimality cut: opt_cut_55
+
+Iteration 56: Solving Master...
+Master LB: 903707.64
+Fixed y: {'m2': 1.0, 'm7': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901260.74, Total UB: 904230.20
+Added optimality cut: opt_cut_56
+
+Iteration 57: Solving Master...
+Master LB: 903707.64
+Fixed y: {'m1': 1.0, 'm2': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901265.05, Total UB: 904230.20
+Added optimality cut: opt_cut_57
+
+Iteration 58: Solving Master...
+Master LB: 903708.17
+Fixed y: {'m1': 1.0, 'm7': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901247.32, Total UB: 904230.20
+Added optimality cut: opt_cut_58
+
+Iteration 59: Solving Master...
+Master LB: 903709.33
+Fixed y: {'m3': 1.0, 'm8': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901248.48, Total UB: 904230.20
+Added optimality cut: opt_cut_59
+
+Iteration 60: Solving Master...
+Master LB: 903728.04
+Fixed y: {'m2': 1.0, 'm4': 1.0, 'm8': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901267.19, Total UB: 904230.20
+Added optimality cut: opt_cut_60
+
+Iteration 61: Solving Master...
+Master LB: 903739.45
+Fixed y: {'m5': 1.0, 'm9': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901243.69, Total UB: 904230.20
+Added optimality cut: opt_cut_61
+
+Iteration 62: Solving Master...
+Master LB: 903739.92
+Fixed y: {'m5': 1.0, 'm7': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901244.15, Total UB: 904230.20
+Added optimality cut: opt_cut_62
+
+Iteration 63: Solving Master...
+Master LB: 903741.88
+Fixed y: {'m5': 1.0, 'm6': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901246.12, Total UB: 904230.20
+Added optimality cut: opt_cut_63
+
+Iteration 64: Solving Master...
+Master LB: 903742.55
+Fixed y: {'m7': 1.0, 'm9': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901253.41, Total UB: 904230.20
+Added optimality cut: opt_cut_64
+
+Iteration 65: Solving Master...
+Master LB: 903744.22
+Fixed y: {'m1': 1.0, 'm5': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901248.45, Total UB: 904230.20
+Added optimality cut: opt_cut_65
+
+Iteration 66: Solving Master...
+Master LB: 903744.52
+Fixed y: {'m5': 1.0, 'm6': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901248.75, Total UB: 904230.20
+Added optimality cut: opt_cut_66
+
+Iteration 67: Solving Master...
+Master LB: 903744.98
+Fixed y: {'m6': 1.0, 'm7': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901258.47, Total UB: 904230.20
+Added optimality cut: opt_cut_67
+
+Iteration 68: Solving Master...
+Master LB: 903744.98
+Fixed y: {'m5': 1.0, 'm6': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901249.21, Total UB: 904230.20
+Added optimality cut: opt_cut_68
+
+Iteration 69: Solving Master...
+Master LB: 903744.98
+Fixed y: {'m6': 1.0, 'm7': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901255.83, Total UB: 904230.20
+Added optimality cut: opt_cut_69
+
+Iteration 70: Solving Master...
+Master LB: 903745.84
+Fixed y: {'m3': 1.0, 'm5': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901250.08, Total UB: 904230.20
+Added optimality cut: opt_cut_70
+
+Iteration 71: Solving Master...
+Master LB: 903746.36
+Fixed y: {'m4': 1.0, 'm5': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901250.59, Total UB: 904230.20
+Added optimality cut: opt_cut_71
+
+Iteration 72: Solving Master...
+Master LB: 903746.85
+Fixed y: {'m1': 1.0, 'm9': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901257.71, Total UB: 904230.20
+Added optimality cut: opt_cut_72
+
+Iteration 73: Solving Master...
+Master LB: 903747.32
+Fixed y: {'m1': 1.0, 'm7': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901260.81, Total UB: 904230.20
+Added optimality cut: opt_cut_73
+
+Iteration 74: Solving Master...
+Master LB: 903747.32
+Fixed y: {'m1': 1.0, 'm5': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901251.55, Total UB: 904230.20
+Added optimality cut: opt_cut_74
+
+Iteration 75: Solving Master...
+Master LB: 903748.48
+Fixed y: {'m3': 1.0, 'm5': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901252.71, Total UB: 904230.20
+Added optimality cut: opt_cut_75
+
+Iteration 76: Solving Master...
+Master LB: 903748.94
+Fixed y: {'m3': 1.0, 'm7': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901259.80, Total UB: 904230.20
+Added optimality cut: opt_cut_76
+
+Iteration 77: Solving Master...
+Master LB: 903748.94
+Fixed y: {'m3': 1.0, 'm7': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901262.43, Total UB: 904230.20
+Added optimality cut: opt_cut_77
+
+Iteration 78: Solving Master...
+Master LB: 903749.00
+Fixed y: {'m4': 1.0, 'm9': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901259.85, Total UB: 904230.20
+Added optimality cut: opt_cut_78
+
+Iteration 79: Solving Master...
+Master LB: 903749.28
+Fixed y: {'m1': 1.0, 'm6': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901260.14, Total UB: 904230.20
+Added optimality cut: opt_cut_79
+
+Iteration 80: Solving Master...
+Master LB: 903749.28
+Fixed y: {'m1': 1.0, 'm6': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901263.24, Total UB: 904230.20
+Added optimality cut: opt_cut_80
+
+Iteration 81: Solving Master...
+Master LB: 903749.28
+Fixed y: {'m1': 1.0, 'm6': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901262.77, Total UB: 904230.20
+Added optimality cut: opt_cut_81
+
+Iteration 82: Solving Master...
+Master LB: 903749.46
+Fixed y: {'m4': 1.0, 'm7': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901260.31, Total UB: 904230.20
+Added optimality cut: opt_cut_82
+
+Iteration 83: Solving Master...
+Master LB: 903750.91
+Fixed y: {'m3': 1.0, 'm6': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901261.76, Total UB: 904230.20
+Added optimality cut: opt_cut_83
+
+Iteration 84: Solving Master...
+Master LB: 903750.91
+Fixed y: {'m3': 1.0, 'm6': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901264.40, Total UB: 904230.20
+Added optimality cut: opt_cut_84
+
+Iteration 85: Solving Master...
+Master LB: 903750.91
+Fixed y: {'m3': 1.0, 'm6': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901264.86, Total UB: 904230.20
+Added optimality cut: opt_cut_85
+
+Iteration 86: Solving Master...
+Master LB: 903751.42
+Fixed y: {'m4': 1.0, 'm6': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901262.28, Total UB: 904230.20
+Added optimality cut: opt_cut_86
+
+Iteration 87: Solving Master...
+Master LB: 903751.42
+Fixed y: {'m4': 1.0, 'm6': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901264.91, Total UB: 904230.20
+Added optimality cut: opt_cut_87
+
+Iteration 88: Solving Master...
+Master LB: 903751.42
+Fixed y: {'m4': 1.0, 'm5': 1.0, 'm6': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901255.65, Total UB: 904230.20
+Added optimality cut: opt_cut_88
+
+Iteration 89: Solving Master...
+Master LB: 903751.42
+Fixed y: {'m4': 1.0, 'm6': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901265.38, Total UB: 904230.20
+Added optimality cut: opt_cut_89
+
+Iteration 90: Solving Master...
+Master LB: 903753.24
+Fixed y: {'m1': 1.0, 'm3': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901266.73, Total UB: 904230.20
+Added optimality cut: opt_cut_90
+
+Iteration 91: Solving Master...
+Master LB: 903753.24
+Fixed y: {'m1': 1.0, 'm3': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901264.10, Total UB: 904230.20
+Added optimality cut: opt_cut_91
+
+Iteration 92: Solving Master...
+Master LB: 903753.24
+Fixed y: {'m1': 1.0, 'm3': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901267.20, Total UB: 904230.20
+Added optimality cut: opt_cut_92
+
+Iteration 93: Solving Master...
+Master LB: 903753.76
+Fixed y: {'m1': 1.0, 'm4': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901267.25, Total UB: 904230.20
+Added optimality cut: opt_cut_93
+
+Iteration 94: Solving Master...
+Master LB: 903753.76
+Fixed y: {'m1': 1.0, 'm4': 1.0, 'm5': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901257.99, Total UB: 904230.20
+Added optimality cut: opt_cut_94
+
+Iteration 95: Solving Master...
+Master LB: 903753.76
+Fixed y: {'m1': 1.0, 'm4': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901264.61, Total UB: 904230.20
+Added optimality cut: opt_cut_95
+
+Iteration 96: Solving Master...
+Master LB: 903753.76
+Fixed y: {'m1': 1.0, 'm4': 1.0, 'm6': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901269.68, Total UB: 904230.20
+Added optimality cut: opt_cut_96
+
+Iteration 97: Solving Master...
+Master LB: 903753.76
+Fixed y: {'m1': 1.0, 'm4': 1.0, 'm7': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901267.71, Total UB: 904230.20
+Added optimality cut: opt_cut_97
+
+Iteration 98: Solving Master...
+Master LB: 903755.38
+Fixed y: {'m3': 1.0, 'm4': 1.0, 'm9': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901266.24, Total UB: 904230.20
+Added optimality cut: opt_cut_98
+
+Iteration 99: Solving Master...
+Master LB: 903755.38
+Fixed y: {'m1': 1.0, 'm3': 1.0, 'm4': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901273.64, Total UB: 904230.20
+Added optimality cut: opt_cut_99
+
+Iteration 100: Solving Master...
+Master LB: 903755.38
+Fixed y: {'m3': 1.0, 'm4': 1.0, 'm10': 1.0}
+Solving Subproblem...
+Sub Status: Optimal
+Sub Cost: 901268.87, Total UB: 904230.20
+Added optimality cut: opt_cut_100
+
+Converged after 100 iterations. Final UB: 904230.19791554
+Objective Value: 904230.19791554
+
+CSAM Deployments:
+y[m5, 'l1'] = 1
+y[m8, 'l1'] = 1
+y[m9, 'l1'] = 1
+
+Positive CSAM l1 flows (q_l1 to r_l1):
+Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k1'): flow=12.2
+Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k2'): flow=10.4
+Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k3'): flow=14.8
+Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k4'): flow=12.6
+Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k1'): flow=13.0
+Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k2'): flow=14.2
+Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k3'): flow=13.7
+Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k4'): flow=9.1
+Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k1'): flow=12.1
+Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k2'): flow=7.1
+Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k3'): flow=7.9
+Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k4'): flow=13.3
+Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k5'): flow=9.6
+Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k1'): flow=5.1
+Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k2'): flow=14.9
+Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k3'): flow=7.8
+Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k4'): flow=11.8
+Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k5'): flow=10.5
+Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k1'): flow=6.1
+Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k2'): flow=9.5
+Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k3'): flow=7.8
+Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k4'): flow=7.1
+Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k5'): flow=19.5
+Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k1'): flow=11.2
+Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k2'): flow=6.6
+Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k3'): flow=14.3
+Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k4'): flow=7.3
+Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k5'): flow=10.6
+
+Positive traditional l2 flows (q_l2 to r_l2):
+
+For k=k1 at m1:
+Arc (m1_q_l2 -> m1_r_l2), t=1, commodity=('l1', 'k1'): flow=9.2 (jumping if 'l1')
+Arc (m1_q_l2 -> m1_r_l2), t=1, commodity=('l2', 'k1'): flow=90.8
+Arc (m1_q_l2 -> m1_r_l2), t=2, commodity=('l1', 'k1'): flow=90.3 (jumping if 'l1')
+Arc (m1_q_l2 -> m1_r_l2), t=2, commodity=('l2', 'k1'): flow=9.7
+
+For k=k2 at m2:
+Arc (m2_q_l2 -> m2_r_l2), t=1, commodity=('l2', 'k2'): flow=100.0
+Arc (m2_q_l2 -> m2_r_l2), t=2, commodity=('l1', 'k2'): flow=92.1 (jumping if 'l1')
+Arc (m2_q_l2 -> m2_r_l2), t=2, commodity=('l2', 'k2'): flow=7.9
+
+For k=k3 at m3:
+Arc (m3_q_l2 -> m3_r_l2), t=1, commodity=('l1', 'k3'): flow=73.0 (jumping if 'l1')
+Arc (m3_q_l2 -> m3_r_l2), t=1, commodity=('l2', 'k3'): flow=27.0
+Arc (m3_q_l2 -> m3_r_l2), t=2, commodity=('l1', 'k3'): flow=6.0 (jumping if 'l1')
+Arc (m3_q_l2 -> m3_r_l2), t=2, commodity=('l2', 'k3'): flow=94.0
+
+For k=k4 at m4:
+Arc (m4_q_l2 -> m4_r_l2), t=1, commodity=('l1', 'k4'): flow=62.2 (jumping if 'l1')
+Arc (m4_q_l2 -> m4_r_l2), t=1, commodity=('l2', 'k4'): flow=37.8
+Arc (m4_q_l2 -> m4_r_l2), t=2, commodity=('l1', 'k4'): flow=12.2 (jumping if 'l1')
+Arc (m4_q_l2 -> m4_r_l2), t=2, commodity=('l2', 'k4'): flow=87.8
+
+For k=k5 at m5:
+Arc (m5_q_l2 -> m5_r_l2), t=1, commodity=('l2', 'k5'): flow=100.0
+Arc (m5_q_l2 -> m5_r_l2), t=2, commodity=('l1', 'k5'): flow=84.1 (jumping if 'l1')
+Arc (m5_q_l2 -> m5_r_l2), t=2, commodity=('l2', 'k5'): flow=15.9
+
+Positive inter-facility travel flows (in-to-in):
+Arc (m1_in -> m2_in), t=1, commodity=('l1', 'k2'): flow=6.6
+Arc (m1_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=5.6
+Arc (m1_in -> m2_in), t=2, commodity=('l1', 'k2'): flow=8.9
+Arc (m1_in -> m3_in), t=1, commodity=('l1', 'k3'): flow=12.8
+Arc (m1_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=12.6
+Arc (m1_in -> m4_in), t=1, commodity=('l1', 'k4'): flow=13.1
+Arc (m1_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=6.8
+Arc (m1_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=10.3
+Arc (m1_in -> m5_in), t=1, commodity=('l1', 'k5'): flow=11.3
+Arc (m1_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=6.5
+Arc (m2_in -> m1_in), t=1, commodity=('l1', 'k1'): flow=6.8
+Arc (m2_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=6.5
+Arc (m2_in -> m1_in), t=2, commodity=('l1', 'k1'): flow=7.1
+Arc (m2_in -> m3_in), t=1, commodity=('l1', 'k3'): flow=7.4
+Arc (m2_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=13.6
+Arc (m2_in -> m4_in), t=1, commodity=('l1', 'k4'): flow=5.1
+Arc (m2_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=7.0
+Arc (m2_in -> m5_in), t=1, commodity=('l1', 'k5'): flow=8.6
+Arc (m2_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=6.3
+Arc (m3_in -> m1_in), t=1, commodity=('l1', 'k1'): flow=10.6
+Arc (m3_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=10.9
+Arc (m3_in -> m1_in), t=2, commodity=('l1', 'k1'): flow=5.1
+Arc (m3_in -> m2_in), t=1, commodity=('l1', 'k2'): flow=14.4
+Arc (m3_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=5.4
+Arc (m3_in -> m4_in), t=1, commodity=('l1', 'k4'): flow=14.0
+Arc (m3_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=8.7
+Arc (m3_in -> m4_in), t=2, commodity=('l1', 'k4'): flow=6.3
+Arc (m3_in -> m4_in), t=2, commodity=('l2', 'k4'): flow=14.8
+Arc (m3_in -> m5_in), t=1, commodity=('l1', 'k5'): flow=6.8
+Arc (m3_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=13.0
+Arc (m3_in -> m5_in), t=2, commodity=('l1', 'k5'): flow=10.0
+Arc (m4_in -> m1_in), t=1, commodity=('l1', 'k1'): flow=10.2
+Arc (m4_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=5.9
+Arc (m4_in -> m1_in), t=2, commodity=('l1', 'k1'): flow=11.1
+Arc (m4_in -> m2_in), t=1, commodity=('l1', 'k2'): flow=6.2
+Arc (m4_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=9.8
+Arc (m4_in -> m2_in), t=2, commodity=('l1', 'k2'): flow=1.5
+Arc (m4_in -> m3_in), t=1, commodity=('l1', 'k3'): flow=8.3
+Arc (m4_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=13.4
+Arc (m4_in -> m5_in), t=1, commodity=('l1', 'k5'): flow=2.8
+Arc (m4_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=5.5
+Arc (m4_in -> m9_in), t=1, commodity=('l1', 'k5'): flow=10.9
+Arc (m5_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=10.4
+Arc (m5_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=11.8
+Arc (m5_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=12.4
+Arc (m5_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=11.3
+Arc (m6_in -> m1_in), t=1, commodity=('l1', 'k1'): flow=5.3
+Arc (m6_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=7.6
+Arc (m6_in -> m1_in), t=2, commodity=('l1', 'k1'): flow=6.5
+Arc (m6_in -> m2_in), t=1, commodity=('l1', 'k2'): flow=10.8
+Arc (m6_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=8.2
+Arc (m6_in -> m3_in), t=1, commodity=('l1', 'k3'): flow=13.8
+Arc (m6_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=12.5
+Arc (m6_in -> m4_in), t=1, commodity=('l1', 'k4'): flow=6.7
+Arc (m6_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=5.8
+Arc (m6_in -> m5_in), t=1, commodity=('l1', 'k2'): flow=0.6
+Arc (m6_in -> m5_in), t=1, commodity=('l1', 'k5'): flow=7.3
+Arc (m6_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=14.9
+Arc (m6_in -> m5_in), t=2, commodity=('l1', 'k5'): flow=7.9
+Arc (m7_in -> m1_in), t=1, commodity=('l1', 'k1'): flow=9.2
+Arc (m7_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=12.5
+Arc (m7_in -> m2_in), t=1, commodity=('l1', 'k2'): flow=10.7
+Arc (m7_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=14.7
+Arc (m7_in -> m2_in), t=2, commodity=('l1', 'k2'): flow=2.2
+Arc (m7_in -> m3_in), t=1, commodity=('l1', 'k3'): flow=12.0
+Arc (m7_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=3.9
+Arc (m7_in -> m4_in), t=1, commodity=('l1', 'k4'): flow=5.3
+Arc (m7_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=14.4
+Arc (m7_in -> m5_in), t=1, commodity=('l1', 'k5'): flow=5.1
+Arc (m7_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=10.9
+Arc (m7_in -> m5_in), t=2, commodity=('l1', 'k2'): flow=3.7
+Arc (m8_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=5.7
+Arc (m8_in -> m1_in), t=2, commodity=('l1', 'k1'): flow=3.6
+Arc (m8_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=13.6
+Arc (m8_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=9.2
+Arc (m8_in -> m4_in), t=1, commodity=('l1', 'k4'): flow=0.2
+Arc (m8_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=10.2
+Arc (m8_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=11.5
+Arc (m9_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=13.0
+Arc (m9_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=5.9
+Arc (m9_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=11.6
+Arc (m9_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=7.2
+Arc (m9_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=9.6
+Arc (m10_in -> m1_in), t=1, commodity=('l1', 'k1'): flow=6.7
+Arc (m10_in -> m1_in), t=1, commodity=('l2', 'k1'): flow=7.3
+Arc (m10_in -> m1_in), t=2, commodity=('l1', 'k1'): flow=0.4
+Arc (m10_in -> m2_in), t=1, commodity=('l1', 'k2'): flow=9.9
+Arc (m10_in -> m2_in), t=1, commodity=('l2', 'k2'): flow=14.5
+Arc (m10_in -> m3_in), t=1, commodity=('l1', 'k3'): flow=12.1
+Arc (m10_in -> m3_in), t=1, commodity=('l2', 'k3'): flow=8.4
+Arc (m10_in -> m4_in), t=1, commodity=('l1', 'k4'): flow=10.2
+Arc (m10_in -> m4_in), t=1, commodity=('l2', 'k4'): flow=11.8
+Arc (m10_in -> m5_in), t=1, commodity=('l1', 'k5'): flow=7.2
+Arc (m10_in -> m5_in), t=1, commodity=('l2', 'k5'): flow=12.3
+Arc (m10_in -> m5_in), t=2, commodity=('l1', 'k5'): flow=5.5
+
+Positive flows on dummy arcs (unmet demand in t=2):
+Arc (m1_in -> dummy), t=2, commodity=('l1', 'k3'): flow=10.8
+Arc (m1_in -> dummy), t=2, commodity=('l1', 'k4'): flow=6.5
+Arc (m1_in -> dummy), t=2, commodity=('l1', 'k5'): flow=11.9
+Arc (m1_in -> dummy), t=2, commodity=('l2', 'k2'): flow=18.9
+Arc (m1_in -> dummy), t=2, commodity=('l2', 'k3'): flow=11.5
+Arc (m1_in -> dummy), t=2, commodity=('l2', 'k4'): flow=1.9
+Arc (m1_in -> dummy), t=2, commodity=('l2', 'k5'): flow=11.8
+Arc (m2_in -> dummy), t=2, commodity=('l1', 'k3'): flow=13.6
+Arc (m2_in -> dummy), t=2, commodity=('l1', 'k4'): flow=10.3
+Arc (m2_in -> dummy), t=2, commodity=('l1', 'k5'): flow=9.3
+Arc (m2_in -> dummy), t=2, commodity=('l2', 'k1'): flow=6.9
+Arc (m2_in -> dummy), t=2, commodity=('l2', 'k3'): flow=11.3
+Arc (m2_in -> dummy), t=2, commodity=('l2', 'k4'): flow=8.6
+Arc (m2_in -> dummy), t=2, commodity=('l2', 'k5'): flow=12.3
+Arc (m3_in -> dummy), t=2, commodity=('l1', 'k2'): flow=9.8
+Arc (m3_in -> dummy), t=2, commodity=('l1', 'k5'): flow=3.2
+Arc (m3_in -> dummy), t=2, commodity=('l2', 'k1'): flow=11.0
+Arc (m3_in -> dummy), t=2, commodity=('l2', 'k2'): flow=14.7
+Arc (m3_in -> dummy), t=2, commodity=('l2', 'k5'): flow=10.2
+Arc (m4_in -> dummy), t=2, commodity=('l1', 'k2'): flow=7.6
+Arc (m4_in -> dummy), t=2, commodity=('l1', 'k3'): flow=12.1
+Arc (m4_in -> dummy), t=2, commodity=('l1', 'k5'): flow=8.8
+Arc (m4_in -> dummy), t=2, commodity=('l2', 'k1'): flow=5.2
+Arc (m4_in -> dummy), t=2, commodity=('l2', 'k2'): flow=8.9
+Arc (m4_in -> dummy), t=2, commodity=('l2', 'k3'): flow=6.4
+Arc (m4_in -> dummy), t=2, commodity=('l2', 'k5'): flow=12.9
+Arc (m5_in -> dummy), t=2, commodity=('l2', 'k1'): flow=6.4
+Arc (m5_in -> dummy), t=2, commodity=('l2', 'k2'): flow=15.0
+Arc (m5_in -> dummy), t=2, commodity=('l2', 'k3'): flow=7.0
+Arc (m5_in -> dummy), t=2, commodity=('l2', 'k4'): flow=13.9
+Arc (m6_in -> dummy), t=2, commodity=('l1', 'k2'): flow=13.8
+Arc (m6_in -> dummy), t=2, commodity=('l1', 'k3'): flow=5.4
+Arc (m6_in -> dummy), t=2, commodity=('l1', 'k4'): flow=6.1
+Arc (m6_in -> dummy), t=2, commodity=('l2', 'k1'): flow=14.0
+Arc (m6_in -> dummy), t=2, commodity=('l2', 'k2'): flow=14.2
+Arc (m6_in -> dummy), t=2, commodity=('l2', 'k3'): flow=5.2
+Arc (m6_in -> dummy), t=2, commodity=('l2', 'k4'): flow=12.6
+Arc (m6_in -> dummy), t=2, commodity=('l2', 'k5'): flow=8.2
+Arc (m7_in -> dummy), t=2, commodity=('l1', 'k1'): flow=6.4
+Arc (m7_in -> dummy), t=2, commodity=('l1', 'k3'): flow=11.3
+Arc (m7_in -> dummy), t=2, commodity=('l1', 'k4'): flow=10.0
+Arc (m7_in -> dummy), t=2, commodity=('l1', 'k5'): flow=10.2
+Arc (m7_in -> dummy), t=2, commodity=('l2', 'k1'): flow=11.3
+Arc (m7_in -> dummy), t=2, commodity=('l2', 'k2'): flow=7.3
+Arc (m7_in -> dummy), t=2, commodity=('l2', 'k3'): flow=11.6
+Arc (m7_in -> dummy), t=2, commodity=('l2', 'k4'): flow=10.6
+Arc (m7_in -> dummy), t=2, commodity=('l2', 'k5'): flow=8.9
+Arc (m8_in -> dummy), t=2, commodity=('l2', 'k1'): flow=10.3
+Arc (m8_in -> dummy), t=2, commodity=('l2', 'k2'): flow=5.1
+Arc (m8_in -> dummy), t=2, commodity=('l2', 'k3'): flow=12.6
+Arc (m8_in -> dummy), t=2, commodity=('l2', 'k4'): flow=7.0
+Arc (m8_in -> dummy), t=2, commodity=('l2', 'k5'): flow=12.4
+Arc (m9_in -> dummy), t=2, commodity=('l1', 'k4'): flow=4.2
+Arc (m9_in -> dummy), t=2, commodity=('l2', 'k1'): flow=10.4
+Arc (m9_in -> dummy), t=2, commodity=('l2', 'k2'): flow=12.4
+Arc (m9_in -> dummy), t=2, commodity=('l2', 'k3'): flow=14.4
+Arc (m9_in -> dummy), t=2, commodity=('l2', 'k4'): flow=7.7
+Arc (m9_in -> dummy), t=2, commodity=('l2', 'k5'): flow=5.5
+Arc (m10_in -> dummy), t=2, commodity=('l1', 'k1'): flow=8.4
+Arc (m10_in -> dummy), t=2, commodity=('l1', 'k2'): flow=10.3
+Arc (m10_in -> dummy), t=2, commodity=('l1', 'k3'): flow=6.1
+Arc (m10_in -> dummy), t=2, commodity=('l1', 'k4'): flow=9.5
+Arc (m10_in -> dummy), t=2, commodity=('l2', 'k1'): flow=9.0
+Arc (m10_in -> dummy), t=2, commodity=('l2', 'k2'): flow=14.1
+Arc (m10_in -> dummy), t=2, commodity=('l2', 'k3'): flow=9.5
+Arc (m10_in -> dummy), t=2, commodity=('l2', 'k4'): flow=5.7
+Arc (m10_in -> dummy), t=2, commodity=('l2', 'k5'): flow=15.0
+
+Positive in-to-q flows (queue entries):
+Arc (m1_in -> m1_q_l2), t=1, commodity=('l1', 'k1'): flow=56.3
+Arc (m1_in -> m1_q_l2), t=1, commodity=('l2', 'k1'): flow=90.8
+Arc (m1_in -> m1_q_l2), t=2, commodity=('l1', 'k1'): flow=43.2
+Arc (m1_in -> m1_q_l2), t=2, commodity=('l2', 'k1'): flow=9.7
+Arc (m2_in -> m2_q_l2), t=1, commodity=('l1', 'k2'): flow=64.8
+Arc (m2_in -> m2_q_l2), t=1, commodity=('l2', 'k2'): flow=100.0
+Arc (m2_in -> m2_q_l2), t=2, commodity=('l1', 'k2'): flow=27.3
+Arc (m2_in -> m2_q_l2), t=2, commodity=('l2', 'k2'): flow=7.9
+Arc (m3_in -> m3_q_l2), t=1, commodity=('l1', 'k3'): flow=73.0
+Arc (m3_in -> m3_q_l2), t=1, commodity=('l2', 'k3'): flow=109.1
+Arc (m3_in -> m3_q_l2), t=2, commodity=('l1', 'k3'): flow=6.0
+Arc (m3_in -> m3_q_l2), t=2, commodity=('l2', 'k3'): flow=11.9
+Arc (m4_in -> m4_q_l2), t=1, commodity=('l1', 'k4'): flow=62.2
+Arc (m4_in -> m4_q_l2), t=1, commodity=('l2', 'k4'): flow=93.4
+Arc (m4_in -> m4_q_l2), t=2, commodity=('l1', 'k4'): flow=12.2
+Arc (m4_in -> m4_q_l2), t=2, commodity=('l2', 'k4'): flow=32.3
+Arc (m5_in -> m5_q_l1), t=1, commodity=('l1', 'k1'): flow=12.2
+Arc (m5_in -> m5_q_l1), t=1, commodity=('l1', 'k2'): flow=10.4
+Arc (m5_in -> m5_q_l1), t=1, commodity=('l1', 'k3'): flow=14.8
+Arc (m5_in -> m5_q_l1), t=1, commodity=('l1', 'k4'): flow=12.6
+Arc (m5_in -> m5_q_l1), t=2, commodity=('l1', 'k1'): flow=13.0
+Arc (m5_in -> m5_q_l1), t=2, commodity=('l1', 'k2'): flow=14.2
+Arc (m5_in -> m5_q_l1), t=2, commodity=('l1', 'k3'): flow=13.7
+Arc (m5_in -> m5_q_l1), t=2, commodity=('l1', 'k4'): flow=9.1
+Arc (m5_in -> m5_q_l2), t=1, commodity=('l1', 'k5'): flow=55.1
+Arc (m5_in -> m5_q_l2), t=1, commodity=('l2', 'k5'): flow=104.4
+Arc (m5_in -> m5_q_l2), t=2, commodity=('l1', 'k5'): flow=29.1
+Arc (m5_in -> m5_q_l2), t=2, commodity=('l2', 'k5'): flow=11.5
+Arc (m8_in -> m8_q_l1), t=1, commodity=('l1', 'k1'): flow=12.1
+Arc (m8_in -> m8_q_l1), t=1, commodity=('l1', 'k2'): flow=7.1
+Arc (m8_in -> m8_q_l1), t=1, commodity=('l1', 'k3'): flow=7.9
+Arc (m8_in -> m8_q_l1), t=1, commodity=('l1', 'k4'): flow=13.3
+Arc (m8_in -> m8_q_l1), t=1, commodity=('l1', 'k5'): flow=9.6
+Arc (m8_in -> m8_q_l1), t=2, commodity=('l1', 'k1'): flow=5.1
+Arc (m8_in -> m8_q_l1), t=2, commodity=('l1', 'k2'): flow=14.9
+Arc (m8_in -> m8_q_l1), t=2, commodity=('l1', 'k3'): flow=7.8
+Arc (m8_in -> m8_q_l1), t=2, commodity=('l1', 'k4'): flow=11.8
+Arc (m8_in -> m8_q_l1), t=2, commodity=('l1', 'k5'): flow=10.5
+Arc (m9_in -> m9_q_l1), t=1, commodity=('l1', 'k1'): flow=6.1
+Arc (m9_in -> m9_q_l1), t=1, commodity=('l1', 'k2'): flow=9.5
+Arc (m9_in -> m9_q_l1), t=1, commodity=('l1', 'k3'): flow=7.8
+Arc (m9_in -> m9_q_l1), t=1, commodity=('l1', 'k4'): flow=7.1
+Arc (m9_in -> m9_q_l1), t=1, commodity=('l1', 'k5'): flow=19.5
+Arc (m9_in -> m9_q_l1), t=2, commodity=('l1', 'k1'): flow=11.2
+Arc (m9_in -> m9_q_l1), t=2, commodity=('l1', 'k2'): flow=6.6
+Arc (m9_in -> m9_q_l1), t=2, commodity=('l1', 'k3'): flow=14.3
+Arc (m9_in -> m9_q_l1), t=2, commodity=('l1', 'k4'): flow=7.3
+Arc (m9_in -> m9_q_l1), t=2, commodity=('l1', 'k5'): flow=10.6
+
+Positive queue carryover flows (q_l? to q_l?):
+Arc (m1_q_l2 -> m1_q_l2), t=1 to 2, commodity=('l1', 'k1'): flow=47.1
+Arc (m2_q_l2 -> m2_q_l2), t=1 to 2, commodity=('l1', 'k2'): flow=64.8
+Arc (m3_q_l2 -> m3_q_l2), t=1 to 2, commodity=('l2', 'k3'): flow=82.1
+Arc (m4_q_l2 -> m4_q_l2), t=1 to 2, commodity=('l2', 'k4'): flow=55.6
+Arc (m5_q_l2 -> m5_q_l2), t=1 to 2, commodity=('l1', 'k5'): flow=55.1
+Arc (m5_q_l2 -> m5_q_l2), t=1 to 2, commodity=('l2', 'k5'): flow=4.4
+
+Positive in carryover flows (in to in across time):
+Arc (m1_in -> m1_in), t=1 to 2, commodity=('l2', 'k2'): flow=8.2
+Arc (m7_in -> m7_in), t=1 to 2, commodity=('l2', 'k3'): flow=4.0
+
+Objective Component Sums:
+Deployment (CSAM): 3000.0
+Travel (in-in): 834.49445911
+Queue Entry (in-q): 12999.999992
+Repair l1 (CSAM): 30000.0002
+Repair l2 (TM): 199999.99994
+Carryover (q-q): 1545.1065085
+In Carryover (in-in): 61.003409500000004
+Dummy penalty: 655334.06
