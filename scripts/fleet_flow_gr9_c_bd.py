@@ -16,16 +16,16 @@ class Tee(object):
     def write(self, obj):
         for f in self.files:
             f.write(obj)
-            f.flush()  # Ensure real-time output
+            f.flush()
     def flush(self):
         for f in self.files:
             f.flush()
 
-# Create output directory at repo root if it doesn't exist
-repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))  # Go up one level from 'scripts' to root
+# Create output directory
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 output_dir = os.path.join(repo_root, 'output')
+os.makedirs(output_dir, exist_ok=True)
 
-# Open log file in the output directory
 log_file_path = os.path.join(output_dir, 'output_gr9_c_3_benders.txt')
 log_file = open(log_file_path, 'w')
 original_stdout = sys.stdout
@@ -159,7 +159,7 @@ C_q_q = 5  # Carryover
 C_dummy = 1000  # Dummy penalty
 U_l1 = 50  # CSAM capacity per m per t
 U_l2 = {k: 100 for k in K}  # Traditional per k per t
-max_csam_facilities = 10
+max_csam_facilities = 3
 
 # Benders' Parameters
 EPS = 1e-4
@@ -311,7 +311,7 @@ while ub - lb > EPS and iter_count < max_iter:
 
 print("\nConverged after", iter_count, "iterations. Final UB:", ub)
 
-# Now, use best_sub_vars to print results (adapted from original)
+# ====================== FULL DETAILED PRINTING SECTION ======================
 print("Objective Value:", ub)
 
 # Print open CSAM facilities
@@ -335,13 +335,136 @@ with open(os.path.join(output_dir, 'csam_flows.csv'), 'w', newline='') as csvfil
                         print(f"Arc ({m}_q_l1 -> {m}_r_l1), t={t}, commodity={c}: flow={flow:.1f}")
                         writer.writerow([m, t, str(c), flow])
 
-# ... (Add similar blocks for traditional flows, travel, dummy, in-q, in-carry as in your original script, using best_sub_vars)
+# Print traditional l2 flows
+print("\nPositive traditional l2 flows (q_l2 to r_l2):")
+with open(os.path.join(output_dir, 'traditional_flows.csv'), 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['Type', 'Facility', 'Time', 'Commodity', 'Flow'])
+    for k in K:
+        if k in traditional_m_dict:
+            traditional_m = traditional_m_dict[k]
+            print(f"\nFor k={k} at {traditional_m}:")
+            for t in T:
+                for c in C:
+                    if c[1] != k: continue
+                    a = (f'{traditional_m}_q_l2', f'{traditional_m}_r_l2', t, c)
+                    if a in best_sub_vars['x_regular']:
+                        flow = best_sub_vars['x_regular'][a]
+                        if flow > 1e-6:
+                            jumping = " (jumping if 'l1')" if c[0] == 'l1' else ""
+                            print(f"Arc ({traditional_m}_q_l2 -> {traditional_m}_r_l2), t={t}, commodity={c}: flow={flow:.1f}{jumping}")
+                            writer.writerow([k, traditional_m, t, str(c), flow])
 
-# Objective component sums (using best_sub_vars)
-# ... (Adapt calculations similarly)
+# Print travel flows (in-to-in)
+print("\nPositive inter-facility travel flows (in-to-in):")
+with open(os.path.join(output_dir, 'travel_flows.csv'), 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['From Node', 'To Node', 'Time', 'Commodity', 'Flow'])
+    for m1 in M:
+        for m2 in M:
+            if m1 == m2: continue
+            for t in T:
+                for c in C:
+                    a = (f'{m1}_in', f'{m2}_in', t, c)
+                    if a in best_sub_vars['x_regular']:
+                        flow = best_sub_vars['x_regular'][a]
+                        if flow > 1e-6:
+                            print(f"Arc ({m1}_in -> {m2}_in), t={t}, commodity={c}: flow={flow:.1f}")
+                            writer.writerow([m1, m2, t, str(c), flow])
 
-# Restore original stdout and close log file
+# Print dummy flows
+print("\nPositive flows on dummy arcs (unmet demand in t=2):")
+with open(os.path.join(output_dir, 'dummy_flows.csv'), 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['Node', 'Path', 'Commodity', 'Flow'])
+    for m in M:
+        for lp in L:
+            for c in C:
+                a = (f'{m}_q_{lp}', 'dummy', 2, c)
+                if a in best_sub_vars['x_regular']:
+                    flow = best_sub_vars['x_regular'][a]
+                    if flow > 1e-6:
+                        print(f"Arc ({m}_q_{lp} -> dummy), t=2, commodity={c}: flow={flow:.1f}")
+                        writer.writerow([m, lp, str(c), flow])
+        for c in C:
+            a = (f'{m}_in', 'dummy', 2, c)
+            if a in best_sub_vars['x_regular']:
+                flow = best_sub_vars['x_regular'][a]
+                if flow > 1e-6:
+                    print(f"Arc ({m}_in -> dummy), t=2, commodity={c}: flow={flow:.1f}")
+                    writer.writerow([m, 'in', str(c), flow])
+
+# === CRITICAL FOR QUEUE GRAPH ===
+print("\nPositive in-to-q flows (queue entries):")
+with open(os.path.join(output_dir, 'inq_flows.csv'), 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['Facility', 'Level', 'Time', 'Commodity', 'Flow'])
+    for m in M:
+        for lp in L:
+            for t in T:
+                for c in C:
+                    valid = False
+                    if lp == 'l1' and c[0] != 'l2':
+                        valid = True
+                    elif lp == 'l2' and m == traditional_m_dict.get(c[1]):
+                        valid = True
+                    if valid:
+                        a = (f'{m}_in', f'{m}_q_{lp}', t, c)
+                        if a in best_sub_vars['x_regular']:
+                            flow = best_sub_vars['x_regular'][a]
+                            if flow > 1e-6:
+                                print(f"Arc ({m}_in -> {m}_q_{lp}), t={t}, commodity={c}: flow={flow:.1f}")
+                                writer.writerow([m, lp, t, str(c), flow])
+
+print("\nPositive queue carryover flows (q_l? to q_l?):")
+with open(os.path.join(output_dir, 'qq_flows.csv'), 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['Facility', 'Level', 'Commodity', 'Flow'])
+    for m in M:
+        for c in C:
+            for lp in L:
+                a = (f'{m}_q_{lp}', f'{m}_q_{lp}', 1, c, 2)
+                if a in best_sub_vars['x_qq']:
+                    flow = best_sub_vars['x_qq'][a]
+                    if flow > 1e-6:
+                        print(f"Arc ({m}_q_{lp} -> {m}_q_{lp}), t=1 to 2, commodity={c}: flow={flow:.1f}")
+                        writer.writerow([m, lp, str(c), flow])
+
+print("\nPositive in carryover flows (in to in across time):")
+with open(os.path.join(output_dir, 'in_carry_flows.csv'), 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['Facility', 'Commodity', 'Flow'])
+    for m in M:
+        for c in C:
+            a = (f'{m}_in', f'{m}_in', 1, c, 2)
+            if a in best_sub_vars['x_in_carryover']:
+                flow = best_sub_vars['x_in_carryover'][a]
+                if flow > 1e-6:
+                    print(f"Arc ({m}_in -> {m}_in), t=1 to 2, commodity={c}: flow={flow:.1f}")
+                    writer.writerow([m, str(c), flow])
+
+# Objective component sums
+print("\nObjective Component Sums:")
+deployment_cost = sum(F[m] * best_y[m] for m in M)
+travel_cost = sum(C_in_in * best_sub_vars['x_regular'].get(a, 0) for a in regular_arcs if '_in' in a[0] and '_in' in a[1])
+queue_entry_cost = sum(C_in_q * best_sub_vars['x_regular'].get(a, 0) for a in regular_arcs if '_in' in a[0] and '_q_' in a[1])
+repair_l1_cost = sum(C_q_r_l1 * best_sub_vars['x_regular'].get(a, 0) for a in regular_arcs if '_q_l1' in a[0] and '_r_l1' in a[1])
+repair_l2_cost = sum(C_q_r_l2 * best_sub_vars['x_regular'].get(a, 0) for a in regular_arcs if '_q_l2' in a[0] and '_r_l2' in a[1])
+carryover_cost = sum(C_q_q * best_sub_vars['x_qq'].get(a, 0) for a in qq_arcs)
+in_carryover_cost = sum(C_q_q * best_sub_vars['x_in_carryover'].get(a, 0) for a in in_carryover_arcs)
+dummy_cost = sum(C_dummy * best_sub_vars['x_regular'].get(a, 0) for a in regular_arcs if ('_q_' in a[0] or '_in' in a[0]) and 'dummy' in a[1])
+
+print("Deployment (CSAM):", deployment_cost)
+print("Travel (in-in):", travel_cost)
+print("Queue Entry (in-q):", queue_entry_cost)
+print("Repair l1 (CSAM):", repair_l1_cost)
+print("Repair l2 (TM):", repair_l2_cost)
+print("Carryover (q-q):", carryover_cost)
+print("In Carryover (in-in):", in_carryover_cost)
+print("Dummy penalty:", dummy_cost)
+
+# Restore stdout
 sys.stdout = original_stdout
 log_file.close()
 
-print("Benders' script completed. Output logged to 'output_gr9_c_3_benders.txt' and CSVs.")
+print("Benders' script completed. Output logged to 'output/output_gr9_c_3_benders.txt' and CSVs.")
