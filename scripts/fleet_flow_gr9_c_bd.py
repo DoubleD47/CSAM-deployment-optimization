@@ -1,0 +1,347 @@
+# Benders' decomposition version of fleet_flow_gr9_c_3.py for CSAM deployment optimization.
+# Implements manual loop in PuLP for academic explainability.
+# Original monolithic model decomposed: Master for y (deployments), Sub for flows.
+
+import os
+import sys
+import csv
+from pulp import *
+import numpy as np
+from collections import defaultdict
+
+# Capture all prints to file while printing to console
+class Tee(object):
+    def __init__(self, *files):
+        self.files = files
+    def write(self, obj):
+        for f in self.files:
+            f.write(obj)
+            f.flush()  # Ensure real-time output
+    def flush(self):
+        for f in self.files:
+            f.flush()
+
+# Create output directory at repo root if it doesn't exist
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))  # Go up one level from 'scripts' to root
+output_dir = os.path.join(repo_root, 'output')
+
+# Open log file in the output directory
+log_file_path = os.path.join(output_dir, 'output_gr9_c_3_benders.txt')
+log_file = open(log_file_path, 'w')
+original_stdout = sys.stdout
+sys.stdout = Tee(sys.stdout, log_file)
+
+# Set random seed
+SEED = 456
+np.random.seed(SEED)
+print(f"Random seed set to: {SEED}")
+
+# Define sets
+M = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'm8', 'm9', 'm10']
+traditional_m_dict = {'k1': 'm1', 'k2': 'm2', 'k3': 'm3', 'k4': 'm4', 'k5': 'm5'}  # Type-specific traditional facilities
+L = ['l1', 'l2']
+K = ['k1', 'k2', 'k3', 'k4', 'k5']
+C = [(l, k) for l in L for k in K]
+T = [1, 2]
+
+##### Nodes #####
+nodes = []
+for t in T:
+    for c in C:
+        # Source and sink per t, c
+        nodes.append(('source', t, c))
+        nodes.append(('sink', t, c))
+        # Dummy and ss per c
+        if t == 2:
+            nodes.append(('dummy', t, c))
+        nodes.append(('ss', None, c))
+        for m in M:
+            # Common in node per m, t, c
+            nodes.append((f'{m}_in', t, c))
+            # l1 path nodes for all m
+            nodes.extend([
+                (f'{m}_q_l1', t, c),
+                (f'{m}_r_l1', t, c),
+                (f'{m}_out_l1', t, c),
+            ])
+            # l2 path nodes only at k-specific traditional_m
+            traditional_m_for_k = traditional_m_dict.get(c[1])
+            if m == traditional_m_for_k:
+                nodes.extend([
+                    (f'{m}_q_l2', t, c),
+                    (f'{m}_r_l2', t, c),
+                    (f'{m}_out_l2', t, c),
+                ])
+
+##### Arcs #####
+regular_arcs = []
+qq_arcs = []
+
+# Carryover arcs at the 'in' node level
+in_carryover_arcs = []
+for c in C:
+    for m in M:
+        in_carryover_arcs.append((f'{m}_in', f'{m}_in', 1, c, 2)) # t=1 to t=2
+
+for t in T:
+    for c in C:
+        # source-to-in arcs
+        for m in M:
+            regular_arcs.append(('source', f'{m}_in', t, c))
+        # in-to-in arcs (travel between nodes)
+        for m1 in M:
+            for m2 in M:
+                if m1 != m2:
+                    regular_arcs.append((f'{m1}_in', f'{m2}_in', t, c))
+        # in-to-q_lp arcs
+        for m in M:
+            if c[0] != 'l2':
+                regular_arcs.append((f'{m}_in', f'{m}_q_l1', t, c))
+            traditional_m_for_k = traditional_m_dict.get(c[1])
+            if m == traditional_m_for_k:
+                regular_arcs.append((f'{m}_in', f'{m}_q_l2', t, c))
+        # q_lp-to-r_lp arcs
+        for m in M:
+            regular_arcs.append((f'{m}_q_l1', f'{m}_r_l1', t, c))
+            traditional_m_for_k = traditional_m_dict.get(c[1])
+            if m == traditional_m_for_k:
+                regular_arcs.append((f'{m}_q_l2', f'{m}_r_l2', t, c))
+        # r_lp-to-out_lp arcs
+        for m in M:
+            regular_arcs.append((f'{m}_r_l1', f'{m}_out_l1', t, c))
+            traditional_m_for_k = traditional_m_dict.get(c[1])
+            if m == traditional_m_for_k:
+                regular_arcs.append((f'{m}_r_l2', f'{m}_out_l2', t, c))
+        # out_lp-to-sink arcs
+        for m in M:
+            regular_arcs.append((f'{m}_out_l1', 'sink', t, c))
+            traditional_m_for_k = traditional_m_dict.get(c[1])
+            if m == traditional_m_for_k:
+                regular_arcs.append((f'{m}_out_l2', 'sink', t, c))
+        # sink-to-ss arcs
+        regular_arcs.append(('sink', 'ss', t, c))
+        # q_lp-to-q_lp arcs (carryover)
+        if t == 1:
+            for m in M:
+                qq_arcs.append((f'{m}_q_l1', f'{m}_q_l1', t, c, t+1))
+                traditional_m_for_k = traditional_m_dict.get(c[1])
+                if m == traditional_m_for_k:
+                    qq_arcs.append((f'{m}_q_l2', f'{m}_q_l2', t, c, t+1))
+        # q_lp-to-dummy and dummy-to-ss (t=2)
+        if t == 2:
+            for m in M:
+                regular_arcs.append((f'{m}_q_l1', 'dummy', t, c))
+                traditional_m_for_k = traditional_m_dict.get(c[1])
+                if m == traditional_m_for_k:
+                    regular_arcs.append((f'{m}_q_l2', 'dummy', t, c))
+            for m in M:
+                regular_arcs.append((f'{m}_in', 'dummy', t, c))
+            regular_arcs.append(('dummy', 'ss', t, c))
+
+# Demands
+D = {}
+for m in M:
+    for t in T:
+        for c in C:
+            D[(m, t, c)] = np.random.uniform(5, 15)
+
+print("\nDemands:")
+for (m, t, c), d in D.items():
+    print(f"D({m}, t={t}, {c}) = {d:.1f}")
+
+# Parameters
+F = {m: 1000 for m in M}  # Deployment cost
+C_in_in = 1  # Travel
+C_in_q = 10  # Queue entry
+C_q_r_l1 = 100  # CSAM repair
+C_q_r_l2 = 200  # Traditional repair
+C_q_q = 5  # Carryover
+C_dummy = 1000  # Dummy penalty
+U_l1 = 50  # CSAM capacity per m per t
+U_l2 = {k: 100 for k in K}  # Traditional per k per t
+max_csam_facilities = 10
+
+# Benders' Parameters
+EPS = 1e-4
+max_iter = 100
+
+# Master Problem
+master = LpProblem("Master_CSAM_Deployment", LpMinimize)
+y = LpVariable.dicts("y", [(m, 'l1') for m in M], cat='Binary')
+theta = LpVariable("theta", lowBound=0)
+master += lpSum(F[m] * y[(m, 'l1')] for m in M) + theta
+master += lpSum(y[(m, 'l1')] for m in M) <= max_csam_facilities, "max_csam_facilities"
+
+lb, ub = -np.inf, np.inf
+iter_count = 0
+best_y = None
+best_sub_cost = np.inf
+best_sub_vars = None  # To store final flows for output
+
+while ub - lb > EPS and iter_count < max_iter:
+    iter_count += 1
+    print(f"\nIteration {iter_count}: Solving Master...")
+    master.solve()
+    lb = value(master.objective)
+    print(f"Master LB: {lb:.2f}")
+
+    # Fix y for subproblem
+    fixed_y = {m: value(y[(m, 'l1')]) for m in M}
+    print("Fixed y:", {m: fixed_y[m] for m in M if fixed_y[m] > 0.5})
+
+    # Subproblem (flow LP with fixed capacities)
+    sub = LpProblem("Subproblem_Flow", LpMinimize)
+    x_regular = LpVariable.dicts("flow_regular", regular_arcs, lowBound=0, cat='Continuous')
+    x_qq = LpVariable.dicts("flow_qq", qq_arcs, lowBound=0, cat='Continuous')
+    x_in_carryover = LpVariable.dicts("flow_in_carry", in_carryover_arcs, lowBound=0, cat='Continuous')
+
+    # Sub Objective (variable costs only, no deployment)
+    sub += (
+        lpSum(C_in_in * x_regular[a] for a in regular_arcs if '_in' in a[0] and '_in' in a[1]) +
+        lpSum(C_in_q * x_regular[a] for a in regular_arcs if '_in' in a[0] and '_q_' in a[1]) +
+        lpSum(C_q_r_l1 * x_regular[a] for a in regular_arcs if '_q_l1' in a[0] and '_r_l1' in a[1]) +
+        lpSum(C_q_r_l2 * x_regular[a] for a in regular_arcs if '_q_l2' in a[0] and '_r_l2' in a[1]) +
+        lpSum(C_q_q * x_qq[a] for a in qq_arcs) +
+        lpSum(0.1 * x_regular[a] for a in regular_arcs if '_r_' in a[0] and '_out_' in a[1]) +
+        lpSum(0.1 * x_regular[a] for a in regular_arcs if '_out_' in a[0] and 'sink' in a[1]) +
+        lpSum(0.1 * x_regular[a] for a in regular_arcs if 'sink' in a[0] and 'ss' in a[1]) +
+        lpSum(C_dummy * x_regular[a] for a in regular_arcs if ('_q_' in a[0] or '_in' in a[0]) and 'dummy' in a[1]) +
+        lpSum(0.1 * x_regular[a] for a in regular_arcs if 'dummy' in a[0] and 'ss' in a[1]) +
+        lpSum(C_q_q * x_in_carryover[a] for a in in_carryover_arcs)
+    )
+
+    # Demand injection
+    for m in M:
+        for t in T:
+            for c in C:
+                a = ('source', f'{m}_in', t, c)
+                if a in x_regular:
+                    sub += x_regular[a] == D.get((m, t, c), 0), f"demand_inject_{m}_{t}_{c[0]}_{c[1]}"
+
+    # Flow conservation (same as original)
+    constraint_names = set()
+    constraint_counter = 0
+    unique_nodes = set(nodes)
+    for n, t_node, comm in unique_nodes:
+        incoming = [a for a in regular_arcs if a[1] == n and a[2] == t_node and a[3] == comm]
+        outgoing = [a for a in regular_arcs if a[0] == n and a[2] == t_node and a[3] == comm]
+        incoming_qq = [a for a in qq_arcs if a[1] == n and a[4] == t_node and a[3] == comm]
+        outgoing_qq = [a for a in qq_arcs if a[0] == n and a[2] == t_node and a[3] == comm]
+        incoming_in_carry = [a for a in in_carryover_arcs if a[1] == n and a[4] == t_node and a[3] == comm]
+        outgoing_in_carry = [a for a in in_carryover_arcs if a[0] == n and a[2] == t_node and a[3] == comm]
+
+        if not (incoming or outgoing or incoming_qq or outgoing_qq or incoming_in_carry or outgoing_in_carry):
+            continue
+
+        constraint_name = f"flow_conservation_{constraint_counter}_{n.replace('_', '-')}_{t_node if t_node else 'None'}_{comm[0]}_{comm[1]}"
+        if constraint_name in constraint_names:
+            raise ValueError(f"Duplicate constraint name: {constraint_name}")
+        constraint_names.add(constraint_name)
+        constraint_counter += 1
+
+        if n == 'source':
+            total_demand_t_c = sum(D.get((m, t_node, comm), 0) for m in M)
+            constraint = lpSum(x_regular[a] for a in outgoing) + lpSum(x_qq[a] for a in outgoing_qq) + lpSum(x_in_carryover[a] for a in outgoing_in_carry) == total_demand_t_c
+        elif n == 'ss' and t_node is None:
+            total_demand_c = sum(D.get((m, ti, comm), 0) for m in M for ti in T)
+            constraint = lpSum(x_regular[a] for a in incoming) + lpSum(x_qq[a] for a in incoming_qq) + lpSum(x_in_carryover[a] for a in incoming_in_carry) == total_demand_c
+        else:
+            constraint = (
+                lpSum(x_regular[a] for a in incoming) + 
+                lpSum(x_qq[a] for a in incoming_qq) + 
+                lpSum(x_in_carryover[a] for a in incoming_in_carry) ==
+                lpSum(x_regular[a] for a in outgoing) + 
+                lpSum(x_qq[a] for a in outgoing_qq) + 
+                lpSum(x_in_carryover[a] for a in outgoing_in_carry)
+            )
+        sub += constraint, constraint_name
+
+    # Capacity constraints (fixed y)
+    l1_capacity_cons = {}  # Store for duals
+    for m in M:
+        for t in T:
+            cons_name = f"capacity_l1_{m}_{t}"
+            cons = lpSum(x_regular[(f'{m}_q_l1', f'{m}_r_l1', t, c)] for c in C if (f'{m}_q_l1', f'{m}_r_l1', t, c) in x_regular) <= U_l1 * fixed_y[m]
+            sub += cons, cons_name
+            l1_capacity_cons[(m, t)] = cons_name
+
+    for k in K:
+        if k in traditional_m_dict:
+            traditional_m = traditional_m_dict[k]
+            for t in T:
+                sub += lpSum(x_regular[(f'{traditional_m}_q_l2', f'{traditional_m}_r_l2', t, c)] for c in C if c[1] == k and (f'{traditional_m}_q_l2', f'{traditional_m}_r_l2', t, c) in x_regular) <= U_l2[k], f"capacity_l2_{traditional_m}_{k}_{t}"
+
+    # Solve sub
+    print("Solving Subproblem...")
+    status = sub.solve()
+    print("Sub Status:", LpStatus[status])
+
+    if LpStatus[status] == 'Optimal':
+        sub_cost = value(sub.objective)
+        deployment_cost = sum(F[m] * fixed_y[m] for m in M)
+        total_cost = deployment_cost + sub_cost
+        ub = min(ub, total_cost)
+        print(f"Sub Cost: {sub_cost:.2f}, Total UB: {ub:.2f}")
+
+        # Update best if improved
+        if total_cost < deployment_cost + best_sub_cost:
+            best_y = fixed_y.copy()
+            best_sub_cost = sub_cost
+            best_sub_vars = {
+                'x_regular': {a: value(x_regular[a]) for a in regular_arcs},
+                'x_qq': {a: value(x_qq[a]) for a in qq_arcs},
+                'x_in_carryover': {a: value(x_in_carryover[a]) for a in in_carryover_arcs}
+            }
+
+        # Get duals for l1 capacities
+        pi = {(m, t): sub.constraints[l1_capacity_cons[(m, t)]].pi for m in M for t in T}
+
+        # Add optimality cut to master
+        cut_name = f"opt_cut_{iter_count}"
+        cut = theta >= sub_cost + lpSum(pi[(m, t)] * U_l1 * (y[(m, 'l1')] - fixed_y[m]) for m in M for t in T)
+        master += cut, cut_name
+        print(f"Added optimality cut: {cut_name}")
+
+    else:
+        # Infeasible: Add simple feasibility cut (force more deployments; customize as needed)
+        print("Subproblem infeasible! Adding feasibility cut.")
+        cut_name = f"feas_cut_{iter_count}"
+        min_deploy = sum(fixed_y.values()) + 1  # Force at least one more
+        master += lpSum(y[(m, 'l1')] for m in M) >= min_deploy, cut_name
+
+print("\nConverged after", iter_count, "iterations. Final UB:", ub)
+
+# Now, use best_sub_vars to print results (adapted from original)
+print("Objective Value:", ub)
+
+# Print open CSAM facilities
+print("\nCSAM Deployments:")
+for m in M:
+    if best_y[m] > 0.5:
+        print(f"y[{m}, 'l1'] = {best_y[m]:.0f}")
+
+# Print positive CSAM l1 flows
+print("\nPositive CSAM l1 flows (q_l1 to r_l1):")
+with open(os.path.join(output_dir, 'csam_flows.csv'), 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['Facility', 'Time', 'Commodity', 'Flow'])
+    for m in M:
+        for t in T:
+            for c in C:
+                a = (f'{m}_q_l1', f'{m}_r_l1', t, c)
+                if a in best_sub_vars['x_regular']:
+                    flow = best_sub_vars['x_regular'][a]
+                    if flow > 1e-6:
+                        print(f"Arc ({m}_q_l1 -> {m}_r_l1), t={t}, commodity={c}: flow={flow:.1f}")
+                        writer.writerow([m, t, str(c), flow])
+
+# ... (Add similar blocks for traditional flows, travel, dummy, in-q, in-carry as in your original script, using best_sub_vars)
+
+# Objective component sums (using best_sub_vars)
+# ... (Adapt calculations similarly)
+
+# Restore original stdout and close log file
+sys.stdout = original_stdout
+log_file.close()
+
+print("Benders' script completed. Output logged to 'output_gr9_c_3_benders.txt' and CSVs.")
