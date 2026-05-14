@@ -1,5 +1,5 @@
 # This is the file that will create visualization bar charts for the fleet_flow_gr9_c_3 model. This is DIFFERENT than the visualizations Graphs_bar_charts_gr9_c_3.py, which is graphing the fleet_flow_gr9_c_2.py model.
-# This update attempts to correct issues with the queue graph, in order to display everything total volume that's waiting at that node, but get a different color code for the commodities that didn't move. In other words, if we chose not to move something, it should all be the same color, but if it did move, it's getting identified as its specific tuple at that graph. 
+
 # This script will parse the output from the optimization model and create bar charts
 import os
 import re
@@ -20,10 +20,11 @@ os.makedirs(output_dir, exist_ok=True)
 # The output text
 # Read output from file 
 try:
-    output_text = open(r'C:\Git\CSAM-deployment-optimization\output\output_gr9_c_3.txt', 'r').read()
+    output_text = open(r'C:\Git\CSAM-deployment-optimization\output\output_gr9_c_3_benders.txt', 'r').read()
 except FileNotFoundError:
-    print("Error: File not found at C:\\Git\\CSAM-deployment-optimization\\output\\output_gr9_c_3.txt")
+    print("Error: File not found at C:\\Git\\CSAM-deployment-optimization\\output\\output_gr9_c_3_benders.txt")
     raise
+
 
 # Parse deployments
 deploy_pattern = r"y\[(\w+), 'l1'\] = ([\d.]+)"

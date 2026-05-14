@@ -27,6 +27,13 @@ All scripts must be run **locally** (large PuLP models).
 cd scripts
 python fleet_flow_gr9_c_bd.py
 
+Main output: output/output_gr9_c_3_benders.txt + CSVs.
+2. Generate Visualizations
+
+cd scripts
+python Graphs_bar_charts_gr9_c_bd.py
+
+Outputs → viz_output/Graphs_bar_charts_gr9_c_bd/
 Mathematical Formulation
 Sets and Indices
 
@@ -48,12 +55,12 @@ $$\min \sum_{m \in M} F_m \, y_m + \sum_{\text{arcs}} c_{ij} \, x_{ij,\dots}$$
 (Deployment + travel + queue entry + repair (l1 cheaper than l2) + carryover + dummy penalty)
 Main Constraints
 
-Flow conservation at every node (source = demand injection, ss = total demand, others balanced).
+Flow conservation at every node (source = demand, ss = total demand, others balanced).
 CSAM capacity:$$\sum_{c:c[0]=l1} x_{(m\_q\_l1 \to m\_r\_l1),t,c} \leq U_{l1} \cdot y_m \quad \forall m,t$$
 Traditional (l2) capacity at fixed locations.
 Deployment limit: $\sum_m y_m \leq$ max facilities.
 
-Full detailed formulation is in main.tex.
+Full details in main.tex.
 Benders Decomposition
 
 Master: Binary $y$ + continuous $\theta$ (subproblem cost approximation) + optimality/feasibility cuts.
@@ -61,32 +68,35 @@ Subproblem: LP flow problem with fixed $y$; duals from l1-capacity constraints g
 Manual loop in PuLP for academic transparency.
 
 Repository Structure
-textCopy.
+.
 ├── scripts/
-│   ├── fleet_flow_gr9_c_3.py
-│   ├── fleet_flow_gr9_c_bd.py          ← Current
+│   ├── fleet_flow_gr9_c_bd.py          ← Current model
 │   └── Graphs_bar_charts_gr9_c_bd.py   ← New visualization parser
 ├── output/
 ├── viz_output/
 ├── main.tex
 └── README.md
-Latest Results Example
 
-CSAM Deployed: m5, m8, m9 (example)
-High unmet demand penalty remains — good area for tuning.
+Latest Results (seed 456)
 
-See output/ and charts in viz_output/.
+All 10 CSAM facilities deployed (max limit reached in this run).
+Objective: 362072.35
+Significant CSAM repair usage; unmet demand still present in some flows.
+
+See output/ and generated charts.
+
 Ongoing Work & Roadmap
 
  Stabilize Benders cuts / convergence
- Update visualization script for Benders output
  Multi-seed experiments + statistics
  Stochastic / CVaR extensions
  Refresh main.tex with latest figures
 
-Pulling into Overleaf
+ Pulling into Overleaf
 Copy sections directly, or:
-BashCopypandoc README.md -o model.tex --from markdown+tex_math_dollars
+Bashpandoc README.md -o model.tex --from markdown+tex_math_dollars
+
 Contributing / Contact
 PhD project by David Dunham (Northeastern University, Advisor: Prof. Ozlem Ergun).
 Issues and PRs welcome!
+text
