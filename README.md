@@ -67,6 +67,14 @@ textCopy.
 └── README.md
 Latest Results (seed 456)
 
+- **csam_flows.csv** — Actual CSAM (l1) repair throughput (q_l1 → r_l1)
+- **traditional_flows.csv** — Repair at traditional (l2) sites; may include l1 commodities using l2 capacity ("jumping")
+- **inq_flows.csv** — Demand entering repair queues from the entry node
+- **qq_flows.csv** — Queue carry-over from t=1 to t=2
+- **in_carry_flows.csv** — Demand held at the *entry* node (m_in t=1 → m_in t=2). Not yet in any queue. Shown as gray hatched bars.
+- **travel_flows.csv** — Inter-facility movement (mX_in → mY_in)
+- **dummy_flows.csv** — Unmet demand (total penalty base)
+
 All 10 CSAM facilities deployed (max limit reached).
 Objective: 362072.35
 Significant CSAM repair usage; some unmet demand remains.

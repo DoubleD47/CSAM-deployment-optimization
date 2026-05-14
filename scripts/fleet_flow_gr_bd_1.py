@@ -14,6 +14,7 @@ import pandas as pd
 from pulp import *
 import numpy as np
 from collections import defaultdict
+import time
 
 # ====================== EXPERIMENT CONFIG ======================
 EXPERIMENT_NAME = "maxCSAM3_single"          # ← Change this per experiment
@@ -185,6 +186,9 @@ best_y = None
 best_sub_cost = np.inf
 best_sub_vars = None  # To store final flows for output
 
+start_time = time.time()
+
+# Begin Benders' loop
 while ub - lb > EPS and iter_count < max_iter:
     iter_count += 1
     print(f"\nIteration {iter_count}: Solving Master...")
@@ -316,6 +320,12 @@ while ub - lb > EPS and iter_count < max_iter:
         min_deploy = sum(fixed_y.values()) + 1  # Force at least one more
         master += lpSum(y[(m, 'l1')] for m in M) >= min_deploy, cut_name
 
+#^^^ End of Benders' loop ^^^
+
+# Record time stats
+runtime_seconds = time.time() - start_time
+print(f"Total runtime: {runtime_seconds:.2f} seconds")
+
 print("\nConverged after", iter_count, "iterations. Final UB:", ub)
 
 # ====================== DETAILED PRINTING & SAVING ======================
@@ -426,7 +436,7 @@ with open(os.path.join(output_dir, 'inq_flows.csv'), 'w', newline='') as csvfile
 print("\nPositive queue carryover flows (q_l? to q_l?):")
 with open(os.path.join(output_dir, 'qq_flows.csv'), 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(['Facility', 'Level', 'Commodity', 'Flow'])
+    writer.writerow(['Facility', 'Level', 'Commodity', 'Time_From', 'Time_To', 'Flow'])
     for m in M:
         for c in C:
             for lp in L:
@@ -440,7 +450,7 @@ with open(os.path.join(output_dir, 'qq_flows.csv'), 'w', newline='') as csvfile:
 print("\nPositive in carryover flows (in to in across time):")
 with open(os.path.join(output_dir, 'in_carry_flows.csv'), 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(['Facility', 'Commodity', 'Flow'])
+    writer.writerow(['Facility', 'Commodity', 'Time_From', 'Time_To', 'Flow'])
     for m in M:
         for c in C:
             a = (f'{m}_in', f'{m}_in', 1, c, 2)
@@ -477,6 +487,7 @@ summary = {
     "experiment": EXPERIMENT_NAME,
     "max_csam_facilities": MAX_CSAM_FACILITIES,
     "seed": SEED,
+    "runtime_seconds": float(runtime_seconds),
     "objective": float(ub) if 'ub' in locals() else None,
     "deployed_count": int(sum(1 for v in (best_y or {}).values() if v > 0.5)),
     "deployed_facilities": [m for m in M if (best_y or {}).get(m, 0) > 0.5],
