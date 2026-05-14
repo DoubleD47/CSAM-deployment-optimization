@@ -226,8 +226,8 @@ Sub Status: Optimal
 Sub Cost: 352072.35, Total UB: 362072.35
 Added optimality cut: opt_cut_3
 
-Converged after 3 iterations. Final UB: 362072.3489521835
-Objective Value: 362072.3489521835
+Converged after 3 iterations. Final UB: 362072.34865468316
+Objective Value: 362072.34865468316
 
 CSAM Deployments:
 y[m1, 'l1'] = 1
@@ -242,13 +242,13 @@ y[m9, 'l1'] = 1
 y[m10, 'l1'] = 1
 
 Positive CSAM l1 flows (q_l1 to r_l1):
-Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k1'): flow=7.5
+Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k1'): flow=6.2
 Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k2'): flow=6.6
 Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k3'): flow=12.8
 Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k4'): flow=13.1
-Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k5'): flow=10.0
-Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k1'): flow=10.4
-Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k2'): flow=8.9
+Arc (m1_q_l1 -> m1_r_l1), t=1, commodity=('l1', 'k5'): flow=11.3
+Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k1'): flow=9.4
+Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k2'): flow=11.6
 Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k3'): flow=10.8
 Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k4'): flow=6.5
 Arc (m1_q_l1 -> m1_r_l1), t=2, commodity=('l1', 'k5'): flow=11.9
@@ -257,44 +257,44 @@ Arc (m2_q_l1 -> m2_r_l1), t=1, commodity=('l1', 'k2'): flow=6.2
 Arc (m2_q_l1 -> m2_r_l1), t=1, commodity=('l1', 'k3'): flow=7.4
 Arc (m2_q_l1 -> m2_r_l1), t=1, commodity=('l1', 'k4'): flow=5.1
 Arc (m2_q_l1 -> m2_r_l1), t=1, commodity=('l1', 'k5'): flow=8.6
-Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k1'): flow=7.1
+Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k1'): flow=6.2
 Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k2'): flow=14.7
 Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k3'): flow=13.6
-Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k4'): flow=5.2
-Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k5'): flow=9.3
-Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k1'): flow=8.3
+Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k4'): flow=10.3
+Arc (m2_q_l1 -> m2_r_l1), t=2, commodity=('l1', 'k5'): flow=5.2
+Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k1'): flow=10.6
 Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k2'): flow=14.4
 Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k3'): flow=6.5
 Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k4'): flow=14.0
-Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k5'): flow=6.8
+Arc (m3_q_l1 -> m3_r_l1), t=1, commodity=('l1', 'k5'): flow=4.5
 Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k1'): flow=5.1
-Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k2'): flow=9.8
+Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k2'): flow=11.3
 Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k3'): flow=6.0
 Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k4'): flow=6.3
 Arc (m3_q_l1 -> m3_r_l1), t=2, commodity=('l1', 'k5'): flow=13.2
 Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k1'): flow=10.2
 Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k2'): flow=6.2
 Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k3'): flow=8.3
-Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k4'): flow=7.7
-Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k5'): flow=15.0
-Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k1'): flow=11.1
-Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k2'): flow=12.0
+Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k4'): flow=9.3
+Arc (m4_q_l1 -> m4_r_l1), t=1, commodity=('l1', 'k5'): flow=16.0
+Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k1'): flow=14.1
+Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k2'): flow=9.1
 Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k3'): flow=12.1
 Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k4'): flow=5.9
 Arc (m4_q_l1 -> m4_r_l1), t=2, commodity=('l1', 'k5'): flow=8.8
-Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k1'): flow=12.2
+Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k1'): flow=12.1
 Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k2'): flow=9.8
-Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k3'): flow=9.5
-Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k4'): flow=12.6
+Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k3'): flow=14.8
+Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k4'): flow=7.4
 Arc (m5_q_l1 -> m5_r_l1), t=1, commodity=('l1', 'k5'): flow=5.9
-Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k1'): flow=11.9
+Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k1'): flow=11.0
 Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k2'): flow=10.5
 Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k3'): flow=13.7
-Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k4'): flow=8.2
+Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k4'): flow=9.1
 Arc (m5_q_l1 -> m5_r_l1), t=2, commodity=('l1', 'k5'): flow=5.7
 Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k1'): flow=5.3
 Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k2'): flow=11.4
-Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k3'): flow=19.1
+Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k3'): flow=13.8
 Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k4'): flow=6.7
 Arc (m6_q_l1 -> m6_r_l1), t=1, commodity=('l1', 'k5'): flow=7.3
 Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k1'): flow=6.5
@@ -302,43 +302,43 @@ Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k2'): flow=13.8
 Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k3'): flow=5.4
 Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k4'): flow=6.1
 Arc (m6_q_l1 -> m6_r_l1), t=2, commodity=('l1', 'k5'): flow=7.9
-Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k1'): flow=9.2
+Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k1'): flow=10.6
 Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k2'): flow=10.7
 Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k3'): flow=12.0
 Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k4'): flow=5.3
 Arc (m7_q_l1 -> m7_r_l1), t=1, commodity=('l1', 'k5'): flow=5.1
-Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k1'): flow=7.6
+Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k1'): flow=6.4
 Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k2'): flow=5.9
 Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k3'): flow=11.3
 Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k4'): flow=10.0
-Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k5'): flow=10.2
-Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k1'): flow=11.9
+Arc (m7_q_l1 -> m7_r_l1), t=2, commodity=('l1', 'k5'): flow=13.8
+Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k1'): flow=12.1
 Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k2'): flow=7.1
 Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k3'): flow=7.9
-Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k4'): flow=13.5
+Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k4'): flow=13.3
 Arc (m8_q_l1 -> m8_r_l1), t=1, commodity=('l1', 'k5'): flow=9.6
 Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k1'): flow=8.7
 Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k2'): flow=14.9
 Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k3'): flow=7.8
-Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k4'): flow=8.2
-Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k5'): flow=10.5
-Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k1'): flow=8.6
+Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k4'): flow=11.8
+Arc (m8_q_l1 -> m8_r_l1), t=2, commodity=('l1', 'k5'): flow=6.8
+Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k1'): flow=6.1
 Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k2'): flow=9.5
 Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k3'): flow=7.8
 Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k4'): flow=7.1
 Arc (m9_q_l1 -> m9_r_l1), t=1, commodity=('l1', 'k5'): flow=8.7
-Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k1'): flow=9.9
-Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k2'): flow=3.6
+Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k1'): flow=11.2
+Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k2'): flow=2.4
 Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k3'): flow=14.3
 Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k4'): flow=11.5
 Arc (m9_q_l1 -> m9_r_l1), t=2, commodity=('l1', 'k5'): flow=10.6
 Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k1'): flow=6.7
 Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k2'): flow=9.9
 Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k3'): flow=12.1
-Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k4'): flow=10.2
+Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k4'): flow=14.0
 Arc (m10_q_l1 -> m10_r_l1), t=1, commodity=('l1', 'k5'): flow=7.2
 Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k1'): flow=8.9
 Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k2'): flow=10.3
 Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k3'): flow=6.1
-Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k4'): flow=19.2
-Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k5'): flow=5.5
+Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k4'): flow=9.5
+Arc (m10_q_l1 -> m10_r_l1), t=2, commodity=('l1', 'k5'): flow=9.7
