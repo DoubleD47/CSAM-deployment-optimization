@@ -1,0 +1,18 @@
+{
+  "run_id": "2026-05-14_103910_maxCSAM3_single_no_incarry",
+  "timestamp": "2026-05-14_103910",
+  "experiment": "maxCSAM3_single_no_incarry",
+  "max_csam_facilities": 3,
+  "seed": 456,
+  "objective": 6659376.533760727,
+  "deployed_count": 3,
+  "deployed_facilities": [
+    "m3",
+    "m8",
+    "m10"
+  ],
+  "unmet_demand": 1310.6681156,
+  "iterations": 50,
+  "runtime_seconds": 132.60240578651428,
+  "C_q_q": 100
+}

@@ -17,7 +17,7 @@ from collections import defaultdict
 EXPERIMENT_NAME = "maxCSAM3_single_no_incarry"
 MAX_CSAM_FACILITIES = 3
 NUM_SEEDS = 1
-BASE_SEED = 100
+BASE_SEED = 456
 
 timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S")
 run_id = f"{timestamp}_{EXPERIMENT_NAME}"
@@ -119,19 +119,19 @@ for t in range(min(T), max(T)):
 # Demands & Parameters
 D = {(m, t, c): np.random.uniform(5, 15) for m in M for t in T for c in C}
 F = {m: 1000 for m in M}
-C_in_in = 1
+C_in_in = 3
 C_in_q = 10
-C_q_r_l1 = 100
-C_q_r_l2 = 200
-C_q_q = 100          # Depreciation-style holding cost
-C_dummy = 1000
+C_q_r_l1 = 50
+C_q_r_l2 = 40
+C_q_q = 100            # Depreciation-style holding cost
+C_dummy = 10000
 U_l1 = 50
 U_l2 = {k: 100 for k in K}
 max_csam_facilities = MAX_CSAM_FACILITIES
 
 # ====================== BENDERS LOOP ======================
 EPS = 1e-4
-max_iter = 25
+max_iter = 50
 
 master = LpProblem("Master_CSAM_Deployment", LpMinimize)
 y = LpVariable.dicts("y", [(m, 'l1') for m in M], cat='Binary')
@@ -424,6 +424,30 @@ for csv_name in ["csam_flows.csv", "traditional_flows.csv", "inq_flows.csv",
     src = Path(output_dir) / csv_name
     if src.exists():
         shutil.copy(src, exp_dir / csv_name)
+
+# ====================== GENERATE NODE+ TUPLE VISUALIZATIONS ======================
+print("\n=== Generating enhanced node-level + tuple visualizations ===")
+
+viz_script = os.path.join(repo_root, "visualizations", "analyze_flows_bd.py")
+
+try:
+    import subprocess
+    result = subprocess.run(
+        ["python", viz_script, str(exp_dir)],
+        cwd=repo_root,
+        capture_output=True,
+        text=True,
+        timeout=45
+    )
+    print("Visualization script completed.")
+    if result.stdout:
+        print(result.stdout.strip()[-800:])   # show last part only
+    if result.stderr:
+        print("Viz warnings:", result.stderr)
+except Exception as e:
+    print(f"Could not run visualization script: {e}")
+
+print(f"Visualizations should now be in: {exp_dir / 'visualizations'}")
 
 sys.stdout = original_stdout
 log_file.close()
